@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/user/user",
+    "pages/insurance/insurance",
+    "pages/repair/repair",
+    "pages/article/article",
+    "pages/repairApply/repairApply",
+    "pages/userInfo/userInfo",
+    "pages/repairList/repairList",
+    "pages/wxpay/wxpay",
+    "pages/oil/oil",
+    "pages/webview/webview",
+    "pages/handlingDetails/handlingDetails",
+    "pages/cardDetail/cardDetail",
+    "pages/privacyPolicyProtocol/privacyPolicyProtocol"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#232323",
+    "backgroundColor": "#232323"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#efb336",
+    "borderStyle": "black",
+    "backgroundColor": "#232323",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "static/image/tab/home.png",
+        "selectedIconPath": "static/image/tab/home_1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/insurance/insurance",
+        "iconPath": "static/image/tab/baoxian_1.png",
+        "selectedIconPath": "static/image/tab/baoxian.png",
+        "text": "车险"
+      },
+      {
+        "pagePath": "pages/repair/repair",
+        "iconPath": "static/image/tab/weixiu.png",
+        "selectedIconPath": "static/image/tab/weixiu_1.png",
+        "text": "快修"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "static/image/tab/user.png",
+        "selectedIconPath": "static/image/tab/user_1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "copyright": "/components/copyright/copyright",
+    "home": "/pages/home/home",
+    "insurance": "/pages/insurance/insurance",
+    "repair": "/pages/repair/repair",
+    "user": "/pages/user/user"
+  }
+}

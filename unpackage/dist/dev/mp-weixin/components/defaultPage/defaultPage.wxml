@@ -1,0 +1,1 @@
+<view class="data-v-73590366"><view class="main data-v-73590366" style="{{'top:'+(top)+';'}}"><image style="width:110rpx;height:160rpx;" src="../../static/image/icon/queshenye_1.png" mode class="data-v-73590366"></image><view style="margin-top:30rpx;" class="data-v-73590366">{{title}}</view></view></view>

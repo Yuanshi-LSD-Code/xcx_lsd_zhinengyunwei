@@ -12,7 +12,7 @@
 			<view class="top_title" :style="{color:topTitleColor,textAlign:textAlign,fontSize:fontSize}">
 				<view class="top_leftText display_a" @click="leftTextClick" v-if="lefText">
 					<text style="font-size: 32rpx;color: #333333;">{{lefText}}</text>
-					<image src="../../static/image/sanjiaobiao.png" style="width: 22rpx;height: 12rpx;margin-left: 10rpx;" mode=""></image>
+					<!-- <image src="../../static/image/sanjiaobiao.png" style="width: 22rpx;height: 12rpx;margin-left: 10rpx;" mode=""></image> -->
 				</view>
 				<text class="ml_20 f_36 fw_700" >{{topTitle}}</text>
 				<view  v-if="rightTitle" class="top_right" @tap="tapRight">

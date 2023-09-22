@@ -1,0 +1,1 @@
+<view class="footer-content"><view class="copyright" style="{{'margin-top:'+(marginTop)+';'}}"><view style="display:flex;flex-direction:column;"><rich-text nodes="{{copyright}}"></rich-text></view></view></view>

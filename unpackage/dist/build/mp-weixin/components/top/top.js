@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/top/top"],{"318b":function(t,e,n){"use strict";n.r(e);var i=n("9bf6"),r=n.n(i);for(var u in i)"default"!==u&&function(t){n.d(e,t,(function(){return i[t]}))}(u);e["default"]=r.a},5642:function(t,e,n){"use strict";n.r(e);var i=n("74fb"),r=n("318b");for(var u in r)"default"!==u&&function(t){n.d(e,t,(function(){return r[t]}))}(u);n("789e");var a,f=n("f0c5"),o=Object(f["a"])(r["default"],i["b"],i["c"],!1,null,"2020c4bd",null,!1,i["a"],a);e["default"]=o.exports},"74fb":function(t,e,n){"use strict";var i;n.d(e,"b",(function(){return r})),n.d(e,"c",(function(){return u})),n.d(e,"a",(function(){return i}));var r=function(){var t=this,e=t.$createElement;t._self._c},u=[]},"789e":function(t,e,n){"use strict";var i=n("df0d"),r=n.n(i);r.a},"9bf6":function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var i={name:"top",props:{fontSize:{type:String,default:"28rpx"},textAlign:{type:String,default:"center"},backgroundColor:{type:String,default:""},backgroundImage:{type:String,default:""},leftColor:{type:String,default:"#333333"},rightIcon:{type:String,default:""},lefText:{type:String,default:""},topHeight:{type:String,default:"150rpx"},topTitleColor:{type:String,default:""},topTitle:{type:String,default:""},rightTitle:{type:String,default:""},rightTitleColor:{type:String,default:"#666666FF"},isShowIcon:{type:Boolean,default:!1},image:{type:String,default:""}},data:function(){return{}},methods:{back:function(){this.$emit("handleBack")},other:function(){this.$emit("handleTap")},tapRight:function(){this.$emit("handRight")},leftTextClick:function(){this.$emit("leftTextClick")}}};e.default=i},df0d:function(t,e,n){}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/top/top-create-component',
+    {
+        'components/top/top-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('543d')['createComponent'](__webpack_require__("5642"))
+        })
+    },
+    [['components/top/top-create-component']]
+]);

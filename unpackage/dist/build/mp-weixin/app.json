@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/user/user",
+    "pages/insurance/insurance",
+    "pages/repair/repair",
+    "pages/article/article",
+    "pages/repairApply/repairApply",
+    "pages/userInfo/userInfo",
+    "pages/repairList/repairList",
+    "pages/wxpay/wxpay",
+    "pages/oil/oil",
+    "pages/webview/webview"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#295BA2",
+    "backgroundColor": "#295BA2"
+  },
+  "usingComponents": {
+    "copyright": "/components/copyright/copyright",
+    "home": "/pages/home/home",
+    "insurance": "/pages/insurance/insurance",
+    "repair": "/pages/repair/repair",
+    "user": "/pages/user/user"
+  }
+}

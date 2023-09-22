@@ -1,0 +1,1 @@
+<view><web-view title="hehe" src="{{redirect_url}}"></web-view></view>
