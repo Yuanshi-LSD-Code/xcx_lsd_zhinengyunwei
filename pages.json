@@ -1,0 +1,187 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
+		"tui-(.*)": "@/components/thorui/tui-$1/tui-$1.vue",
+		"fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue"
+
+	},
+
+	"pages": [
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationStyle": "custom",
+				"backgroundColor": "#333"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/user/user",
+			"style": {
+				// "navigationStyle": "custom"
+				"navigationStyle": "custom"
+			}
+		}
+
+		, {
+			"path": "pages/insurance/insurance",
+			"style": {
+				// "navigationBarTitleText": "",
+				// "enablePullDownRefresh": false
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/repair/repair",
+			"style": {
+				// "navigationBarTitleText": "",
+				
+				// "enablePullDownRefresh": false
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/article/article",
+			"style": {
+				"navigationStyle": "custom"
+				// "navigationBarTitleText": "",
+				// "enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/repairApply/repairApply",
+			"style": {
+				"navigationStyle": "custom"
+				// "navigationBarTitleText": "",
+				// "enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/userInfo",
+			"style": {
+				"navigationStyle": "custom"
+				// "navigationBarTitleText": "",
+				// "enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/repairList/repairList",
+			"style": {
+				"navigationStyle": "custom"
+				// "enablePullDownRefresh":true
+				// "navigationBarTitleText": "",
+				// "enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/wxpay/wxpay",
+            "style" :                                                                                    
+            {
+				"navigationStyle": "custom"
+                // "navigationBarTitleText": "",
+                // "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/oil/oil",
+            "style" :                                                                                    
+            {
+				"navigationStyle": "custom"
+                // "navigationBarTitleText": "",
+                // "enablePullDownRefresh": false
+            }
+            
+        }
+		,{
+		    "path" : "pages/webview/webview",
+		    "style" :                                                                                    
+		    {
+				"navigationStyle": "custom"
+		        // "navigationBarTitleText": "",
+		        // "enablePullDownRefresh": false
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/handlingDetails/handlingDetails",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "赛聚乐途汇",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/cardDetail/cardDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "赛聚乐途汇",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/privacyPolicyProtocol/privacyPolicyProtocol",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "隐私政策及注册协议",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#232323",
+		"backgroundColor": "#232323"
+	},
+	"tabBar": {
+		"color": "#fff",
+		"selectedColor": "#efb336",
+		"borderStyle": "black",
+		"backgroundColor": "#232323",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"iconPath": "static/image/tab/home.png",
+				"selectedIconPath": "static/image/tab/home_1.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/insurance/insurance",
+				"iconPath": "static/image/tab/baoxian_1.png",
+				"selectedIconPath": "static/image/tab/baoxian.png",
+				"text": "车险"
+			},
+			{
+				"pagePath": "pages/repair/repair",
+				"iconPath": "static/image/tab/weixiu.png",
+				"selectedIconPath": "static/image/tab/weixiu_1.png",
+				"text": "快修"
+			},
+			
+			{
+				"pagePath": "pages/user/user",
+				"iconPath": "static/image/tab/user.png",
+				"selectedIconPath": "static/image/tab/user_1.png",
+				"text": "我的"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}
