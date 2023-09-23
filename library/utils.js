@@ -92,9 +92,9 @@ export function compressImage(path) {
 export function linkTo(name, params) {
 
 	if (name.substr(0, 1) == '/') {
-		let url = `..${name}`;
+		let url = `${name}`;
 	} else {
-		let url = `../${name}/${name}`;
+		let url = `/pages/${name}/${name}`;
 	}
 	if (typeof params == 'object') {
 		let str = '?';
@@ -114,9 +114,9 @@ export function linkTo(name, params) {
 
 export function navigateTo(name, params) {
 	if (name.substr(0, 1) == '/') {
-		let url = `..${name}`;
+		let url = `${name}`;
 	} else {
-		let url = `../${name}/${name}`;
+		let url = `/pages/${name}/${name}`;
 	}
 	if (typeof params == 'object') {
 		let str = '?';
