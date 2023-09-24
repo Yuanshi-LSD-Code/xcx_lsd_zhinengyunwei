@@ -3,7 +3,6 @@
   "backgroundColor": "#333",
   "usingComponents": {
     "top": "/components/top/top",
-    "copyright": "/components/copyright/copyright",
     "swiper-custom": "/components/swiperCustom/swiperCustom"
   }
 }

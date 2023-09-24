@@ -279,8 +279,10 @@ text {
 	width: 12rpx;
 	height: 20rpx;
 }
-/* 中按钮 */
-/* 1.浅色 */
+/* 中按钮
+ */
+/* 1.浅色
+ */
 .midBtn{
 	color: #FFB331;
 	width: 250rpx;
@@ -297,7 +299,8 @@ text {
 .midBtn:active{
 	opacity: 0.7;
 }
-/* 2.主题红 */
+/* 2.主题红
+ */
 .midBtn2{
 	color: #fff;
 	width: 250rpx;
@@ -313,7 +316,8 @@ text {
 .midBtn2:active{
 	opacity: 0.7;
 }
-/*居中 */
+/*居中
+ */
 .center{
 	display: flex;
 	align-items: center;
@@ -326,7 +330,8 @@ text {
 input,textarea{
 	font-size: 28rpx;
 }
-/*页面布局 */
+/*页面布局
+ */
 .main-content{
 	display: flex;
 	flex-direction: column;

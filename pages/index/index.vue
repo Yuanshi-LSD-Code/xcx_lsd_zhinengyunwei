@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		
-		<!-- <home v-if="navIndex==0" :swiperCurrent="swiperCurrent"></home>
+		<home v-if="navIndex==0" :swiperCurrent="swiperCurrent"></home>
 		<insurance    v-if="navIndex==1"></insurance>
 		<repair    v-if="navIndex==2"></repair>
 		<user  v-if="navIndex==3"></user>
@@ -14,7 +14,7 @@
 					<text>{{item.title}}</text>
 				</view>
 			</view>
-		</view> -->
+		</view>
 	
 	</view>
 </template>
@@ -241,7 +241,7 @@
 		position: fixed;
 		z-index: 10;
 		bottom: 0rpx;
-		background-color: #000000;
+		// background-color: #000000;
 		justify-content: space-around;
 		.botton_nav_con{
 			// margin-left: 56rpx;

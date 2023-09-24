@@ -8,6 +8,12 @@
 
 	"pages": [
 		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, 
+		{
 			"path": "pages/home/home",
 			"style": {
 				"navigationStyle": "custom",
@@ -15,11 +21,6 @@
 			}
 		},
 		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationStyle": "custom"
-			}
-		}, {
 			"path": "pages/user/user",
 			"style": {
 				// "navigationStyle": "custom"
@@ -142,38 +143,38 @@
 		"navigationBarBackgroundColor": "#232323",
 		"backgroundColor": "#232323"
 	},
-	"tabBar": {
-		"color": "#fff",
-		"selectedColor": "#efb336",
-		"borderStyle": "black",
-		"backgroundColor": "#232323",
-		"list": [{
-				"pagePath": "pages/home/home",
-				"iconPath": "static/image/tab/home.png",
-				"selectedIconPath": "static/image/tab/home_1.png",
-				"text": "首页"
-			},
-			{
-				"pagePath": "pages/insurance/insurance",
-				"iconPath": "static/image/tab/baoxian_1.png",
-				"selectedIconPath": "static/image/tab/baoxian.png",
-				"text": "车险"
-			},
-			{
-				"pagePath": "pages/repair/repair",
-				"iconPath": "static/image/tab/weixiu.png",
-				"selectedIconPath": "static/image/tab/weixiu_1.png",
-				"text": "快修"
-			},
+	// "tabBar": {
+	// 	"color": "#fff",
+	// 	"selectedColor": "#efb336",
+	// 	"borderStyle": "black",
+	// 	"backgroundColor": "#232323",
+	// 	"list": [{
+	// 			"pagePath": "pages/home/home",
+	// 			"iconPath": "static/image/tab/home.png",
+	// 			"selectedIconPath": "static/image/tab/home_1.png",
+	// 			"text": "首页"
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/insurance/insurance",
+	// 			"iconPath": "static/image/tab/baoxian_1.png",
+	// 			"selectedIconPath": "static/image/tab/baoxian.png",
+	// 			"text": "车险"
+	// 		},
+	// 		{
+	// 			"pagePath": "pages/repair/repair",
+	// 			"iconPath": "static/image/tab/weixiu.png",
+	// 			"selectedIconPath": "static/image/tab/weixiu_1.png",
+	// 			"text": "快修"
+	// 		},
 			
-			{
-				"pagePath": "pages/user/user",
-				"iconPath": "static/image/tab/user.png",
-				"selectedIconPath": "static/image/tab/user_1.png",
-				"text": "我的"
-			}
-		]
-	},
+	// 		{
+	// 			"pagePath": "pages/user/user",
+	// 			"iconPath": "static/image/tab/user.png",
+	// 			"selectedIconPath": "static/image/tab/user_1.png",
+	// 			"text": "我的"
+	// 		}
+	// 	]
+	// },
 	"condition" : { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式(list 的索引项)
 		"list": [

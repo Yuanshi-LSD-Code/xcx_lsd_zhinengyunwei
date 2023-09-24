@@ -1,88 +1,20 @@
 <template>
-	<view class="main-content page" style="background-color: #393939;">
+	<view class="main-content page" style="">
 		<view class="w_100">
-			<!-- #ifdef MP-WEIXIN -->
-			<top :topHeight="topHeight" textAlign='left' leftColor='#fff' :topTitle='topTitle' fontSize='40rpx'
-				topTitleColor='#ffffff' @handleBack='handleBack'></top>
+			
+			<top :topHeight="topHeight" textAlign='center'  :topTitle='topTitle'></top>
 			<view style="width: 100%;" :style="{height:topHeight}"></view>
-			<!-- #endif -->
-			<view class="w_100 h_80 display_a" style="background-color: #232323">
-				<text class="c_fff" style="margin-left: 160rpx;">加入乐途汇，养车更优惠</text>
-			</view>
-			<view class="banner display_j mt_20">
-				<swiper :indicator-dots="true" :autoplay="true" interval="3000" style="height: 300rpx;width: 690rpx;">
-					<swiper-item v-for="(item,index) in bennarList" :key="index">
-						<view class="" style="width: 690rpx;height: 300rpx;" @click="swiperBookDetails(item,index)">
-							<image :src="item.url" mode="aspectFill" style="width: 100%;height:100%;"></image>
-						</view>
-					</swiper-item>
-				</swiper>
-			</view>
-
-
-
-
-			<!-- <view style="margin-top: 20rpx;">
-				<view style="display: flex;flex-direction: column;background-color: #ffd1020d;height:150rpx;">
-					<view style="margin-left: 20rpx;margin-top: 35rpx;">
-						敬请期待
-					</view>
-					<view style="margin-left: 20rpx;margin-top: 10rpx;">
-						新功能陆续推出
-					</view>
-				</view>
-			</view> -->
-
-
-		</view>
-		<view class="menu">
-			<view class="menu_list" style="">
-				<view class="item" style="" v-for="(item,index) in findList" :key="index" @click="linkTo(item,index)">
-					<image :src="item.img" mode="" style=""></image>
-					<text style="text-align: center;">{{item.name}}</text>
-				</view>
-			</view>
+			
+			
+			<view>所有工厂</view>
+            <div class="divider" tyle="border-width: 1px 1px 1px 0.5rem;;border-top: 1px dashed rgb(179, 175, 175);height:2px;width:100%;margin-top: 10px;"></div>
+	
 		</view>
 
 
-		<view class="w_100 mt_20" style="overflow-x: scroll;">
-			<image :src="home_bottom_img" :style="{width:imagesWidth+'px',height:imagesHeight+'px'}" mode=""></image>
-		</view>
 
-		<view class="w_690 display_a h_100">
-			<image src="../../static/image/home/tuijian.png" style="width: 50rpx;height: 50rpx;" mode=""></image>
-			<text class="f_36  c_fff ml_20 fw_700">为你推荐</text>
-		</view>
-
-		<view class="foot_list">
-			<view class="foot_list_item display_a" style="border-radius: 30rpx;" @click="article(item,index)"
-				v-for="(item,indexs) in tuijianList" :key="item.id">
-				<image :src="item.cover" style="width: 160rpx;height: 160rpx;border-radius: 20rpx;flex-shrink: 0;"
-					mode=""></image>
-				<view class="display_sb ml_20" style="flex-grow: 1;height: 100%;">
-					<view class="display" style="flex-direction: column;">
-						<text class="c_fff f_30 fw_500">{{item.title}}</text>
-						<text class="c_fff mt_20 f_26" v-if="item.introduction">{{item.introduction}}</text>
-						<view class="display_a mt_20">
-							<view class="tag display_j" v-for="(items,indexs) in setTag(item.label)" :key="indexs">
-								<text>{{items}}</text>
-							</view>
-						</view>
-					</view>
-					<image src="../../static/image/home/youjiantou.png" style="width: 30rpx;height: 30rpx;" mode="">
-					</image>
-				</view>
-			</view>
-		</view>
-		<view class="images w_100 mt_30 display_a" style="flex-direction: column;">
-			<image @click="cardListClick(item)" v-for="(item,index) in cardList" :key="item.url" class="mb_20"
-				:src="item.url" style="width: 690rpx;height: 200rpx;border-radius: 30rpx;" mode=""></image>
-		</view>
-
-		<view class="w_100" style="height: 120rpx;">
-
-		</view>
-		<copyright :text="copyright"></copyright>
+	
+	
 
 	</view>
 </template>
@@ -112,7 +44,7 @@
 				isOldUser: uni.getStorageSync('isOldUser') || false,
 				topHeight: this.header_height,
 				popupheight: (uni.getSystemInfoSync().windowHeight * (750 / uni.getSystemInfoSync().windowWidth)), //转rpx
-				topTitle: "赛聚乐途汇",
+				topTitle: "选择工厂",
 				isShowInput: false,
 				copyright: this.copyright,
 				list: [],

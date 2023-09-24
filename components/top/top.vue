@@ -14,7 +14,7 @@
 					<text style="font-size: 32rpx;color: #333333;">{{lefText}}</text>
 					<!-- <image src="../../static/image/sanjiaobiao.png" style="width: 22rpx;height: 12rpx;margin-left: 10rpx;" mode=""></image> -->
 				</view>
-				<text class="ml_20 f_36 fw_700" >{{topTitle}}</text>
+				<text class="ml_20  fw_700" >{{topTitle}}</text>
 				<view  v-if="rightTitle" class="top_right" @tap="tapRight">
 					<view class="top_right_icon" v-if="rightIcon" :style="{background: 'url('+rightIcon+')',backgroundSize:'100%', }">
 						<!-- <image :src="rightIcon" mode="" style="width: 100%;height: 100%;"></image> -->
@@ -32,7 +32,7 @@
 		props:{
 			fontSize:{
 				type:String,
-				default:'28rpx'
+				default:'20rpx'
 			},
 			textAlign:{
 				type:String,
@@ -40,7 +40,7 @@
 			},
 			backgroundColor:{
 				type:String,
-				default:'#232323'
+				default:''
 			},
 			backgroundImage:{
 				type:String,
@@ -48,7 +48,7 @@
 			},
 			leftColor:{
 				type:String,
-				default:'#333333'
+				default:''
 			},
 			//  右边图标
 			rightIcon:{

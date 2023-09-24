@@ -214,7 +214,6 @@
   position: fixed;
   z-index: 10;
   bottom: 0rpx;
-  background-color: #000000;
   justify-content: space-around;
 }
 .botton_nav .botton_nav_con .botton_nav_con_img.data-v-57280228 {
