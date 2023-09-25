@@ -1,4 +1,5 @@
 {
+  "navigationStyle": "custom",
   "usingComponents": {
     "top": "/components/top/top",
     "copyright": "/components/copyright/copyright"

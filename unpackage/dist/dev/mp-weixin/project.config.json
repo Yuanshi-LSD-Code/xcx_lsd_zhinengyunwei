@@ -7,14 +7,14 @@
     "urlCheck": false,
     "es6": false,
     "postcss": false,
-    "minified": false,
+    "minified": true,
     "newFeature": true,
     "bigPackageSizeSupport": true
   },
   "compileType": "miniprogram",
   "libVersion": "",
   "appid": "wxbd54f0fd87dc4067",
-  "projectname": "refueling-applet",
+  "projectname": "lsd_new_uniapp",
   "condition": {
     "search": {
       "current": -1,

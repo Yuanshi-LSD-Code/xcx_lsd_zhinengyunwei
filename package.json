@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "echarts": "^5.4.3",
     "sass-loader": "^10.2.1",
     "uview-ui": "^2.0.29"
   },

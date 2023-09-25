@@ -1,8 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "backgroundColor": "#333",
-  "usingComponents": {
-    "top": "/components/top/top",
-    "swiper-custom": "/components/swiperCustom/swiperCustom"
-  }
-}

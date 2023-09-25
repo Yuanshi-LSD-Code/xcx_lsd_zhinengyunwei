@@ -1,6 +1,6 @@
 {
-    "name" : "refueling-applet",
-    "appid" : "",
+    "name" : "lsd_new_uniapp",
+    "appid" : "__UNI__4D3B2A7",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -58,7 +58,9 @@
         "usingComponents" : true,
         "appid" : "wxbd54f0fd87dc4067",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "minified" : true,
+            "es6" : false
         }
     }
 }

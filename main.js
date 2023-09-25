@@ -19,23 +19,43 @@ Vue.use(uView);
 import copyright from 'components/copyright/copyright.vue'
 Vue.component('copyright',copyright)
 
+import mainLayout from 'components/base-common/main-layout/main-layout.vue'
+Vue.component('main-layout',mainLayout)
+
+import mainTabBar from 'components/base-common/main-tab-bar/main-tab-bar.vue'
+Vue.component('main-tab-bar',mainTabBar)
+
+import stage_speed_gauge from "@/components/echarts/gauge/stage_speed_gauge";
+import stacked_column_chart from "@/components/echarts/bar/stacked_column_chart";
+import basic_line_chart from "@/components/echarts/line/basic_line_chart";
+import wold_population_chart from "@/components/echarts/bar/wold_population_chart";
+import basic_line_config_chart from "@/components/echarts/line/basic_line_config_chart";
+import basic_line_config_chart_ts from "@/components/echarts/line/basic_line_config_chart_ts";
+import base_bar_chart from "@/components/echarts/bar/base_bar_chart";
+
+Vue.component('echarts-stage-speed-gauge', stage_speed_gauge);
+Vue.component('echarts-stacked-column-chart', stacked_column_chart);
+Vue.component('echarts-basic-line-chart', basic_line_chart);
+Vue.component('echarts-wold-population-chart', wold_population_chart);
+Vue.component('echarts-basic-line-config-chart', basic_line_config_chart);
+Vue.component('echarts-basic-line-config-chart-ts', basic_line_config_chart_ts);
+Vue.component('echarts-base-bar-chart', base_bar_chart);
+
 // import fui-footer from 'components/firstui/fui-footer/fui-footer.vue'
 // Vue.component('fui-footer',fui-footer)
 
+// import home from 'pages/home/home.vue'
+// Vue.component('home',home)
+
+// import insurance from 'pages/insurance/insurance.vue'
+// Vue.component('insurance',insurance)
+
+// import repair from 'pages/repair/repair.vue'
+// Vue.component('repair',repair)
 
 
-import home from 'pages/home/home.vue'
-Vue.component('home',home)
-
-import insurance from 'pages/insurance/insurance.vue'
-Vue.component('insurance',insurance)
-
-import repair from 'pages/repair/repair.vue'
-Vue.component('repair',repair)
-
-
-import user from 'pages/user/user.vue'
-Vue.component('user',user)
+// import user from 'pages/user/user.vue'
+// Vue.component('user',user)
 
 
 

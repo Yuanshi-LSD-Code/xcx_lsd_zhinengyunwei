@@ -1,30 +1,27 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/home/home",
+    "pages/factory/factory",
     "pages/user/user",
-    "pages/insurance/insurance",
-    "pages/repair/repair",
-    "pages/article/article",
-    "pages/repairApply/repairApply",
-    "pages/userInfo/userInfo",
-    "pages/repairList/repairList",
-    "pages/wxpay/wxpay",
-    "pages/oil/oil",
-    "pages/webview/webview"
+    "pages/privacyPolicyProtocol/privacyPolicyProtocol"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "",
-    "navigationBarBackgroundColor": "#295BA2",
-    "backgroundColor": "#295BA2"
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff"
   },
   "usingComponents": {
     "copyright": "/components/copyright/copyright",
-    "home": "/pages/home/home",
-    "insurance": "/pages/insurance/insurance",
-    "repair": "/pages/repair/repair",
-    "user": "/pages/user/user"
+    "main-layout": "/components/base-common/main-layout/main-layout",
+    "main-tab-bar": "/components/base-common/main-tab-bar/main-tab-bar",
+    "echarts-stage-speed-gauge": "/components/echarts/gauge/stage_speed_gauge",
+    "echarts-stacked-column-chart": "/components/echarts/bar/stacked_column_chart",
+    "echarts-basic-line-chart": "/components/echarts/line/basic_line_chart",
+    "echarts-wold-population-chart": "/components/echarts/bar/wold_population_chart",
+    "echarts-basic-line-config-chart": "/components/echarts/line/basic_line_config_chart",
+    "echarts-basic-line-config-chart-ts": "/components/echarts/line/basic_line_config_chart_ts",
+    "echarts-base-bar-chart": "/components/echarts/bar/base_bar_chart"
   }
 }

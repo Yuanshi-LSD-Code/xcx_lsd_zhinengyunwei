@@ -2,8 +2,8 @@
 	<view class="main-content page" style="">
 		<view class="w_100">
 			
-			<top :topHeight="topHeight" textAlign='center'  :topTitle='topTitle'></top>
-			<view style="width: 100%;" :style="{height:topHeight}"></view>
+			<!-- <top :topHeight="topHeight" textAlign='center'  :topTitle='topTitle'></top> -->
+			<!-- <view style="width: 100%;" :style="{height:topHeight}"></view> -->
 			
 			
 			<view>所有工厂</view>

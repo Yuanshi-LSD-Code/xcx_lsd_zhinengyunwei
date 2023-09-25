@@ -9,15 +9,19 @@
 	"pages": [
 		{
 			"path": "pages/index/index",
-			"style": {
-				"navigationStyle": "custom"
+			"style" :
+			{
+			    "navigationBarTitleText": "所有工厂",
+			    "enablePullDownRefresh": false
 			}
+			
 		}, 
 		{
-			"path": "pages/home/home",
-			"style": {
-				"navigationStyle": "custom",
-				"backgroundColor": "#333"
+			"path": "pages/factory/factory",
+			"style" :
+			{
+			    "navigationBarTitleText": "工厂",
+			    "enablePullDownRefresh": false
 			}
 		},
 		{
@@ -27,106 +31,7 @@
 				"navigationStyle": "custom"
 			}
 		}
-
-		, {
-			"path": "pages/insurance/insurance",
-			"style": {
-				// "navigationBarTitleText": "",
-				// "enablePullDownRefresh": false
-				"navigationStyle": "custom"
-			}
-
-		}, {
-			"path": "pages/repair/repair",
-			"style": {
-				// "navigationBarTitleText": "",
-				
-				// "enablePullDownRefresh": false
-				"navigationStyle": "custom"
-			}
-
-		}, {
-			"path": "pages/article/article",
-			"style": {
-				"navigationStyle": "custom"
-				// "navigationBarTitleText": "",
-				// "enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/repairApply/repairApply",
-			"style": {
-				"navigationStyle": "custom"
-				// "navigationBarTitleText": "",
-				// "enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/userInfo/userInfo",
-			"style": {
-				"navigationStyle": "custom"
-				// "navigationBarTitleText": "",
-				// "enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/repairList/repairList",
-			"style": {
-				"navigationStyle": "custom"
-				// "enablePullDownRefresh":true
-				// "navigationBarTitleText": "",
-				// "enablePullDownRefresh": false
-			}
-
-		}
-	    ,{
-            "path" : "pages/wxpay/wxpay",
-            "style" :                                                                                    
-            {
-				"navigationStyle": "custom"
-                // "navigationBarTitleText": "",
-                // "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/oil/oil",
-            "style" :                                                                                    
-            {
-				"navigationStyle": "custom"
-                // "navigationBarTitleText": "",
-                // "enablePullDownRefresh": false
-            }
-            
-        }
-		,{
-		    "path" : "pages/webview/webview",
-		    "style" :                                                                                    
-		    {
-				"navigationStyle": "custom"
-		        // "navigationBarTitleText": "",
-		        // "enablePullDownRefresh": false
-		    }
-		    
-		}
-        ,{
-            "path" : "pages/handlingDetails/handlingDetails",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "赛聚乐途汇",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/cardDetail/cardDetail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "赛聚乐途汇",
-                "enablePullDownRefresh": false
-            }
-            
-        }
+      
         ,{
             "path" : "pages/privacyPolicyProtocol/privacyPolicyProtocol",
             "style" :                                                                                    
@@ -138,10 +43,10 @@
         }
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
+		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "",
-		"navigationBarBackgroundColor": "#232323",
-		"backgroundColor": "#232323"
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#ffffff"
 	},
 	// "tabBar": {
 	// 	"color": "#fff",
