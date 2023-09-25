@@ -7,7 +7,7 @@
 			
 			
 			<view>所有工厂</view>
-			<u-line dashed></u-line>
+			<u-line></u-line>
             <!-- <div class="divider" tyle="border-width: 1px 1px 1px 0.5rem;;border-top: 1px dashed rgb(179, 175, 175);height:2px;width:100%;margin-top: 10px;"></div> -->
 	
 		</view>
