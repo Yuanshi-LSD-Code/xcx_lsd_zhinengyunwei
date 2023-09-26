@@ -1,48 +1,91 @@
 <template>
-	
+
 	<view class="main-tab-bar">
-		
-		<view class="botton_nav" :style="{bottom:(isIphoneX?'25rpx':'')}" >
-			
-			<view class="botton_nav_con"  v-if="shwoType"  :style="{marginLeft:('')}"   @click="navClick(index)"  v-for="(item,index) in navList " :key="index"  :class="''" >
-				<image v-if="navIndex==index" class="botton_nav_con_img" :src="item.selectImg" mode="" :class="''"  ></image>
-				<image v-if="navIndex!=index" class="botton_nav_con_img" :src="item.img" mode="" :class="''"  ></image>
-				<view class="botton_nav_con_text" :style="{color:(navIndex==index ?'#1296db':'#BBBBBB')}">
+
+		<view class="botton_nav" :style="{bottom:(isIphoneX?'25rpx':'')}">
+
+			<view class="botton_nav_con" v-if="shwoType" :style="{marginLeft:('')}" @click="navClick(item,index)"
+				v-for="(item,index) in navList " :key="index" :class="''">
+				<image v-if="(navIndex===index || router == item.url)" class="botton_nav_con_img" :src="item.selectImg"
+					mode="" :class="''">
+				</image>
+				<image v-if="(navIndex!==index && router != item.url)" class="botton_nav_con_img" :src="item.img"
+					mode="" :class="''"></image>
+				<view class="botton_nav_con_text"
+					:style="{color:((navIndex===index || router == item.url) ?'#1296db':'#BBBBBB')}">
 					<text>{{item.title}}</text>
 				</view>
 			</view>
 		</view>
-		
-		
+
+
 	</view>
 </template>
 
 <script>
 	export default {
 		name: "main-tab-bar",
-		
+		props: {
+			navList: {
+				type: Array,
+				default () {
+					return [];
+				}
+			},
+			pageCount: Number,
+		},
 		data() {
 			return {
-				isIphoneX:this.isIphoneX,
+				isIphoneX: this.isIphoneX,
 				title: 'Hello',
-				navList:[
-					{title:'首页',selectImg:"../../../static/image/tab/blue/home_yes.png",img:'../../../../static/image/tab/blue/home_no.png'},
-					{title:'消息',selectImg:"../../../../static/image/tab/blue/repair_yes.png",img:'../../../../static/image/tab/blue/repair_no.png'},
-					{title:'我的',selectImg:"../../../../static/image/tab/blue/user_yes.png",img:'../../../../static/image/tab/blue/user_no.png'}
-				],
-				
-				navIndex:0,
-				shwoType:true,
-				swiperCurrent:0,
-				token:uni.getStorageSync('token')||null,
+
+
+				navIndex: '',
+				shwoType: true,
+				swiperCurrent: 0,
+				token: uni.getStorageSync('token') || null,
+				router: '',
 			};
 		},
-		
-	
-	
-		async onLoad() {
-			
-		}
+
+
+		created() {
+			this.router = this.$platDiff.tabBarUrl(null, this.pageCount);
+			console.log(55566)
+			console.log(this.router)
+		},
+
+		watch: {
+			// #ifdef H5
+			// '$route': {
+			// 	handler: function(data) {
+			// 		console.log(44455);
+			// 		let {
+			// 			query,
+			// 			meta
+			// 		} = data;
+			// 		let str = '?';
+			// 		for (let key in query) {
+			// 			str += `${key}=${query[key]}&`
+			// 		}
+			// 		let url = '/' + meta.pagePath + str;
+			// 		url = url.slice(0, url.length - 1);
+			// 		this.router = url;
+			// 		console.log(44455888);
+			// 		console.log(this.router);
+			// 	},
+			// 	deep: true,
+			// 	immediate: true
+			// }
+			// #endif
+		},
+		methods: {
+			navClick(item, index) {
+				console.log(22222)
+				console.log(item.url)
+				this.$_reLaunch(item.url)
+			},
+		},
 	}
 </script>
 <style scoped lang="scss">

@@ -1,1 +1,1 @@
-<view class="main-layout data-v-dffdec4c"><view class="data-v-dffdec4c"><slot></slot></view><block wx:if="{{tabbarbool}}"><main-tab-bar vue-id="7020b26c-1" page-count="{{page_count}}" class="data-v-dffdec4c" bind:__l="__l"></main-tab-bar></block></view>
+<view class="main-layout data-v-dffdec4c"><view class="data-v-dffdec4c"><slot></slot></view><block wx:if="{{tabbarbool}}"><main-tab-bar vue-id="7020b26c-1" navList="{{navList}}" page-count="{{page_count}}" class="data-v-dffdec4c" bind:__l="__l"></main-tab-bar></block></view>

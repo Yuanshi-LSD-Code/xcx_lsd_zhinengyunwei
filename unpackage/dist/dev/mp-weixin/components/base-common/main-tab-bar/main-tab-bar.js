@@ -116,13 +116,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 30));
-var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 32));
 //
 //
 //
@@ -142,46 +139,48 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 //
 //
 //
-var _default = {
+//
+//
+//
+//
+//
+var _default2 = {
   name: "main-tab-bar",
+  props: {
+    navList: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    },
+    pageCount: Number
+  },
   data: function data() {
     return {
       isIphoneX: this.isIphoneX,
       title: 'Hello',
-      navList: [{
-        title: '首页',
-        selectImg: "../../../static/image/tab/blue/home_yes.png",
-        img: '../../../../static/image/tab/blue/home_no.png'
-      }, {
-        title: '消息',
-        selectImg: "../../../../static/image/tab/blue/repair_yes.png",
-        img: '../../../../static/image/tab/blue/repair_no.png'
-      }, {
-        title: '我的',
-        selectImg: "../../../../static/image/tab/blue/user_yes.png",
-        img: '../../../../static/image/tab/blue/user_no.png'
-      }],
-      navIndex: 0,
+      navIndex: '',
       shwoType: true,
       swiperCurrent: 0,
-      token: uni.getStorageSync('token') || null
+      token: uni.getStorageSync('token') || null,
+      router: ''
     };
   },
-  onLoad: function onLoad() {
-    return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-      return _regenerator.default.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }))();
+  created: function created() {
+    this.router = this.$platDiff.tabBarUrl(null, this.pageCount);
+    console.log(55566);
+    console.log(this.router);
+  },
+  watch: {},
+  methods: {
+    navClick: function navClick(item, index) {
+      console.log(22222);
+      console.log(item.url);
+      this.$_reLaunch(item.url);
+    }
   }
 };
-exports.default = _default;
+exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),

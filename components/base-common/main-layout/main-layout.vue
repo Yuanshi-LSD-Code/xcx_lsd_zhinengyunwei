@@ -1,97 +1,147 @@
 <template>
-	<view class="main-layout"  >
-		
+	<view class="main-layout">
+
 		<view>
-		    <slot></slot>
+			<slot></slot>
 		</view>
-		
+
 		<template v-if="tabbarbool">
-		    
-		    <main-tab-bar :page-count="page_count"></main-tab-bar>
+
+			<main-tab-bar :navList="navList" :page-count="page_count"></main-tab-bar>
 		</template>
-		
-		
+
+
 	</view>
-	
-	
+
+
 </template>
 
 <script>
 	export default {
 		name: "main-layout",
-		
+
 		props: {
-		    haveBackground: {
-		        type: Boolean,
-		        default() {
-		            return true;
-		        }
-		    },
-		     overflow: {
-		         type: Boolean,
-		         default() {
-		             return true;
-		         }
-		     }
+			haveBackground: {
+				type: Boolean,
+				default () {
+					return true;
+				}
+			},
+			overflow: {
+				type: Boolean,
+				default () {
+					return true;
+				}
+			}
 		},
 		data() {
 			return {
-				tabbarbool:true,
-				page_count:getCurrentPages().length,
+				navList: [{
+						title: '首页',
+						selectImg: "../../../static/image/tab/blue/home_yes.png",
+						img: '../../../../static/image/tab/blue/home_no.png',
+						url: '/pages/index/index',
+					},
+					{
+						title: '消息',
+						selectImg: "../../../../static/image/tab/blue/repair_yes.png",
+						img: '../../../../static/image/tab/blue/repair_no.png',
+						url: '/pages/notice/notice',
+					},
+					{
+						title: '我的',
+						selectImg: "../../../../static/image/tab/blue/user_yes.png",
+						img: '../../../../static/image/tab/blue/user_no.png',
+						url: '/pages/user/user',
+					}
+				],
+				tabbarbool: true,
+				page_count: getCurrentPages().length,
+				currentRoute: '',
 			};
 		},
 		
-	
-	
-		async onLoad() {
-			
-		}
+		mounted() {
+		
+		    this.currentRoute = this.$platDiff.tabBarUrl(null, this.page_count);
+		    this.setTabbar();
+		
+		},
+
+		watch: {
+			tabBarNavs: {
+				handler: function() {
+					this.setTabbar();
+				},
+				immediate: true,
+			},
+
+		},
+
+		methods:{
+			setTabbar() {
+			    let currentRoute = this.currentRoute;
+			    if (
+			        this.$appScene
+			        && [1001, 1045, 1046, 1058, 1067, 1084, 1091].indexOf(this.$appScene) > -1
+			        && (currentRoute.indexOf('appid') > -1 || currentRoute.indexOf('appmsg_compact_url') > -1 || currentRoute .indexOf('wxwork_userid') > -1 || currentRoute .indexOf('weixinadinfo') > -1 || currentRoute .indexOf('gdt_vid') > -1)
+			    ) {
+			        currentRoute = this.$utils.deleteUrlParam(currentRoute, ['appid', 'appmsg_compact_url', 'wxwork_userid', 'weixinadinfo', 'gdt_vid'], true);
+			    }
+			    for (let i = 0; i < this.navList.length; i++) {
+			        if (currentRoute == this.navList[i].url) {
+			            return this.tabbarbool = true;
+			        }
+			    }
+			    return this.tabbarbool = false;
+			},
+		},
 	}
 </script>
 
 <style scoped lang="scss">
-   .app-layout {
-       max-width: 100%;
-       //#ifdef MP-ALIPAY
-       position: relative;
-       min-height: 100vh;
-       z-index: 1;
-       //#endif
-   }
+	.app-layout {
+		max-width: 100%;
+		//#ifdef MP-ALIPAY
+		position: relative;
+		min-height: 100vh;
+		z-index: 1;
+		//#endif
+	}
 
-   .app-layout-background {
-       background-color: #f7f7f7;
-   }
+	.app-layout-background {
+		background-color: #f7f7f7;
+	}
 
-   .app-scroll-y {
-       width: 100%;
-       height: 100%;
-   }
+	.app-scroll-y {
+		width: 100%;
+		height: 100%;
+	}
 
-   .app-bottom {
-       height: #{160rpx};
-   }
+	.app-bottom {
+		height: #{160rpx};
+	}
 
-   .nav-margin {
-       width: #{750rpx};
-   }
+	.nav-margin {
+		width: #{750rpx};
+	}
 
-   .app-tabbar {
-       height: #{110rpx};
-   }
+	.app-tabbar {
+		height: #{110rpx};
+	}
 
-   .model {
-       position: fixed;
-       bottom: 0;
-       left: 0;
-       width: #{750rpx};
-       height: #{50rpx};
-       z-index: 1600;
-   }
-   
-   .safe-area-inset-bottom {
-     padding-bottom: 0;
-     padding-bottom: constant(safe-area-inset-bottom);
-     padding-bottom: env(safe-area-inset-bottom);
-   }
+	.model {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: #{750rpx};
+		height: #{50rpx};
+		z-index: 1600;
+	}
+
+	.safe-area-inset-bottom {
+		padding-bottom: 0;
+		padding-bottom: constant(safe-area-inset-bottom);
+		padding-bottom: env(safe-area-inset-bottom);
+	}
 </style>

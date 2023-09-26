@@ -116,13 +116,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 30));
-var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 32));
 //
 //
 //
@@ -159,22 +156,52 @@ var _default2 = {
   },
   data: function data() {
     return {
+      navList: [{
+        title: '首页',
+        selectImg: "../../../static/image/tab/blue/home_yes.png",
+        img: '../../../../static/image/tab/blue/home_no.png',
+        url: '/pages/index/index'
+      }, {
+        title: '消息',
+        selectImg: "../../../../static/image/tab/blue/repair_yes.png",
+        img: '../../../../static/image/tab/blue/repair_no.png',
+        url: '/pages/notice/notice'
+      }, {
+        title: '我的',
+        selectImg: "../../../../static/image/tab/blue/user_yes.png",
+        img: '../../../../static/image/tab/blue/user_no.png',
+        url: '/pages/user/user'
+      }],
       tabbarbool: true,
-      page_count: getCurrentPages().length
+      page_count: getCurrentPages().length,
+      currentRoute: ''
     };
   },
-  onLoad: function onLoad() {
-    return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-      return _regenerator.default.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-            case "end":
-              return _context.stop();
-          }
+  mounted: function mounted() {
+    this.currentRoute = this.$platDiff.tabBarUrl(null, this.page_count);
+    this.setTabbar();
+  },
+  watch: {
+    tabBarNavs: {
+      handler: function handler() {
+        this.setTabbar();
+      },
+      immediate: true
+    }
+  },
+  methods: {
+    setTabbar: function setTabbar() {
+      var currentRoute = this.currentRoute;
+      if (this.$appScene && [1001, 1045, 1046, 1058, 1067, 1084, 1091].indexOf(this.$appScene) > -1 && (currentRoute.indexOf('appid') > -1 || currentRoute.indexOf('appmsg_compact_url') > -1 || currentRoute.indexOf('wxwork_userid') > -1 || currentRoute.indexOf('weixinadinfo') > -1 || currentRoute.indexOf('gdt_vid') > -1)) {
+        currentRoute = this.$utils.deleteUrlParam(currentRoute, ['appid', 'appmsg_compact_url', 'wxwork_userid', 'weixinadinfo', 'gdt_vid'], true);
+      }
+      for (var i = 0; i < this.navList.length; i++) {
+        if (currentRoute == this.navList[i].url) {
+          return this.tabbarbool = true;
         }
-      }, _callee);
-    }))();
+      }
+      return this.tabbarbool = false;
+    }
   }
 };
 exports.default = _default2;

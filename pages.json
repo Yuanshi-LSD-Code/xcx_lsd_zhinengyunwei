@@ -10,7 +10,7 @@
 	"pages": [{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "所有工厂",
+				"navigationBarTitleText": "222",
 				"enablePullDownRefresh": false
 			}
 
@@ -18,8 +18,8 @@
 		{
 			"path": "pages/user/user",
 			"style": {
-				// "navigationStyle": "custom"
-				"navigationStyle": "custom"
+				"navigationBarTitleText": "222333",
+				"enablePullDownRefresh": false
 			}
 		}
 		, {

@@ -2,10 +2,16 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/factory/factory",
     "pages/privacyPolicyProtocol/privacyPolicyProtocol"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "pages/factory",
+      "pages": [
+        "factory"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "",

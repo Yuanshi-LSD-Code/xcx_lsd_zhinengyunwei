@@ -190,8 +190,7 @@ export default {
 		this.$refs.chart.init(echarts, chart => {
 		    chart.setOption(this.option);
 		});
-		// 指定尺寸
-		this.$refs.chart.resize({height: this.height})
+		
 	},
 	beforeDestroy() {
 		if (!this.chart) {
@@ -205,8 +204,7 @@ export default {
 		async  init() {
 			const chart = await this.$refs.chart.init(echarts);
 			chart.setOption(this.option)
-			// 指定尺寸
-			this.$refs.chart.resize({height: this.height})
+			
 						
 		},
 

@@ -123,21 +123,20 @@ class Helper {
 			url: url
 		});
 	}
-	redirectTo(name) {
-		let url = `/pages/${name}/${name}`;
-		uni.redirectTo({
-			url: url
-		});
-	}
-	linkTo(name, params) {
-		let url = `/pages/${name}/${name}`;
-		if (typeof params == 'object') {
+	navigateTo(name, params) {
+		if (name.substr(0, 1) == '/') {
+			var url = name;
+		} else {
+			var url = `/pages/${name}/${name}`;
+		}
+
+		if (params && typeof params == 'object') {
 			let str = '?';
 			let paramsArr = [];
 			for (let k in params) {
 				if (typeof params[k] == 'object') {
 					let val = JSON.stringify(params[k]);
-					var temp = `${k}=${val}`; 
+					var temp = `${k}=${val}`;
 				} else {
 					var temp = `${k}=${params[k]}`;
 				}
@@ -147,6 +146,82 @@ class Helper {
 			url = url + str;
 		}
 		uni.navigateTo({
+			url: url,
+			success: () => {
+
+			},
+			fail: (err) => {
+				// utils.alert("页面跳转失败,请重启APP")
+				// utils.toast("err")
+				// utils.alert(JSON.stringify(err))
+				// uni.showToast({
+				// 	title:JSON.stringify(err),
+				// 	icon:'none'
+				// })
+			}
+		})
+	}
+	redirectTo(name, params) {
+		if (name.substr(0, 1) == '/') {
+			var url = name;
+		} else {
+			var url = `/pages/${name}/${name}`;
+		}
+
+		if (params && typeof params == 'object') {
+			let str = '?';
+			let paramsArr = [];
+			for (let k in params) {
+				if (typeof params[k] == 'object') {
+					let val = JSON.stringify(params[k]);
+					var temp = `${k}=${val}`;
+				} else {
+					var temp = `${k}=${params[k]}`;
+				}
+				paramsArr.push(temp)
+			};
+			str = str + paramsArr.join('&');
+			url = url + str;
+		}
+		uni.redirectTo({
+			url: url,
+			success: () => {
+
+			},
+			fail: (err) => {
+				// utils.alert("页面跳转失败,请重启APP")
+				// utils.toast("err")
+				// utils.alert(JSON.stringify(err))
+				// uni.showToast({
+				// 	title:JSON.stringify(err),
+				// 	icon:'none'
+				// })
+			}
+		})
+	}
+	reLaunch(name, params) {
+		if (name.substr(0, 1) == '/') {
+			var url = name;
+		} else {
+			var url = `/pages/${name}/${name}`;
+		}
+
+		if (params && typeof params == 'object') {
+			let str = '?';
+			let paramsArr = [];
+			for (let k in params) {
+				if (typeof params[k] == 'object') {
+					let val = JSON.stringify(params[k]);
+					var temp = `${k}=${val}`;
+				} else {
+					var temp = `${k}=${params[k]}`;
+				}
+				paramsArr.push(temp)
+			};
+			str = str + paramsArr.join('&');
+			url = url + str;
+		}
+		uni.reLaunch({
 			url: url,
 			success: () => {
 

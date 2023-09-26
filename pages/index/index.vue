@@ -4,14 +4,14 @@
 			
 			<view>
 				<view class="display_sb" style="height: 80rpx;" @click="linkTo()">
-					<view style="margin-left: 20rpx;">所有工厂</view>
+					<view style="margin-left: 20rpx;">1122</view>
 					<u-icon name="arrow-right" size="20"></u-icon>
 				</view>
 				<u-line ></u-line>
 			</view>
 		<view>
 			<view class="display_sb" style="height: 80rpx;" @click="linkTo()">
-				<view style="margin-left: 20rpx;">所有工厂</view>
+				<view style="margin-left: 20rpx;">2233</view>
 				<u-icon name="arrow-right" size="20"></u-icon>
 			</view>
 			<u-line ></u-line>
@@ -41,7 +41,7 @@
 		},
 		methods: {
 			linkTo(item, index) {
-				this.$_linkTo('factory', {
+				this.$_navigateTo('factory', {
 					'item': item
 				})
 			},

@@ -8,6 +8,12 @@ const obj = {
 	linkTo(name,params){
 		utils.linkTo(name,params)
 	},
+	navigateTo(name,params){
+		utils.navigateTo(name,params)
+	},
+	reLaunch(name,params){
+		utils.reLaunch(name,params)
+	},
 	//显示加载中
 	showLoading(title="加载中"){
 		return new Promise((resolve,reject)=>{

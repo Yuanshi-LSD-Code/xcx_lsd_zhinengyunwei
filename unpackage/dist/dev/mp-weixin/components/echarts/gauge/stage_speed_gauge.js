@@ -317,10 +317,6 @@ var _default = {
     this.$refs.chart.init(echarts, function (chart) {
       chart.setOption(_this.option);
     });
-    // 指定尺寸
-    this.$refs.chart.resize({
-      height: this.height
-    });
   },
   beforeDestroy: function beforeDestroy() {
     if (!this.chart) {
@@ -343,11 +339,7 @@ var _default = {
               case 2:
                 chart = _context.sent;
                 chart.setOption(_this2.option);
-                // 指定尺寸
-                _this2.$refs.chart.resize({
-                  height: _this2.height
-                });
-              case 5:
+              case 4:
               case "end":
                 return _context.stop();
             }

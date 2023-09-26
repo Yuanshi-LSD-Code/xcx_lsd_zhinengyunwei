@@ -9,6 +9,7 @@ import config from './library/config.js'
 import uView from "uview-ui";
 import http from './library/http.js'
 import pageLoad from './library/pageLoad.js'
+import platDiff from './library/core/platDiff.js';
 Vue.use(uView);
 
 
@@ -71,6 +72,7 @@ Vue.prototype.$http=http;
 Vue.prototype.$pageLoad=pageLoad;
 Vue.prototype.$storage = storage;
 Vue.prototype.$config = config;
+Vue.prototype.$platDiff = platDiff;
 Vue.prototype.getBeforePageVm = utils.getBeforePageVm;
 const app = new Vue({
     ...App
