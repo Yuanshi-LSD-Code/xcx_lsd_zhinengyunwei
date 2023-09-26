@@ -151,15 +151,15 @@ var _default = {
       navList: [{
         title: '首页',
         selectImg: "../../../static/image/tab/blue/home_yes.png",
-        img: '../../../static/image/tab/blue/home_no.png'
+        img: '../../../../static/image/tab/blue/home_no.png'
       }, {
         title: '消息',
-        selectImg: "../../../static/image/tab/blue/repair_yes.png",
-        img: '../../../static/image/tab/blue/repair_no.png'
+        selectImg: "../../../../static/image/tab/blue/repair_yes.png",
+        img: '../../../../static/image/tab/blue/repair_no.png'
       }, {
         title: '我的',
-        selectImg: "../../../static/image/tab/blue/user_yes.png",
-        img: '../../../static/image/tab/blue/user_no.png'
+        selectImg: "../../../../static/image/tab/blue/user_yes.png",
+        img: '../../../../static/image/tab/blue/user_no.png'
       }],
       navIndex: 0,
       shwoType: true,
