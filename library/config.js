@@ -5,10 +5,10 @@ const dev = true
 
 const configObj = {};
 if (environment == 'dev') {
-	configObj.url = 'https://sj.lidw.cn';
+	configObj.url = 'https://lsdnew.dev.ycmua.com';
 	configObj.websocket = '';
 } else if (environment == 'product') {
-	configObj.url = 'https://sj.lidw.cn';
+	configObj.url = 'https://lsdnew.dev.ycmua.com';
 	
 	configObj.websocket = 'ws://';
 } else {

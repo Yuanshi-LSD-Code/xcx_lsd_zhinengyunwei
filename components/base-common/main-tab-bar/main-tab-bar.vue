@@ -6,13 +6,13 @@
 
 			<view class="botton_nav_con" v-if="shwoType" :style="{marginLeft:('')}" @click="navClick(item,index)"
 				v-for="(item,index) in navList " :key="index" :class="''">
-				<image v-if="(navIndex===index || router == item.url)" class="botton_nav_con_img" :src="item.selectImg"
+				<image v-if="(navIndex==item.id || router == item.url)" class="botton_nav_con_img" :src="item.selectImg"
 					mode="" :class="''">
 				</image>
-				<image v-if="(navIndex!==index && router != item.url)" class="botton_nav_con_img" :src="item.img"
+				<image v-else class="botton_nav_con_img" :src="item.img"
 					mode="" :class="''"></image>
 				<view class="botton_nav_con_text"
-					:style="{color:((navIndex===index || router == item.url) ?'#1296db':'#BBBBBB')}">
+					:style="{color:((navIndex==item.id || router == item.url) ?'#1296db':'#BBBBBB')}">
 					<text>{{item.title}}</text>
 				</view>
 			</view>
@@ -33,6 +33,7 @@
 				}
 			},
 			pageCount: Number,
+			navIndex:''
 		},
 		data() {
 			return {
@@ -40,7 +41,7 @@
 				title: 'Hello',
 
 
-				navIndex: '',
+				// navIndex: '',
 				shwoType: true,
 				swiperCurrent: 0,
 				token: uni.getStorageSync('token') || null,
@@ -51,8 +52,7 @@
 
 		created() {
 			this.router = this.$platDiff.tabBarUrl(null, this.pageCount);
-			console.log(55566)
-			console.log(this.router)
+			
 		},
 
 		watch: {

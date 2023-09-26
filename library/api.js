@@ -63,7 +63,7 @@ class Api {
 		return 'News/newsDetail';
 	}
 	loginCode() {
-		return 'Wxapp/loginCode';
+		return 'Wxapp/login';
 	}
 	
 	base() {

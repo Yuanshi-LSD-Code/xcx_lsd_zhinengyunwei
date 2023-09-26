@@ -31,13 +31,16 @@
 				
 			}
 		},
+		created(){
+			 this.$_reLaunch('factoryInfo');
+		},
 		
 		onLoad(option) {
-		
+		    
 			
 		},
 		onShow() {
-			
+			 // this.$_reLaunch('factoryInfo');
 		},
 		methods: {
 			linkTo(item, index) {

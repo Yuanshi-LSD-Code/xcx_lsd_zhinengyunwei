@@ -280,6 +280,8 @@
 							});
 							
 							if (res.code == 200) {
+								console.log(88888)
+								
 								this.globalData.token = res.data.token
 								this.globalData.platform = res.data.platform
 								this.globalData.id = res.data.id
@@ -287,6 +289,7 @@
 								this.globalData.tel = res.data.tel
 								this.globalData.nickname = res.data.nickname
 								this.globalData.avatar = res.data.avatar
+								this.globalData.wx_mini_openid = res.data.wx_mini_openid
 							
 								uni.setStorageSync('token', res.data.token)
 								uni.setStorageSync('platform', res.data.platform)
@@ -295,6 +298,7 @@
 								uni.setStorageSync('tel', res.data.tel)
 								uni.setStorageSync('nickname', res.data.nickname)
 								uni.setStorageSync('avatar', res.data.avatar)
+								uni.setStorageSync('wx_mini_openid', res.data.wx_mini_openid)
 								uni.setStorageSync('isLogin', true)
 								this.globalData.isLogin = true
 								this.$storage.setTokenData(res.data);

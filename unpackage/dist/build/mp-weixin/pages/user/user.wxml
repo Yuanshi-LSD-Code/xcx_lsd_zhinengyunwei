@@ -1,1 +1,1 @@
-<main-layout vue-id="380011e0-1" class="data-v-2b3e8602" bind:__l="__l" vue-slots="{{['default']}}"><view class="data-v-2b3e8602"><view class="data-v-2b3e8602">222</view></view></main-layout>
+<main-layout vue-id="380011e0-1" class="data-v-378a82d1" bind:__l="__l" vue-slots="{{['default']}}"><view class="data-v-378a82d1"><view style="height:400rpx;width:100%;" class="data-v-378a82d1"><view class="display_a data-v-378a82d1"><view class="data-v-378a82d1">头像</view><view class="data-v-378a82d1">呢称</view></view></view></view></main-layout>

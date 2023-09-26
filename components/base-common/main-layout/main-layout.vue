@@ -5,9 +5,9 @@
 			<slot></slot>
 		</view>
 
-		<template v-if="tabbarbool">
+		<template v-if="navIndex || tabbarbool">
 
-			<main-tab-bar :navList="navList" :page-count="page_count"></main-tab-bar>
+			<main-tab-bar :navIndex="navIndex" :navList="navList" :page-count="page_count"></main-tab-bar>
 		</template>
 
 
@@ -32,27 +32,31 @@
 				default () {
 					return true;
 				}
-			}
+			},
+			navIndex: '',
 		},
 		data() {
 			return {
 				navList: [{
 						title: '首页',
-						selectImg: "../../../static/image/tab/blue/home_yes.png",
-						img: '../../../../static/image/tab/blue/home_no.png',
+						selectImg: "../../../static/image/tab/home_yes.png",
+						img: '../../../static/image/tab/home_no.png',
 						url: '/pages/index/index',
+						id:1,
 					},
 					{
 						title: '消息',
-						selectImg: "../../../../static/image/tab/blue/repair_yes.png",
-						img: '../../../../static/image/tab/blue/repair_no.png',
+						selectImg: "../../../static/image/tab/notice_yes.png",
+						img: '../../../static/image/tab/notice_no.png',
 						url: '/pages/notice/notice',
+						id:2,
 					},
 					{
 						title: '我的',
-						selectImg: "../../../../static/image/tab/blue/user_yes.png",
-						img: '../../../../static/image/tab/blue/user_no.png',
+						selectImg: "../../../static/image/tab/user_yes.png",
+						img: '../../../static/image/tab/user_no.png',
 						url: '/pages/user/user',
+						id:3,
 					}
 				],
 				tabbarbool: true,

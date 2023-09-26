@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/notice/notice",
     "pages/user/user",
-    "pages/privacyPolicyProtocol/privacyPolicyProtocol"
+    "pages/privacyPolicyProtocol/privacyPolicyProtocol",
+    "pages/factoryInfo/factoryInfo"
   ],
   "subPackages": [
     {

@@ -3,7 +3,7 @@
 		<view>
 			<view> 磐石建龙-炼铁在线</view>
 		    <echarts-stage-speed-gauge className="main-dj-detail-jkd" ref="chart" @finished="init" :gauge_org="djDetailJkd" height="150px"></echarts-stage-speed-gauge>
-		
+		<echarts-stage-speed-gauge className="main-dj-detail-jkd" ref="chart" @finished="init" :gauge_org="djDetailJkd2" height="150px"></echarts-stage-speed-gauge>
 			
 		</view>
 		
@@ -15,7 +15,8 @@
 	export default {
 		data() {
 			return {
-				djDetailJkd:60
+				djDetailJkd:'60',
+				djDetailJkd2:'80',
 			}
 		},
 		
