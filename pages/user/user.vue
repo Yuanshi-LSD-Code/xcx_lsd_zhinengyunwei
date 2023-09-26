@@ -1,7 +1,13 @@
 <template>
 	<main-layout>
 		<view>
-			<view> 222</view>
+			<view style="height: 400rpx;width: 100%;"> 
+			<view class="display_a">
+				<view>头像</view>
+				<view>呢称</view>
+				
+			</view>
+			</view>
 		    
 		
 			
