@@ -71,57 +71,7 @@
 					},
 
 				],
-				findList: [{
-						name: '优惠加油',
-						img: '../../static/image/icon/oil.png',
-						linkName: 'oil',
-						params: {
-							'navIndex': 0
-						},
-						type: 2,
-
-					},
-					{
-						name: '信用卡办理',
-						img: '../../static/image/home/xinyongka.png',
-						linkName: 'index',
-						type: 2,
-						path: '/pages/handlingDetails/handlingDetails',
-						params: {
-							'navIndex': 2
-						}
-					},
-					{
-						name: '保险服务',
-						img: '../../static/image/tab/blue/car_yes.png',
-						linkName: 'index',
-						path: '/pages/insurance/insurance',
-						type: 1,
-						params: {
-							'navIndex': 1
-						}
-					},
-
-					{
-						name: '汽车快修',
-						img: '../../static/image/tab/blue/repair_yes.png',
-						linkName: 'index',
-						path: '/pages/repair/repair',
-						type: 1,
-						params: {
-							'navIndex': 2
-						}
-					},
-
-					// {
-					// 	name: '会员中心',
-					// 	img: '../../static/image/tab/blue/user_yes.png',
-					// 	linkName: 'index',
-					// 	params: {
-					// 		'navIndex': 3
-					// 	}
-					// },
-				],
+				
 
 			}
 
