@@ -1,8 +1,9 @@
 
 .sticky-container {
-  position: -webkit-sticky;
-  position: sticky;
+			position: fixed;
+  /* position: sticky; */
   top: 0;
   z-index: 99;
+  width: 100%;
 }
 

@@ -40,55 +40,55 @@ _vue.default.use(_uviewUi.default);
 // Vue.component('top',top)
 var copyright = function copyright() {
   __webpack_require__.e(/*! require.ensure | components/copyright/copyright */ "components/copyright/copyright").then((function () {
-    return resolve(__webpack_require__(/*! components/copyright/copyright.vue */ 217));
+    return resolve(__webpack_require__(/*! components/copyright/copyright.vue */ 219));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 _vue.default.component('copyright', copyright);
 var mainLayout = function mainLayout() {
   __webpack_require__.e(/*! require.ensure | components/base-common/main-layout/main-layout */ "components/base-common/main-layout/main-layout").then((function () {
-    return resolve(__webpack_require__(/*! components/base-common/main-layout/main-layout.vue */ 224));
+    return resolve(__webpack_require__(/*! components/base-common/main-layout/main-layout.vue */ 226));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 _vue.default.component('main-layout', mainLayout);
 var mainTabBar = function mainTabBar() {
   __webpack_require__.e(/*! require.ensure | components/base-common/main-tab-bar/main-tab-bar */ "components/base-common/main-tab-bar/main-tab-bar").then((function () {
-    return resolve(__webpack_require__(/*! components/base-common/main-tab-bar/main-tab-bar.vue */ 231));
+    return resolve(__webpack_require__(/*! components/base-common/main-tab-bar/main-tab-bar.vue */ 233));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 _vue.default.component('main-tab-bar', mainTabBar);
 var stage_speed_gauge = function stage_speed_gauge() {
   Promise.all(/*! require.ensure | components/echarts/gauge/stage_speed_gauge */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/echarts/gauge/stage_speed_gauge")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/echarts/gauge/stage_speed_gauge */ 238));
+    return resolve(__webpack_require__(/*! @/components/echarts/gauge/stage_speed_gauge */ 240));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var stacked_column_chart = function stacked_column_chart() {
   Promise.all(/*! require.ensure | components/echarts/bar/stacked_column_chart */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/echarts/bar/stacked_column_chart")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/echarts/bar/stacked_column_chart */ 796));
+    return resolve(__webpack_require__(/*! @/components/echarts/bar/stacked_column_chart */ 798));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var basic_line_chart = function basic_line_chart() {
   Promise.all(/*! require.ensure | components/echarts/line/basic_line_chart */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/echarts/line/basic_line_chart")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/echarts/line/basic_line_chart */ 801));
+    return resolve(__webpack_require__(/*! @/components/echarts/line/basic_line_chart */ 803));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var wold_population_chart = function wold_population_chart() {
   Promise.all(/*! require.ensure | components/echarts/bar/wold_population_chart */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/echarts/bar/wold_population_chart")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/echarts/bar/wold_population_chart */ 806));
+    return resolve(__webpack_require__(/*! @/components/echarts/bar/wold_population_chart */ 808));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var basic_line_config_chart = function basic_line_config_chart() {
   Promise.all(/*! require.ensure | components/echarts/line/basic_line_config_chart */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/echarts/line/basic_line_config_chart")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/echarts/line/basic_line_config_chart */ 811));
+    return resolve(__webpack_require__(/*! @/components/echarts/line/basic_line_config_chart */ 813));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var basic_line_config_chart_ts = function basic_line_config_chart_ts() {
   Promise.all(/*! require.ensure | components/echarts/line/basic_line_config_chart_ts */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/echarts/line/basic_line_config_chart_ts")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/echarts/line/basic_line_config_chart_ts */ 816));
+    return resolve(__webpack_require__(/*! @/components/echarts/line/basic_line_config_chart_ts */ 818));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var base_bar_chart = function base_bar_chart() {
   Promise.all(/*! require.ensure | components/echarts/bar/base_bar_chart */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/echarts/bar/base_bar_chart")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/echarts/bar/base_bar_chart */ 821));
+    return resolve(__webpack_require__(/*! @/components/echarts/bar/base_bar_chart */ 823));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 _vue.default.component('echarts-stage-speed-gauge', stage_speed_gauge);
