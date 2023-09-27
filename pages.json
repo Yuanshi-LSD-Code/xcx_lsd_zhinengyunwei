@@ -56,7 +56,16 @@
 					"navigationBarTitleText": "规则2"
 				}
 			}]
-		}
+		},
+		{
+				"root": "pages/noticeDetail",
+				"pages": [{
+					"path": "noticeDetail",
+					"style": {
+						"navigationBarTitleText": "消息"
+					}
+				}]
+			}
 
 	],
 	"globalStyle": {

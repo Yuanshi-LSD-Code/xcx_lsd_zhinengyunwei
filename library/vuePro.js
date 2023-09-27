@@ -5,11 +5,12 @@ const obj = {
 	test(){
 		console.log(this);
 	},
-	linkTo(name,params){
-		utils.linkTo(name,params)
-	},
+	
 	navigateTo(name,params){
 		utils.navigateTo(name,params)
+	},
+	redirectTo(name,params){
+		utils.redirectTo(name,params)
 	},
 	reLaunch(name,params){
 		utils.reLaunch(name,params)

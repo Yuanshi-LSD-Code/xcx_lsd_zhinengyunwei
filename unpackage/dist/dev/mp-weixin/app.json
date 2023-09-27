@@ -12,6 +12,12 @@
       "pages": [
         "factory"
       ]
+    },
+    {
+      "root": "pages/noticeDetail",
+      "pages": [
+        "noticeDetail"
+      ]
     }
   ],
   "window": {

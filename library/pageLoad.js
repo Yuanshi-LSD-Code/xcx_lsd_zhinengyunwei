@@ -49,18 +49,18 @@ class PageLoad {
 		
 		if(res.result){
 			// console.log(res.data);
-			res.data.list.forEach(ele=>{
+			res.data.list.list.forEach(ele=>{
 				this.list.push(ele)
 			});
 			
-			this.datas.first_id=res.data.first_id
-			this.datas.last_id=res.data.last_id
-			this.datas.count=res.data.count
+			this.datas.first_id=res.data.list.first_id
+			this.datas.last_id=res.data.list.last_id
+			this.datas.count=res.data.list.count
 			
 			this.page++;
 			this.success(res,this);
 			this.openLock();
-			let len = res.data.list.length;
+			let len = res.data.list.list.length;
 			if(len<this.limit){
 				this.noMore = true;
 			}
