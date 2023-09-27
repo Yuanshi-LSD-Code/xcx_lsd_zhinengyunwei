@@ -2,9 +2,9 @@
 
 	<main-layout>
 		<view>
-			<u-sticky>
+			<view class="sticky-container">
 			<u-subsection :list="tabList" :current="tabCurrent" mode="button" @change="sectionChange"></u-subsection>
-            </u-sticky>
+            </view>
 			<view>
 				<view v-for="(item,index) in list " :key="index">
 					<view class="display_sb" style="height: 80rpx;" @click="linkTo()">
@@ -94,4 +94,9 @@
 </script>
 
 <style>
+	.sticky-container {
+	  position: sticky;
+	  top: 0;
+	  z-index: 99;
+	}
 </style>
