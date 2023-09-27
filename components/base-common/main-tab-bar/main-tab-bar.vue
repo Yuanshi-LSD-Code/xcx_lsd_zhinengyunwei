@@ -145,20 +145,19 @@
 		display: flex;
 		align-items: center;
 		position: fixed;
-		z-index: 10;
+		// z-index: 10;
 		bottom: var(--window-bottom, 0);
 		background-color: #FFFFFF;
 		justify-content: space-around;
-		box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.1);
-		border-top: 1px solid #eee;
+		
 
 		.botton_nav_con {
 			// margin-left: 56rpx;
 			// margin-right: 56rpx;
 
 			.botton_nav_con_img {
-				width: 48rpx;
-				height: 48rpx;
+				width: 40rpx;
+				height: 40rpx;
 				// margin: 0 auto;
 			}
 
@@ -167,7 +166,7 @@
 				align-items: center;
 				justify-content: center;
 				color: #bbbbbb;
-				font-size: 20rpx;
+				font-size: 14rpx;
 				font-weight: 400;
 				text-align: center;
 			}
