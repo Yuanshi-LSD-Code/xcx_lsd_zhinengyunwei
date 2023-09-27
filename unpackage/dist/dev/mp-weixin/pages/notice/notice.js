@@ -98,6 +98,9 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uSticky: function () {
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-sticky/u-sticky */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-sticky/u-sticky")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-sticky/u-sticky.vue */ 869))
+    },
     uSubsection: function () {
       return Promise.all(/*! import() | node-modules/uview-ui/components/u-subsection/u-subsection */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-subsection/u-subsection")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-subsection/u-subsection.vue */ 843))
     },
@@ -168,6 +171,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+//
 //
 //
 //

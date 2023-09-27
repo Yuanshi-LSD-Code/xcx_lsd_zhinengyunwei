@@ -1,7 +1,7 @@
 <template>
 	<view class="main-layout">
 
-		<view>
+		<view class="scroll-container">
 			<slot></slot>
 		</view>
 
@@ -160,5 +160,11 @@
 	.placeholder {
 		height: #{160rpx};
 		background-color: #fff;
+	}
+	
+	.scroll-container {
+	  overflow-y: scroll; /* 垂直滚动 */
+	  height: calc(100% - 110rpx); /* 减去底部 TabBar 的高度 */
+	  padding-bottom: 110rpx; /* 底部 TabBar 的高度 */
 	}
 </style>

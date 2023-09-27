@@ -2,8 +2,9 @@
 
 	<main-layout>
 		<view>
+			<u-sticky>
 			<u-subsection :list="tabList" :current="tabCurrent" mode="button" @change="sectionChange"></u-subsection>
-
+            </u-sticky>
 			<view>
 				<view v-for="(item,index) in list " :key="index">
 					<view class="display_sb" style="height: 80rpx;" @click="linkTo()">

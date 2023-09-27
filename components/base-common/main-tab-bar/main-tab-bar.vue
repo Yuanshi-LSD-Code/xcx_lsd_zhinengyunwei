@@ -156,8 +156,8 @@
 			// margin-right: 56rpx;
 
 			.botton_nav_con_img {
-				width: 40rpx;
-				height: 40rpx;
+				width: 48rpx;
+				height: 48rpx;
 				// margin: 0 auto;
 			}
 
@@ -167,7 +167,7 @@
 				justify-content: center;
 				color: #bbbbbb;
 				font-size: 14rpx;
-				font-weight: 400;
+				font-weight: 300;
 				text-align: center;
 			}
 		}
