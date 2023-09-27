@@ -73,7 +73,7 @@
 		},
 
 		watch: {
-			tabBarNavs: {
+			navList: {
 				handler: function() {
 					this.setTabbar();
 				},

@@ -10,6 +10,7 @@ import uView from "uview-ui";
 import http from './library/http.js'
 import pageLoad from './library/pageLoad.js'
 import platDiff from './library/core/platDiff.js';
+import store from './store/index.js';
 Vue.use(uView);
 
 
@@ -74,6 +75,7 @@ Vue.prototype.$storage = storage;
 Vue.prototype.$config = config;
 Vue.prototype.$platDiff = platDiff;
 Vue.prototype.getBeforePageVm = utils.getBeforePageVm;
+Vue.prototype.$store = store;// 数据池
 const app = new Vue({
     ...App
 })

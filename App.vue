@@ -305,6 +305,7 @@
 								uni.$emit('app', {
 									msg: '更新了'
 								})
+								this.$store.dispatch('user/info',res.data);
 								// this.$isResolve();
 							} else {
 								uni.setStorageSync('isLogin', false)

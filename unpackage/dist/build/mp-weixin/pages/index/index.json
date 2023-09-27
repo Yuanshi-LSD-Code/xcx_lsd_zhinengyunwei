@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "222",
+  "navigationBarTitleText": "所有工厂",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",

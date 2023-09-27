@@ -3,33 +3,15 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-	state: {
-		hasLogin: false,
-		userInfo: {},
-	},
-	mutations: {
-		login(state, provider) {
+import mallConfig from './modules/mallConfig.js';
+import user from './modules/user.js';
 
-			state.hasLogin = true;
-			state.userInfo = provider;
-			uni.setStorage({//缓存用户登陆状态
-			    key: 'userInfo',  
-			    data: provider  
-			}) 
-			console.log(state.userInfo);
-		},
-		logout(state) {
-			state.hasLogin = false;
-			state.userInfo = {};
-			uni.removeStorage({  
-                key: 'userInfo'  
-            })
-		}
-	},
-	actions: {
-	
+const store = new Vuex.Store({
+	modules: {
+	    mallConfig,
+	    user,
 	}
+	
 })
 
 export default store
