@@ -50,6 +50,9 @@ class Api {
 
 	}
 	
+	factoryNoticeList() {
+		return 'Factory/factoryNoticeList';
+	}
 	adList() {
 		return 'Ad/adList';
 	}

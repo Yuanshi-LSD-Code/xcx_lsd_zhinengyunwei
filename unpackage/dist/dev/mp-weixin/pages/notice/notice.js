@@ -200,23 +200,58 @@ exports.default = void 0;
 var _default = {
   data: function data() {
     return {
-      list: ['全部', '未读', '已读'],
+      tabList: ['全部', '未读', '已读'],
       // 或者如下，也可以配置keyName参数修改对象键名
       // list: [{name: '未付款'}, {name: '待评价'}, {name: '已付款'}],
-      current: 0
+      tabCurrent: 0,
+      pager: null,
+      isShowDefaultPage: false,
+      list: []
     };
   },
-  onLoad: function onLoad(option) {},
+  watch: {
+    tabCurrent: function tabCurrent(onew, old) {
+      this.loadList();
+    }
+  },
+  onLoad: function onLoad(option) {
+    this.getPager();
+  },
   onShow: function onShow() {},
+  onReachBottom: function onReachBottom() {
+    this.loadList();
+  },
   methods: {
+    getPager: function getPager() {
+      var _this = this;
+      // console.log(this.$api.reapirList)
+      this.pager = new this.$pageLoad({
+        url: this.$api.factoryNoticeList(),
+        list: this.list,
+        limit: 10,
+        success: function success() {
+          if (_this.repairList.length == 0) {
+            _this.isShowDefaultPage = true;
+          } else {
+            _this.isShowDefaultPage = false;
+          }
+          console.log(_this.newList);
+        }
+      });
+      //先加载第一页
+      this.loadList();
+    },
+    loadList: function loadList() {
+      this.pager.load();
+    },
     linkTo: function linkTo(item, index) {
       this.$_linkTo('factory', {
         'item': item
       });
     },
     sectionChange: function sectionChange(index) {
-      this.current = index;
-      this.list = ['全部5', '未读3', '已读2'];
+      this.tabCurrent = index;
+      // this.list= ['全部5', '未读3', '已读2']
     }
   }
 };
