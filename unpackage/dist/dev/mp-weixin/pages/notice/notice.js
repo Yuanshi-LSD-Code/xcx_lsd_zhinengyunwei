@@ -203,11 +203,11 @@ var _default = {
       list: []
     };
   },
-  watch: {
-    tabCurrent: function tabCurrent(onew, old) {
-      this.loadList();
-    }
-  },
+  // watch: {
+  // 	tabCurrent(onew, old) {
+  // 		this.loadList();
+  // 	}
+  // },
   onLoad: function onLoad(option) {
     this.getPager();
   },
@@ -222,10 +222,10 @@ var _default = {
       this.pager = new this.$pageLoad({
         url: this.$api.factoryNoticeList(),
         list: this.list,
-        limit: 10,
+        limit: 20,
         success: function success(res, e) {
-          _this.tabList = res.tabList;
-          _this.tabCurrent = res.tabCurrent;
+          _this.tabList = res.data.tabList;
+          _this.tabCurrent = res.data.tabCurrent;
           _this.isShowDefaultPage = e.noMore;
           console.log(e);
         }
@@ -245,6 +245,7 @@ var _default = {
     },
     sectionChange: function sectionChange(index) {
       this.tabCurrent = index;
+      this.loadList();
       // this.list= ['全部5', '未读3', '已读2']
     }
   }

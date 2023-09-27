@@ -36,11 +36,11 @@
 			}
 		},
 
-		watch: {
-			tabCurrent(onew, old) {
-				this.loadList();
-			}
-		},
+		// watch: {
+		// 	tabCurrent(onew, old) {
+		// 		this.loadList();
+		// 	}
+		// },
 		onLoad(option) {
 			this.getPager();
 
@@ -58,10 +58,10 @@
 				this.pager = new this.$pageLoad({
 					url: this.$api.factoryNoticeList(),
 					list: this.list,
-					limit: 10,
+					limit: 20,
 					success: (res,e) => {
-						this.tabList = res.tabList;
-						this.tabCurrent = res.tabCurrent;
+						this.tabList = res.data.tabList;
+						this.tabCurrent = res.data.tabCurrent;
 						this.isShowDefaultPage = e.noMore;
 						console.log(e);
 					}
@@ -82,6 +82,7 @@
 
 			sectionChange(index) {
 				this.tabCurrent = index;
+				this.loadList();
 				// this.list= ['全部5', '未读3', '已读2']
 			}
 		}

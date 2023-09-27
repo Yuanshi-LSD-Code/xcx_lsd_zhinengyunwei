@@ -90,6 +90,8 @@
   bottom: 0px;
   background-color: #FFFFFF;
   justify-content: space-around;
+  box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #eee;
 }
 .botton_nav .botton_nav_con .botton_nav_con_img.data-v-c4486c88 {
   width: 48rpx;

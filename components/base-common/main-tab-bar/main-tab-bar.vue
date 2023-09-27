@@ -149,6 +149,8 @@
 		bottom: var(--window-bottom, 0);
 		background-color: #FFFFFF;
 		justify-content: space-around;
+		box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.1);
+		border-top: 1px solid #eee;
 
 		.botton_nav_con {
 			// margin-left: 56rpx;
