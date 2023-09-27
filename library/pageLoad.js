@@ -58,7 +58,7 @@ class PageLoad {
 			this.datas.count=res.data.count
 			
 			this.page++;
-			this.success(res);
+			this.success(res,this);
 			this.openLock();
 			let len = res.data.list.length;
 			if(len<this.limit){

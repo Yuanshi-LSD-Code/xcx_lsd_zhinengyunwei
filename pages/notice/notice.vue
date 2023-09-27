@@ -5,21 +5,15 @@
 			<u-subsection :list="tabList" :current="tabCurrent" mode="button" @change="sectionChange"></u-subsection>
 
 			<view>
-				<view>
+				<view v-for="(item,index) in list " :key="index">
 					<view class="display_sb" style="height: 80rpx;" @click="linkTo()">
-						<view style="margin-left: 20rpx;">1122</view>
+						<view style="margin-left: 20rpx;">{{item.title}}</view>
 						<u-icon name="arrow-right" size="20"></u-icon>
 					</view>
 					<u-line></u-line>
 				</view>
 
-				<view>
-					<view class="display_sb" style="height: 80rpx;" @click="linkTo()">
-						<view style="margin-left: 20rpx;">1122</view>
-						<u-icon name="arrow-right" size="20"></u-icon>
-					</view>
-					<u-line></u-line>
-				</view>
+				
 			</view>
 
 		</view>
@@ -65,20 +59,18 @@
 					url: this.$api.factoryNoticeList(),
 					list: this.list,
 					limit: 10,
-					success: () => {
-						if (this.repairList.length == 0) {
-							this.isShowDefaultPage = true
-						} else {
-							this.isShowDefaultPage = false
-						}
-						console.log(this.newList);
+					success: (res,e) => {
+						this.tabList = res.tabList;
+						this.tabCurrent = res.tabCurrent;
+						this.isShowDefaultPage = e.noMore;
+						console.log(e);
 					}
 				});
 				//先加载第一页
 				this.loadList();
 			},
 			loadList() {
-				this.pager.load();
+				this.pager.load({status:this.tabCurrent});
 			},
 			
 			
