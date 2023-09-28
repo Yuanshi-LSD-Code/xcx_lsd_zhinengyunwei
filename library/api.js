@@ -50,6 +50,14 @@ class Api {
 
 	}
 	
+	configSys() {
+		return 'Config/configSys';
+	}
+	
+	factoryNoticeLook() {
+		return 'Factory/factoryNoticeLook';
+	}
+	
 	factoryNoticeList() {
 		return 'Factory/factoryNoticeList';
 	}

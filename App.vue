@@ -152,9 +152,8 @@
 				}
 			})
 
-
+            this.$store.dispatch('mallConfig/actionGetConfig');
             let base = this.base()
-			
 			
 			
 			let res =  this.login()

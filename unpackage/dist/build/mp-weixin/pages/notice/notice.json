@@ -2,7 +2,6 @@
   "navigationBarTitleText": "消息",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "u-sticky": "/node-modules/uview-ui/components/u-sticky/u-sticky",
     "u-subsection": "/node-modules/uview-ui/components/u-subsection/u-subsection",
     "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
     "u-line": "/node-modules/uview-ui/components/u-line/u-line"

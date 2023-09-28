@@ -6,9 +6,11 @@
 		</view>
 
 		<template v-if="navIndex || tabbarbool">
-			<view  class="nav-margin safe-area-inset-bottom" style="border-top: 1px solid #eee;;height: 110rpx;position: fixed;bottom: var(--window-bottom, 0);" :class="haveBackground ? 'app-layout-background' : ''">
+			<view class="nav-margin safe-area-inset-bottom"
+				style="border-top: 1px solid #eee;;height: 110rpx;position: fixed;bottom: var(--window-bottom, 0);"
+				:class="haveBackground ? 'app-layout-background' : ''">
 				<view class="placeholder"></view>
-				
+
 				<main-tab-bar :navIndex="navIndex" :navList="navList" :page-count="page_count"></main-tab-bar>
 			</view>
 		</template>
@@ -21,6 +23,9 @@
 </template>
 
 <script>
+	import {
+		mapState
+	} from "vuex";
 	export default {
 		name: "main-layout",
 
@@ -41,32 +46,38 @@
 		},
 		data() {
 			return {
-				navList: [{
-						title: '首页',
-						selectImg: "../../../static/image/tab/home_yes.png",
-						img: '../../../static/image/tab/home_no.png',
-						url: '/pages/index/index',
-						id: 1,
-					},
-					{
-						title: '消息',
-						selectImg: "../../../static/image/tab/notice_yes.png",
-						img: '../../../static/image/tab/notice_no.png',
-						url: '/pages/notice/notice',
-						id: 2,
-					},
-					{
-						title: '我的',
-						selectImg: "../../../static/image/tab/user_yes.png",
-						img: '../../../static/image/tab/user_no.png',
-						url: '/pages/user/user',
-						id: 3,
-					}
-				],
+				// navList: [{
+				// 		title: '首页',
+				// 		select_img: "../../../static/image/tab/home_yes.png",
+				// 		img: '../../../static/image/tab/home_no.png',
+				// 		url: '/pages/index/index',
+				// 		id: 1,
+				// 	},
+				// 	{
+				// 		title: '消息',
+				// 		select_img: "../../../static/image/tab/notice_yes.png",
+				// 		img: '../../../static/image/tab/notice_no.png',
+				// 		url: '/pages/notice/notice',
+				// 		id: 2,
+				// 	},
+				// 	{
+				// 		title: '我的',
+				// 		select_img: "../../../static/image/tab/user_yes.png",
+				// 		img: '../../../static/image/tab/user_no.png',
+				// 		url: '/pages/user/user',
+				// 		id: 3,
+				// 	}
+				// ],
 				tabbarbool: true,
 				page_count: getCurrentPages().length,
 				currentRoute: '',
 			};
+		},
+		
+		computed: {
+		    ...mapState({
+		          navList: state => state.navbar.navs,
+		    })
 		},
 
 		mounted() {
@@ -90,8 +101,7 @@
 			setTabbar() {
 				let currentRoute = this.currentRoute;
 				if (
-					this.$appScene &&
-					[1001, 1045, 1046, 1058, 1067, 1084, 1091].indexOf(this.$appScene) > -1 &&
+					this.$appScene && [1001, 1045, 1046, 1058, 1067, 1084, 1091].indexOf(this.$appScene) > -1 &&
 					(currentRoute.indexOf('appid') > -1 || currentRoute.indexOf('appmsg_compact_url') > -1 || currentRoute
 						.indexOf('wxwork_userid') > -1 || currentRoute.indexOf('weixinadinfo') > -1 || currentRoute
 						.indexOf('gdt_vid') > -1)
@@ -161,10 +171,13 @@
 		height: #{160rpx};
 		background-color: #fff;
 	}
-	
+
 	.scroll-container {
-	  overflow-y: scroll; /* 垂直滚动 */
-	  height: calc(100% - 110rpx); /* 减去底部 TabBar 的高度 */
-	  padding-bottom: 110rpx; /* 底部 TabBar 的高度 */
+		overflow-y: scroll;
+		/* 垂直滚动 */
+		height: calc(100% - 110rpx);
+		/* 减去底部 TabBar 的高度 */
+		padding-bottom: 110rpx;
+		/* 底部 TabBar 的高度 */
 	}
 </style>
