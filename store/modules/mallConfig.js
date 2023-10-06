@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import main from '@/main.js';
 const state = {
 	auth_page: {
 		pic_url: ''
@@ -90,11 +91,11 @@ const getters = {
 const mutations = {
 	mutSetConfig(state, data) {
 		for (let item in data) {
-			if (item === 'navbar') {
-				for (let i = 0; i < data[item].navs.length; i++) {
-					data[item].navs[i].id = i;
-				}
-			}
+			// if (item === 'navbar') {
+			// 	for (let i = 0; i < data[item].navs.length; i++) {
+			// 		data[item].navs[i].id = i;
+			// 	}
+			// }
 			state[item] = data[item];
 		}
 	},
@@ -105,8 +106,9 @@ const mutations = {
 
 const actions = {
 	actionGetConfig(context) {
-		 this.$http('configSys').then((response)=>{
-			 if (res.code == 200) {
+		console.log(55656577)
+		 Vue.prototype.$http('configSys').then((response)=>{
+			 if (response.code == 200) {
 			 	context.commit('mutSetConfig', response.data);
 			 }
 		 });

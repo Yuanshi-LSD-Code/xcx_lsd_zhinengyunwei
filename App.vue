@@ -151,12 +151,14 @@
 					}
 				}
 			})
-
+            let res =  this.login()
+			
             this.$store.dispatch('mallConfig/actionGetConfig');
-            let base = this.base()
+            // let base = this.base()
 			
 			
-			let res =  this.login()
+			
+			// this.$store.dispatch('user/login');
 			console.log(777777);
 			// if (res.code == 200) {
 			// 	console.log(77788887);

@@ -1,5 +1,5 @@
 // import user from '../../core/user.js';
-
+import Vue from 'vue';
 const state = {
 	accessToken: null,
 	info: null,
@@ -24,7 +24,7 @@ const getters = {
 	showLoginModal(state) {
 		return state.showLoginModal;
 	},
-	
+
 	sign(state) {
 		return state.sign;
 	},
@@ -43,7 +43,7 @@ const mutations = {
 	showLoginModal(state, data) {
 		state.showLoginModal = data;
 	},
-	
+
 	sign(state, data) {
 		state.sign = data;
 	},
@@ -86,12 +86,64 @@ const actions = {
 			}).catch(e => {});
 		}).catch(e => {});
 	},
-	
+
 	logout(context) {
 		context.commit('accessToken', null);
 		user.loginByToken(null);
 	},
-	
+
+	login(context) {
+		if (state.info) {
+			return state.info;
+		}
+		return new Promise((r, j) => {
+			uni.login({
+				success: async (loginInfo) => {
+					let res = await Vue.prototype.$http('loginCode', {
+						code: loginInfo.code
+					}).then((res) => {
+						if (res.code == 200) {
+							console.log(88888)
+							console.log(res)
+
+							this.globalData.token = res.data.token
+							this.globalData.platform = res.data.platform
+							this.globalData.id = res.data.id
+							this.globalData.uid = res.data.uid
+							this.globalData.tel = res.data.tel
+							this.globalData.nickname = res.data.nickname
+							this.globalData.avatar = res.data.avatar
+							this.globalData.wx_mini_openid = res.data.wx_mini_openid
+
+							uni.setStorageSync('token', res.data.token)
+							uni.setStorageSync('platform', res.data.platform)
+							uni.setStorageSync('id', res.data.id)
+							uni.setStorageSync('uid', res.data.uid)
+							uni.setStorageSync('tel', res.data.tel)
+							uni.setStorageSync('nickname', res.data.nickname)
+							uni.setStorageSync('avatar', res.data.avatar)
+							uni.setStorageSync('wx_mini_openid', res.data.wx_mini_openid)
+							uni.setStorageSync('isLogin', true)
+							// this.globalData.isLogin = true
+							Vue.prototype.$storage.setTokenData(res.data);
+
+							context.commit('info', res.data);
+
+						}
+					});
+
+
+					//  else {
+					// 	uni.setStorageSync('isLogin', false)
+					// 	this.globalData.isLogin = false
+					// }
+
+					r(res)
+				}
+			})
+		})
+	},
+
 };
 
 export default {

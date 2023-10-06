@@ -110,7 +110,10 @@ const obj = {
 	// 进行上一个页面的信息刷新
 	refreshBeforePageInfo(){
 		utils.refreshBeforePageInfo(...arguments);
-	}
+	},
+	formatDate(date, fmt){
+		return utils.formatDate(date, fmt);
+	},
 }
 
 function vuePro(Vue){

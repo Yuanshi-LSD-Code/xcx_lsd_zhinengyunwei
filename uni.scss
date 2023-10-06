@@ -14,6 +14,53 @@
 
 /* 颜色变量 */
 
+    .row {
+        display: flex;
+        // align-items: center;
+    }
+
+    .font-bold {
+        font-weight: bold
+    }
+
+    .bg-gray {
+        background-color: #f8f8f8;
+    }
+
+    .row-align {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .row-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .row-space {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .row-wrap {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+	.row-space {
+	        display: flex;
+	        align-items: center;
+	        justify-content: space-between;
+	}
+	
+
+	.padd-top {
+		padding-top: 10px;
+	}
+
 .display{
 	display: flex;
 }

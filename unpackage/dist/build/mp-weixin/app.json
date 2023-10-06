@@ -12,6 +12,12 @@
       "pages": [
         "factory"
       ]
+    },
+    {
+      "root": "pages/noticeDetail",
+      "pages": [
+        "noticeDetail"
+      ]
     }
   ],
   "window": {
@@ -31,5 +37,6 @@
     "echarts-basic-line-config-chart": "/components/echarts/line/basic_line_config_chart",
     "echarts-basic-line-config-chart-ts": "/components/echarts/line/basic_line_config_chart_ts",
     "echarts-base-bar-chart": "/components/echarts/bar/base_bar_chart"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

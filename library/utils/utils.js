@@ -1,12 +1,12 @@
 // 工具类
 import helper from './helper.js';
 
-class Utils extends helper{
-// class Util   {
-	
-	 constructor(){
-	        super();
-	    }
+class Utils extends helper {
+	// class Util   {
+
+	constructor() {
+		super();
+	}
 	// //检查链接是否为网络链接
 	// link_check(url, is_reg = false) {
 

@@ -12,6 +12,41 @@
  * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
  */
 /* 颜色变量 */
+.row.data-v-172979f2 {
+  display: flex;
+}
+.font-bold.data-v-172979f2 {
+  font-weight: bold;
+}
+.bg-gray.data-v-172979f2 {
+  background-color: #f8f8f8;
+}
+.row-align.data-v-172979f2 {
+  display: flex;
+  align-items: center;
+}
+.row-center.data-v-172979f2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row-space.data-v-172979f2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.row-wrap.data-v-172979f2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row-space.data-v-172979f2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.padd-top.data-v-172979f2 {
+  padding-top: 10px;
+}
 .display.data-v-172979f2 {
   display: flex;
 }

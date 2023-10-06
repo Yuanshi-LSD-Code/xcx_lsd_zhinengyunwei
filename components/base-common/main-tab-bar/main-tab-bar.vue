@@ -6,6 +6,7 @@
 
 			<view class="botton_nav_con" v-if="shwoType" :style="{marginLeft:('')}" @click="navClick(item,index)"
 				v-for="(item,index) in navList " :key="index" :class="''">
+				
 				<image v-if="(navIndex==item.id || router == item.url)" class="botton_nav_con_img" :src="item.select_img"
 					mode="" :class="''">
 				</image>

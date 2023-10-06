@@ -75,7 +75,7 @@
 		},
 		
 		computed: {
-		    ...mapState({
+		    ...mapState('mallConfig',{
 		          navList: state => state.navbar.navs,
 		    })
 		},

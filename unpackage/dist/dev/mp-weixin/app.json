@@ -18,6 +18,14 @@
       "pages": [
         "noticeDetail"
       ]
+    },
+    {
+      "root": "pages/factoryOne",
+      "pages": [
+        "factoryOne",
+        "factoryReport",
+        "repairDetail"
+      ]
     }
   ],
   "window": {

@@ -42,7 +42,6 @@ Vue.component('echarts-wold-population-chart', wold_population_chart);
 Vue.component('echarts-basic-line-config-chart', basic_line_config_chart);
 Vue.component('echarts-basic-line-config-chart-ts', basic_line_config_chart_ts);
 Vue.component('echarts-base-bar-chart', base_bar_chart);
-
 // import fui-footer from 'components/firstui/fui-footer/fui-footer.vue'
 // Vue.component('fui-footer',fui-footer)
 

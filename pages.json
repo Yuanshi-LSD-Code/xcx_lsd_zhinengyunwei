@@ -5,6 +5,7 @@
 		"fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue",
 		"uni-(.*)": "@/uni_modules/lime-echart/components/$1-echart/$1-echart.vue"
 
+
 	},
 
 	"pages": [{
@@ -28,44 +29,61 @@
 				"navigationBarTitleText": "我的",
 				"enablePullDownRefresh": false
 			}
-		}
-		, {
+		}, {
 			"path": "pages/privacyPolicyProtocol/privacyPolicyProtocol",
 			"style": {
 				"navigationBarTitleText": "隐私政策及注册协议",
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/factoryInfo/factoryInfo",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
-	    ,{
-            "path" : "pages/factoryInfo/factoryInfo",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+
+	],
 
 	"subPackages": [{
 			"root": "pages/factory",
 			"pages": [{
 				"path": "factory",
 				"style": {
-					"navigationBarTitleText": "规则2"
+					"navigationBarTitleText": "所有工厂"
 				}
 			}]
 		},
 		{
-				"root": "pages/noticeDetail",
-				"pages": [{
-					"path": "noticeDetail",
-					"style": {
-						"navigationBarTitleText": "消息"
-					}
-				}]
-			}
+			"root": "pages/noticeDetail",
+			"pages": [{
+				"path": "noticeDetail",
+				"style": {
+					"navigationBarTitleText": "消息"
+				}
+			}]
+		},
+		{
+			"root": "pages/factoryOne",
+			"pages": [{
+				"path": "factoryOne",
+				"style": {
+					"navigationBarTitleText": "工厂"
+				}
+			}, {
+				"path": "factoryReport",
+				"style": {
+					"navigationBarTitleText": "工厂报告"
+				}
+			}, {
+				"path": "repairDetail",
+				"style": {
+					"navigationBarTitleText": "电机检修维护"
+				}
+			}]
+		}
 
 	],
 	"globalStyle": {

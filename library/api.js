@@ -16,16 +16,16 @@ class Api {
 	}
 
 	url(short_url) {
-		
+
 		if (this.__proto__.hasOwnProperty(short_url)) {
-			var short_url= this[short_url]();
+			var short_url = this[short_url]();
 			// var short_url = this.short_url;
 		}
 
 		var real_url = this._redirect(short_url);
 		return real_url;
 	}
-    
+
 
 	/**
 	 * 自定义路径访问
@@ -38,7 +38,7 @@ class Api {
 		if (short_url == '') return false;
 
 		var is_network_url = utils.link_check(short_url);
-		
+
 		if (is_network_url) {
 			var url = short_url;
 		} else if (short_url.substr(0, 1) == '/') {
@@ -49,15 +49,49 @@ class Api {
 		return url;
 
 	}
-	
+
+	djFactoryReportListNo() {
+		return 'Dj/djFactoryReportListNo';
+	}
+	djRepairListNo() {
+		return 'Dj/djRepairListNo';
+	}
+
+
+	//工厂检修工作统计
+	dJRepairInfo() {
+		return 'Dj/dJRepairInfo';
+	}
+	//工厂电机
+	djList() {
+		return 'Dj/djList';
+	}
+	//所有工厂维修图表
+	djFactoryRepairList() {
+		return 'Dj/djFactoryRepairList';
+	}
+	//所有工厂电机列表
+	djFactoryBarStatus() {
+		return 'Dj/djFactoryBarStatus';
+	}
+	//所有工厂电机列表
+	djFactoryDjList() {
+		return 'Dj/djFactoryDjList';
+	}
+
+	//所有工厂
+	djFactory() {
+		return 'Dj/djFactory';
+	}
+
 	configSys() {
 		return 'Config/configSys';
 	}
-	
+
 	factoryNoticeLook() {
 		return 'Factory/factoryNoticeLook';
 	}
-	
+
 	factoryNoticeList() {
 		return 'Factory/factoryNoticeList';
 	}
@@ -76,11 +110,11 @@ class Api {
 	loginCode() {
 		return 'Wxapp/login';
 	}
-	
+
 	base() {
 		return 'Config/base';
 	}
-	
+
 	login() {
 		return 'Wxapp/login';
 	}
@@ -115,15 +149,15 @@ class Api {
 	updateMember() {
 		return 'Wxapp/updateMember';
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 
 
 

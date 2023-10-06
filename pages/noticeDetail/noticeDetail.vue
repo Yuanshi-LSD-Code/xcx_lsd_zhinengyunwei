@@ -33,7 +33,7 @@
 			console.log(option);
 			var item = JSON.parse(option.item);
 			this.item = item
-
+            this.$http('factoryNoticeLook',{'id':item.id})
 		},
 		onShow() {
 

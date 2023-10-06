@@ -19,6 +19,13 @@ class Helper {
 		// windowWidth/750=x/num
 		// x=windowWidth/750/num
 	}
+	/**
+	 * @param {Object} date
+	 * @param {Object} fmtconsole.log(formatDateTime(date, 'yyyy-mm-dd HH:mm:ss')); // 2023-02-16 08:25:05
+	 *console.log(formatDateTime(date, 'yyyy年mm月dd日 HH:mm:ss')); // 2023年02月16日 08:25:05
+	 *console.log(formatDateTime(date, 'yyyy-mm-dd HH:mm:ss S')); // 2023-02-16 08:25:05 950
+	 *console.log(formatDateTime(date, 'yyyy-mm-dd hh:mm:ss A')); // 2023-02-16 08:25:05 上午
+	 */
 	formatDate(date, fmt) {
 		if (typeof(date) == "string") {
 			date = new Date(date.replace('年', '/').replace('月', '/').replace('日', '').replace(/-/g, '/'));
