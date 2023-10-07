@@ -252,6 +252,14 @@
 					delete this.option['color']
 				}
 				chart.setOption(this.option)
+				chart.on('click', params => {
+					console.log('点击事件触发2：', params);
+						let index = params.dataIndex;
+						
+					
+						this.$emit('djBarClick', index);
+					// 处理点击回调的业务逻辑
+				});
 			},
 
 		}

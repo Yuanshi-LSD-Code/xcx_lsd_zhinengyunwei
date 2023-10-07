@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "所有工厂",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs"
+  }
+}

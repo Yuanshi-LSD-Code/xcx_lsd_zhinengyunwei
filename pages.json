@@ -37,9 +37,9 @@
 			}
 
 		}, {
-			"path": "pages/factoryInfo/factoryInfo",
+			"path": "pages/factoryAllStatus/factoryAllStatus",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "所有工厂",
 				"enablePullDownRefresh": false
 			}
 

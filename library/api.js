@@ -50,6 +50,9 @@ class Api {
 
 	}
 
+	djDayBarList() {
+		return 'Dj/djDayBarList';
+	}
 	djFactoryReportListNo() {
 		return 'Dj/djFactoryReportListNo';
 	}

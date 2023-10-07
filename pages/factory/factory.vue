@@ -163,7 +163,12 @@
 				this.pickerOptionsRepairValue = value;
 				this.factoryDjRepairList();
 			},
-			djBarClick() {
+			djBarClick(e) {
+				console.log(6667)
+				console.log(e)
+				this.$_navigateTo('/pages/factoryAllStatus/factoryAllStatus', {
+					'bar_index': e
+				})
 
 			},
 			// activeNames() {

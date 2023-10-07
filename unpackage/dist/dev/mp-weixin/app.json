@@ -4,7 +4,7 @@
     "pages/notice/notice",
     "pages/user/user",
     "pages/privacyPolicyProtocol/privacyPolicyProtocol",
-    "pages/factoryInfo/factoryInfo"
+    "pages/factoryAllStatus/factoryAllStatus"
   ],
   "subPackages": [
     {
