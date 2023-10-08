@@ -18,6 +18,7 @@
 				</div>
 
 			</view>
+			<view class="bg-gray" style="height: 15px;"></view>
 
 
 		</view>
