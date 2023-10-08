@@ -8,8 +8,8 @@
 						<view>
 							{{userInfo.nickname}}
 						</view>
-						<view>
-							openid:<view @click="copyClick">{{userInfo.wx_mini_openid}}</view>
+						<view @click="copyClick">
+							openid:{{userInfo.wx_mini_openid}}
 						</view>
 					</view>
 				</view>
@@ -58,13 +58,15 @@
 		},
 		methods: {
 			copyClick() {
-				let title = userInfo.wx_mini_openid;
+				let title = this.userInfo.wx_mini_openid;
+				console.log(this)
+				console.log(this.$utils)
 				let copy = this.$utils.copyData(title);
-				if (copy) {
-					this.$utils.toast('复制成功');
-				} else {
-					this.$utils.toast('复制失败');
-				}
+				// if (copy) {
+				// 	this.$utils.toast('复制成功');
+				// } else {
+				// 	this.$utils.toast('复制失败');
+				// }
 			},
 			linkTo(item, index) {
 				this.$_linkTo('factory', {

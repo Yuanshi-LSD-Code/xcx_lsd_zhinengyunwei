@@ -296,22 +296,23 @@
 			},
 			confirm_start(e) {
 				this.show_start_time = false;
-				this.start_time = e;
+				this.start_time = e[0];
+				console.log(7778)
 				console.log(e);
 			},
 			close_start(e) {
 				this.show_start_time = false;
-				this.start_time = e;
+				// this.start_time = e;
 				console.log(e);
 			},
 			confirm_end(e) {
 				this.show_end_time = false;
-				this.end_time = e;
+				this.end_time = e[0];
 				console.log(e);
 			},
 			close_end(e) {
 				this.show_end_time = false;
-				this.end_time = e;
+				// this.end_time = e;
 				console.log(e);
 			},
 

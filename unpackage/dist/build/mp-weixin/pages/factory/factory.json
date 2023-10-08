@@ -2,6 +2,6 @@
   "navigationBarTitleText": "所有工厂",
   "usingComponents": {
     "u-line": "/node-modules/uview-ui/components/u-line/u-line",
-    "uni-datetime-picker": "/uni_modules/uni-datetime-picker/components/uni-datetime-picker/uni-datetime-picker"
+    "u-calendar": "/node-modules/uview-ui/components/u-calendar/u-calendar"
   }
 }

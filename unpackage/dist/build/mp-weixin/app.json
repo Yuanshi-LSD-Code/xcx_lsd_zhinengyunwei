@@ -3,8 +3,7 @@
     "pages/index/index",
     "pages/notice/notice",
     "pages/user/user",
-    "pages/privacyPolicyProtocol/privacyPolicyProtocol",
-    "pages/factoryInfo/factoryInfo"
+    "pages/privacyPolicyProtocol/privacyPolicyProtocol"
   ],
   "subPackages": [
     {
@@ -17,6 +16,20 @@
       "root": "pages/noticeDetail",
       "pages": [
         "noticeDetail"
+      ]
+    },
+    {
+      "root": "pages/factoryOne",
+      "pages": [
+        "factoryOne",
+        "factoryReport",
+        "repairDetail"
+      ]
+    },
+    {
+      "root": "pages/factoryAllStatus",
+      "pages": [
+        "factoryAllStatus"
       ]
     }
   ],
@@ -37,6 +50,5 @@
     "echarts-basic-line-config-chart": "/components/echarts/line/basic_line_config_chart",
     "echarts-basic-line-config-chart-ts": "/components/echarts/line/basic_line_config_chart_ts",
     "echarts-base-bar-chart": "/components/echarts/bar/base_bar_chart"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

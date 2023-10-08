@@ -305,10 +305,9 @@ export default {
 			}
 			// #endif
 			let theme=null,opts={},callback;
-				console.log(999887)
+				
 			Array.from(arguments).forEach(item => {
-				console.log(66666)
-				console.log(item)
+				
 				if(typeof item === 'function') {
 					callback = item
 				}

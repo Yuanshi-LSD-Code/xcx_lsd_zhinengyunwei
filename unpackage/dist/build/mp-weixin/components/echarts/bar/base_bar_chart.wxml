@@ -1,1 +1,1 @@
-<view class="{{['_div',className]}}" style="{{'height:'+(height)+';'+('width:'+(width)+';')+('margin-top:'+(marginTop)+';')}}"></view>
+<view class="{{['_div',className]}}" style="{{'height:'+(height)+';'+('width:'+(width)+';')+('margin-top:'+(marginTop)+';')}}"><l-echart class="vue-ref" vue-id="31758e96-1" force-use-old-canvas="false" width="100%" data-ref="chart" data-event-opts="{{[['^finished',[['init']]],['^click',[['chartClick']]]]}}" bind:finished="__e" bind:click="__e" bind:__l="__l"></l-echart></view>

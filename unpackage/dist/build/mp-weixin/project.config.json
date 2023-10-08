@@ -1,48 +1,48 @@
 {
-  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": false,
-    "postcss": false,
-    "minified": true,
-    "newFeature": true,
-    "bigPackageSizeSupport": true,
-    "coverView": true,
-    "lazyloadPlaceholderEnable": false,
-    "preloadBackgroundData": false,
-    "autoAudits": false,
-    "uglifyFileName": true,
-    "uploadWithSourceMap": true,
-    "enhance": false,
-    "useMultiFrameRuntime": true,
-    "showShadowRootInWxmlPanel": true,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useStaticServer": true,
-    "showES6CompileOption": false,
-    "checkInvalidKey": true,
-    "compileHotReLoad": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
+    "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "packOptions": {
+        "ignore": [],
+        "include": []
     },
-    "disableUseStrict": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "3.1.1",
-  "appid": "wx457487eb3582cd21",
-  "projectname": "lsd_new_uniapp",
-  "condition": {},
-  "editorSetting": {
-    "tabIndent": "insertSpaces",
-    "tabSize": 2
-  }
+    "setting": {
+        "urlCheck": false,
+        "es6": false,
+        "postcss": false,
+        "minified": true,
+        "newFeature": true,
+        "bigPackageSizeSupport": true,
+        "coverView": true,
+        "lazyloadPlaceholderEnable": false,
+        "preloadBackgroundData": false,
+        "autoAudits": false,
+        "uglifyFileName": false,
+        "uploadWithSourceMap": true,
+        "enhance": true,
+        "useMultiFrameRuntime": true,
+        "showShadowRootInWxmlPanel": true,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "useStaticServer": true,
+        "showES6CompileOption": false,
+        "checkInvalidKey": true,
+        "compileHotReLoad": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "disableUseStrict": false,
+        "useCompilerPlugins": false,
+        "minifyWXML": true
+    },
+    "compileType": "miniprogram",
+    "libVersion": "3.1.2",
+    "appid": "wx457487eb3582cd21",
+    "projectname": "lsd_new_uniapp",
+    "condition": {},
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    }
 }

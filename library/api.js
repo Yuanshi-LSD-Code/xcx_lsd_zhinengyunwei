@@ -50,6 +50,11 @@ class Api {
 
 	}
 
+    //组件二天比较
+	djBarDayDjList() {
+		return 'Dj/djBarDayDjList';
+	}
+	//工厂电机组件状态
 	djDayBarList() {
 		return 'Dj/djDayBarList';
 	}

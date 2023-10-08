@@ -75,7 +75,7 @@
 					},
 					legend: {
 						bottom: '5%',
-						right: 'center',
+						// right: 'center',
 						// icon: 'rect',//形状  类型包括 circle，rect,line，roundRect，triangle，diamond，pin，arrow，none
 						itemWidth: 8, // 设置宽度
 						itemHeight: 8, // 设置高度

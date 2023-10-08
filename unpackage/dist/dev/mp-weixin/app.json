@@ -3,8 +3,7 @@
     "pages/index/index",
     "pages/notice/notice",
     "pages/user/user",
-    "pages/privacyPolicyProtocol/privacyPolicyProtocol",
-    "pages/factoryAllStatus/factoryAllStatus"
+    "pages/privacyPolicyProtocol/privacyPolicyProtocol"
   ],
   "subPackages": [
     {
@@ -25,6 +24,12 @@
         "factoryOne",
         "factoryReport",
         "repairDetail"
+      ]
+    },
+    {
+      "root": "pages/factoryAllStatus",
+      "pages": [
+        "factoryAllStatus"
       ]
     }
   ],
