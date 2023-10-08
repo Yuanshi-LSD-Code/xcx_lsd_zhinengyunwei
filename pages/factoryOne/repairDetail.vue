@@ -3,9 +3,15 @@
 
 		<view class="display_sb">
 			<view>检修组件</view>
-			<view>
-				定子
-			</view>
+			<view>定子</view>
+		</view>
+		<view class="display_sb">
+			<view>检修分类</view>
+			<view>日常</view>
+		</view>
+		<view class="display_sb">
+			<view>检修组件</view>
+			<view>定子</view>
 		</view>
 	</view>
 </template>
