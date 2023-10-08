@@ -61,9 +61,9 @@
 				let title = userInfo.wx_mini_openid;
 				let copy = this.$utils.copyData(title);
 				if (copy) {
-					this.$utils.toast(data.msg);
+					this.$utils.toast('复制成功');
 				} else {
-					this.$utils.toast(data.msg);
+					this.$utils.toast('复制失败');
 				}
 			},
 			linkTo(item, index) {
