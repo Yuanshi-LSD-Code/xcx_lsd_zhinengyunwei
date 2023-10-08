@@ -1,0 +1,345 @@
+/* 定义一些公共样式 */
+.f_w {
+	flex-wrap: wrap;
+}
+
+.d_f {
+	display: flex;
+}
+
+.f_d {
+	flex-direction: column;
+}
+
+.ai_c {
+	align-items: center;
+}
+
+.ju_c {
+	justify-content: center;
+}
+
+.ju_s_b {
+	justify-content: space-between;
+}
+
+.flex1 {
+	flex: 1;
+}
+
+.margin_left_20{
+	margin-left: 20rpx;
+}
+.margin_right_20{
+	margin-right: 20rpx;
+}
+
+.margin_top_20{
+	margin-top: 20rpx;
+}
+
+.margin_botton_20{
+	margin-bottom: 20rpx;
+}
+
+.button:active {
+	opacity: 0.7;
+}
+.arrow_left {
+	width: 25rpx;
+	height: 25rpx;
+	border-top: 4rpx solid #333;
+	border-left: 4rpx solid #333;
+	transform: rotate(-45deg);
+}
+.arrow_right {
+	width: 15rpx;
+	height: 15rpx;
+	border-top: 4rpx solid #333;
+	border-left: 4rpx solid #333;
+	transform: rotate(135deg);
+}
+.arrow_right_white {
+	width: 15rpx;
+	height: 15rpx;
+	border-top: 4rpx solid #FFF;
+	border-left: 4rpx solid #FFF;
+	transform: rotate(135deg);
+}
+.wrap_2 {
+	letter-spacing: 0;
+	overflow: hidden;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	/*要显示的行数*/
+	-webkit-box-orient: vertical;
+}
+
+.wrap_1 {
+	letter-spacing: 0;
+	overflow: hidden;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 1;
+	/*要显示的行数*/
+	-webkit-box-orient: vertical;
+}
+view,
+text {
+	box-sizing: border-box;
+	font-family: PingFang SC;
+	font-size: 28rpx;
+
+}
+
+.c_f5 {
+	color: #f5f5f5;
+}
+
+.bg_f5 {
+	background-color: #f5f5f5;
+}
+
+.c_red {
+	color: #FFB331;
+}
+.c_mred{
+	color: #EE4D4D;
+}
+
+.bg_red {
+	background-color: #FFB331;
+}
+.bg_blue {
+	background-color: #00aaff;
+}
+.bg_ff{
+	background-color: #fff;
+}
+.bg_ffe{
+	background-color: #FFEFD4;
+}
+.c_bbb {
+	color: #BBBBBB;
+}
+.c_fff{
+	color: #fff;
+}
+.c_jin{
+	color: #A47748;
+}
+.c_999{
+	color: #999;
+}
+.c_333{
+	color: #333;
+}
+.c_bd{
+	color: #BDBEC2;
+}
+.c_db{
+	color: #DBDBDB;
+}
+.c_bc{
+	color: #BCBDBF;
+}
+.c_333{
+	color: #333;
+}
+.c_323{
+	color: #323435;
+}
+.c_262{
+	color: #262728;
+}
+.c_444{
+	color: #444;
+}
+.c_68{
+	color: #68696B;
+}
+.c_26{
+	color: #262827;
+}
+.c_c8{
+	color: #C8CBCD;
+}
+.c_26{
+	color: #262827;
+}
+.c_c2{
+	color: #C2C4C7;
+}
+.c_c4{
+	color: #C4C4C6;
+}
+.c_6c{
+	color: #6C6C6C;
+}
+
+/* 字体大小 */
+.f_24{
+	font-size: 24rpx;
+	line-height: 24rpx;
+}
+.f_22{
+	font-size: 22rpx;
+	line-height: 22rpx;
+}
+.f_26 {
+	font-size: 26rpx;
+	line-height: 26rpx;
+}
+
+.f_28 {
+	font-size: 28rpx;
+	line-height: 28rpx;
+}
+.f_30{
+	font-size: 30rpx;
+	line-height: 30rpx;
+}
+.f_32 {
+	font-size: 32rpx;
+	line-height: 32rpx;
+}
+.f_34{
+	font-size: 34rpx;
+	line-height: 34rpx;
+}
+.f_36 {
+	font-size: 36rpx;
+	line-height: 36rpx;
+}
+.f_40{
+	font-size: 40rpx;
+	line-height:40rpx
+}
+.f_42{
+	font-size: 42rpx;
+	list-style-position: 42rpx;
+}
+.f_70{
+	font-size: 70rpx;
+	line-height: 70rpx;
+}
+
+.pd40 {
+	padding-top: 40rpx;
+}
+.bold{
+	font-weight: bold;
+}
+
+.button:active {
+	opacity: 0.7;
+}
+
+.wrap_2 {
+	letter-spacing: 0;
+	overflow: hidden;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	/*要显示的行数*/
+	-webkit-box-orient: vertical;
+}
+.wrap_1 {
+	letter-spacing: 0;
+	overflow: hidden;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 1;
+	/*要显示的行数*/
+	-webkit-box-orient: vertical;
+}
+.avatar-img{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+}
+.border-bottom{
+	border-bottom: 2rpx solid rgba(0,0,0,0.1);
+}
+.arrow-left{
+	width: 12rpx;
+	height: 22rpx;
+	margin-left: 20rpx;
+}
+.arrow_right{
+	width: 20rpx;
+	height: 20rpx;
+	border-top: 4rpx solid #BBBFC0;
+	border-left: 4rpx solid #BBBFC0;
+	transform: rotate(135deg);
+}
+.go-arrow{
+	width: 18rpx;
+	height: 32rpx;
+}
+.s-go-arrow{
+	width: 12rpx;
+	height: 20rpx;
+}
+
+// 中按钮
+// 1.浅色
+.midBtn{
+	color: #FFB331;
+	width: 250rpx;
+	height: 72rpx;
+	font-size: 32rpx;
+	line-height: 32rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 36rpx;
+	background-color: #FFEFD4;
+	border: 2rpx solid #FFB331;
+}
+.midBtn:active{
+	opacity: 0.7;
+}
+// 2.主题红
+.midBtn2{
+	color: #fff;
+	width: 250rpx;
+	height: 72rpx;
+	font-size: 32rpx;
+	line-height: 32rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 36rpx;
+	background-color: #FFB331;
+}
+.midBtn2:active{
+	opacity: 0.7;
+}
+//居中
+.center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.fg-line{
+	background-color: #F5F5F5;
+	padding-bottom: 20rpx;
+}
+input,textarea{
+	font-size: 28rpx;
+}
+
+//页面布局
+.main-content{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.head-content{
+	flex: 1;
+}
+.footer-content{
+	flex: 0;
+}

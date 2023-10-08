@@ -28,7 +28,7 @@
 			},
 			minWidth: {
 				type: String,
-				default: '350px'
+				default: '750px'
 			},
 			autoResize: {
 				type: Boolean,
@@ -93,13 +93,13 @@
 
 					legend: {
 						// bottom: '5%',
-						// left: '-30',
+						left: '0',
 						// height:'auto',
 						// orient:'vertical',
 					},
 					grid: {
 						left: '1%',
-						right: '1%',
+						right: '0',
 						bottom: '10%',
 						containLabel: true
 					},
@@ -121,21 +121,21 @@
 
 							},
 							fontSize: 10,
-							padding: [5, 0, -15, -70],
+							// padding: [5, 0, -15, -70],
 							formatter: function(value) {
 
 								if (value === 20) {
 									var str = '良好';
-									return str.split("");;
+									return str;
 								} else if (value === 40) {
 									var str = '正常';
-									return str.split("");
+									return str;
 								} else if (value === 60) {
 									var str = '关注';
-									return str.split("");
+									return str;
 								} else if (value === 80) {
 									var str = '高风险';
-									return str.split("");
+									return str;
 								}
 								return '';
 							}, // y轴1%-100%格式化
@@ -181,8 +181,9 @@
 					},
 					xAxis: {
 						axisLabel: {
-							width: 100, // 设置每个横坐标标签的宽度为60像素
-							overflow: 'truncate', // 超出部分截断显示
+							interval: 0, // 设置刻度间隔为 0，表示所有刻度都显示
+							width: 40, // 设置每个横坐标标签的宽度为60像素
+							overflow: 'breakAll', // 超出部分截断显示
 							// ellipsis: true // 显示省略号
 							// formatter: function(value) {
 							// 	console.log(8888999)
@@ -240,11 +241,14 @@
 		},
 		watch: {
 			yAxisData(newVal) {
-
+				
+				
 				this.option.xAxis.data = newVal;
-				console.log(785444545)
-				console.log(this.option)
-				console.log(this.option.xAxis)
+				
+				
+				var autoHeight = this.option.yAxis.data.length * 60 + 100;
+				this.minWidth = autoHeight + 'px';
+				
 				this.$refs.chart.setOption(this.option)
 			},
 			series(newVal) {

@@ -1,0 +1,1 @@
+<main-layout vue-id="0f8461c0-1" bind:__l="__l" vue-slots="{{['default']}}"><view><view style="height:100px;margin-left:20rpx;margin-top:20rpx;">{{''+item.content+''}}</view><view style="display:flex;justify-content:flex-end;margin-right:20rpx;">{{''+item.add_time+''}}</view></view></main-layout>
