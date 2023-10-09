@@ -74,11 +74,13 @@
 						}
 					},
 					legend: {
+						// padding:5,
 						bottom: '5%',
+						// left:'10%',
 						// right: 'center',
 						// icon: 'rect',//形状  类型包括 circle，rect,line，roundRect，triangle，diamond，pin，arrow，none
-						itemWidth: 8, // 设置宽度
-						itemHeight: 8, // 设置高度
+						itemWidth: 10, // 设置宽度
+						itemHeight: 10, // 设置高度
 						// itemGap: 40, // 设置两个legend之间的间距
 						data: this.legendData
 						// data: [
@@ -110,10 +112,10 @@
 
 					},
 
-					radius: '100%',
+					radius: '90%',
 					grid: {
 						top: '15px', // 图形距离容器上边界的距离
-
+                        left:'10%',
 						// right: '0%',
 						bottom: '30%',
 						containLabel: true

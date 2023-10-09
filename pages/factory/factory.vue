@@ -48,24 +48,23 @@
 					<view class="example-body" style="">
 						<view class="display">
 							<view @click="startClick()">{{start_time}}</view>
+							<view>~</view>
 							<view @click="endClick()">{{end_time}}</view>
 						</view>
-						
 
-						<u-calendar :show="show_start_time" value="2022-02-15" defaultDate="2022-02-15"
-							minDate="2020-01-01" monthNum="60" maxDate="2030-01-01" @confirm="confirm_start"
-							@close="close_start"></u-calendar>
-						<u-calendar :show="show_end_time" value="2022-02-15" defaultDate="2022-02-15"
-							minDate="2020-01-01" monthNum="60" maxDate="2030-01-01" @confirm="confirm_end"
-							@close="close_end"></u-calendar>
+
+						<u-calendar :show="show_start_time" :defaultDate="start_time" :minDate="min_time" monthNum="13"
+							:maxDate="max_time" @confirm="confirm_start" @close="close_start"></u-calendar>
+						<u-calendar :show="show_end_time" :defaultDate="end_time" :minDate="min_time" monthNum="13"
+							:maxDate="max_time" @confirm="confirm_end" @close="close_end"></u-calendar>
 
 					</view>
 				</div>
 
 				<div class="echart_factory" style="display: flex;flex-wrap:wrap;">
-					<echarts-stacked-column-chart ref="chart" @finished="init"  
-						className="main-echart-chart" :legendData="factory_repair.legendData"
-						:series="factory_repair.series" width="100%" height="290px"></echarts-stacked-column-chart>
+					<echarts-stacked-column-chart ref="chart" @finished="init" className="main-echart-chart"
+						:legendData="factory_repair.legendData" :series="factory_repair.series" width="100%"
+						height="290px"></echarts-stacked-column-chart>
 				</div>
 			</div>
 
@@ -86,12 +85,14 @@
 				show_end_time: false,
 				start_time: '',
 				end_time: '',
+				min_time: '',
+				max_time: '',
 
 
 				factory_dj_list: [],
 				factory_bar: '',
 				factory_repair: '',
-				
+
 
 			}
 		},
@@ -101,10 +102,18 @@
 			var currentDate = new Date();
 
 			var beforeDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
-			
+
 			this.start_time = this.$_formatDate(beforeDate, 'yyyy-mm-dd');
 			this.end_time = this.$_formatDate(currentDate, 'yyyy-mm-dd');
-		
+
+			this.min_time = this.$_formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 12, currentDate
+				.getDate()), 'yyyy-mm-dd');
+			this.max_time = this.$_formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate
+				.getDate() + 1), 'yyyy-mm-dd');
+			console.log(78787)
+			console.log(this.min_time)
+			console.log(this.max_time)
+
 
 			this.$http('djFactoryDjList').then((res) => {
 				this.factory_dj_list = res.data.factory_dj_list;
@@ -115,10 +124,9 @@
 			this.$http('djFactoryBarStatus').then((res) => {
 				this.factory_bar = res.data;
 			});
-			
-			this.$http('djFactoryRepairList',{start_time:this.start_time,end_time:this.end_time}).then((res) => {
-				this.factory_repair = res.data;
-			});
+
+			this.changeRepairTime();
+
 
 
 		},
@@ -134,34 +142,40 @@
 				this.show_end_time = true;
 			},
 
-			
+
 			dateChange(e) {
 				console.log(e);
 			},
 			confirm_start(e) {
 				this.show_start_time = false;
-				this.start_time = e;
+				this.start_time = e[0];
 				console.log(e);
+				this.changeRepairTime();
 			},
 			close_start(e) {
 				this.show_start_time = false;
-				this.start_time = e;
+				// this.start_time = e;
 				console.log(e);
 			},
 			confirm_end(e) {
 				this.show_end_time = false;
-				this.end_time = e;
+				this.end_time = e[0];
 				console.log(e);
+				this.changeRepairTime();
 			},
 			close_end(e) {
 				this.show_end_time = false;
-				this.end_time = e;
+				// this.end_time = e;
 				console.log(e);
 			},
 			//获取修理情况
 			changeRepairTime(value) {
-				this.pickerOptionsRepairValue = value;
-				this.factoryDjRepairList();
+				this.$http('djFactoryRepairList', {
+					start_time: this.start_time,
+					end_time: this.end_time
+				}).then((res) => {
+					this.factory_repair = res.data;
+				});
 			},
 			djBarClick(e) {
 				console.log(6667)

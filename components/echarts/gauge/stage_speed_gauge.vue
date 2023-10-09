@@ -98,25 +98,35 @@
 								itemStyle: {
 									color: '#601885'
 								},
-								width: 3,
+								length: '90%',
+								width: 2,
 							},
 							// 仪表盘指针
 							// pointer: {
-								// show: true,
-								// 仪表盘指针icon
-								// icon: "path://M-36.5,23.9L-41,4.4c-0.1-0.4-0.4-0.7-0.7-0.7c-0.5-0.1-1.1,0.2-1.2,0.7l-4.5,19.5c0,0.1,0,0.1,0,0.2v92.3c0,0.6,0.4,1,1,1h9c0.6,0,1-0.4,1-1V24.1C-36.5,24-36.5,23.9-36.5,23.9z M-39.5,114.6h-5v-85h5V114.6z",
-								// icon: "image://https://lsdnew.dev.ycmua.com//static/img_07.png",
-								// width: 8,
-								// length: "70%", // 指针长度
-								// keepAspect:true,
-								// offsetCenter: [0, '-58%'],
-								// itemStyle: {
-								// 	color: "#e3b260",
-								// 	shadowColor: "rgba(255, 0, 0)",
-								// 	shadowBlur: 5,
-								// 	shadowOffsetY: 2,
-								// },
+							// 	show: true,
+							// 	// 仪表盘指针icon
+							// 	icon: "path://M 113.24 94.74 C 125.20 98.73 128.31 113.32 117.91 121.07 C 111.12 126.13 101.45 123.57 96.85 116.44 Q 96.57 116.00 96.07 116.13 L 6.27 138.45 A 0.79 0.79 0.0 0 1 5.34 137.98 Q 5.01 137.21 5.85 136.95 Q 49.99 123.32 94.14 109.71 A 0.83 0.82 84.3 0 0 94.72 108.99 C 95.49 99.36 103.91 91.62 113.24 94.74 Z",
+							// 	// icon: "image://https://lsdnew.dev.ycmua.com//static/img_07.png",
+							// 	width: '90%',
+							// 	// length: "100%", // 指针长度
+							// 	// keepAspect: true,
+							// 	// offsetCenter: [-18, '55%'],
+							// 	itemStyle: {
+							// 		color: "#601885",
+							// 	},
 							// },
+							// min:0,
+							// max:100,
+							anchor: {
+								show: true,
+								showAbove: true,
+								size: 5,
+								itemStyle: {
+									borderWidth: 5,
+									borderColor: "#601885",
+								}
+
+							},
 
 							axisTick: {
 								distance: -10,
@@ -189,6 +199,7 @@
 
 							},
 							data: [{
+								// value: this.gauge_org > 0 ? this.gauge_org-10 : 0,
 								value: 100 - (this.gauge_org > 0 ? this.gauge_org : 100),
 							}]
 						}
