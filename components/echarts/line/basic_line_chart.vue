@@ -190,12 +190,13 @@
 					delete this.option['color']
 				}
 				chart.setOption(this.option)
+				var that = this;
 				chart.on('click', params => {
 					console.log('点击事件触发2：', params);
 					let index = params.dataIndex;
-
-
-					this.$emit('djBarClick', index);
+                   let time = that.dayMonth[index];
+					// uni.$emit('djBarClick', index);
+					this.$emit('djTimeClick', time);
 					// 处理点击回调的业务逻辑
 				});
 

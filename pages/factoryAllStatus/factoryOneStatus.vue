@@ -12,13 +12,13 @@
 			<u-picker :show="show" closeOnClickOverlay="true" :columns="factory_list" :defaultIndex="defaultIndex"
 				keyName="title" @confirm="factoryConfirm()" @cancel="factoryCancel()"></u-picker>
 
-			<view class="bg-gray" style="height: 15px;"></view>
+			<view class="bg-gray" style="height: 10px;"></view>
 			<view>
 				<u-tabs :list="barList" :current="tabCurrent" @click="tabClick" keyName="title"></u-tabs>
 				<!-- 				 <u-tabs :list="barList" @click="click" keyName="title" itemStyle="height: 54px;width:52px;font-size:12px"></u-tabs> -->
 			</view>
 
-			<view class="bg-gray" style="height: 15px;"></view>
+			<view class="bg-gray" style="height: 10px;"></view>
 			<view>
 				<view style="font-size: 14px;height: 40px;">全部电机{{barItem.title}}状态统计</view>
 				<u-line></u-line>
@@ -26,7 +26,7 @@
 				<div class="jdk_line_echarts" style="">
 
 					<echarts-basic-line-chart ref="chart" @finished="init" className="main-jdk-all-bar-time"
-						:key="djBarTimeListKey" :__that="this" :xAxisData="djBarTimeList.xAxisData"
+						:key="djBarTimeListKey" :__that="this" :yAxisData="djBarTimeList.xAxisData"
 						:series="djBarTimeList.series" :dayMonth="djBarTimeList.dayMonth"
 						@djTimeClick="factoryDjBarDayBarList" height="250px"></echarts-basic-line-chart>
 				</div>
@@ -137,6 +137,7 @@
 				dj_bar_bar_device_title: '',
 
 				djBarDjDayList: {},
+				curr_time_click: '',
 			}
 		},
 
@@ -183,9 +184,22 @@
 				this.factory_title = option.factory_title;
 			}
 			this.init();
+
+
 		},
 
 		methods: {
+
+			factoryDjBarDayDayList(dj_device_id = '', dj_device_title = '') {
+				if (dj_device_id) {
+					this.dj_bar_bar_device_id = dj_device_id;
+				}
+				if (dj_device_title) {
+					this.dj_bar_bar_device_title = dj_device_title;
+				}
+				this.djBarDayDayList();
+
+			},
 
 			changeFactory() {
 				this.show = true;
@@ -213,10 +227,11 @@
 				this.$http('djBarDayDayList', {
 					'bar_type': this.barItem.type,
 					'device_id': this.dj_bar_bar_device_id,
-					'time': [this.start_time, this.end_time],
+					'start_time': this.start_time,
+					'end_time': this.end_time,
 					'factory_id': this.factory_id,
 				}).then((res) => {
-					this.djBarTimeList = res.data;
+					this.djBarDjDayList = res.data;
 
 
 				});
@@ -237,19 +252,18 @@
 				this.$http('djBarDayDjList', {
 					'bar_type': this.barItem.type,
 					'factory_id': this.factory_id,
+					'time': this.curr_time_click,
 				}).then((res) => {
 					this.djBarDjList = res.data;
 					if (this.djBarDjList.yAxisLabel && this.djBarDjList.yAxisLabel.length > 0) {
-						this.dj_bar_bar_device_id = this.djBarDjList.yAxisLabel[this.djBarDjList.yAxisLabel
-							.length - 1];
-						this.dj_bar_bar_device_title = this.djBarDjList.yAxisData[this.djBarDjList.yAxisData
-							.length - 1];
-						this.djBarDayDayList();
+						this.dj_bar_bar_device_id = this.djBarDjList.yAxisLabel[0];
+						this.dj_bar_bar_device_title = this.djBarDjList.yAxisData[0];
+
 					} else {
 						this.dj_bar_bar_device_id = '';
 						this.dj_bar_bar_device_title = '';
 					}
-
+					this.djBarDayDayList();
 				});
 			},
 
@@ -265,6 +279,7 @@
 					}
 				})
 				this.djDayBarList();
+				this.djBarDayDjList();
 			},
 
 			factoryDjBarDayBarList(e) {

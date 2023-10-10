@@ -1,5 +1,5 @@
 <template>
-	<main-layout>
+	<main-layout navIndex="1">
 		<view>
 			<u-line></u-line>
 
@@ -20,7 +20,7 @@
 					</div>
 				</view>
 				<view style="display: flex;flex-wrap: wrap;">
-					<view v-for="(item2,index2) in factory_dj_list" style="width: 50%;">
+					<view v-for="(item2,index2) in factory_dj_list" style="width: 50%;" @click="djClickJkd(item2)">
 						<echarts-stage-speed-gauge className="main-dj-detail-jkd" ref="chart" @finished="init"
 							:gauge_org="item2.avgbg ? item2.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
 						<div class="display_j" style="">
@@ -37,11 +37,12 @@
 
 			<view class="display_sb" style="height:40px;">
 				<view>电机运行状态</view>
-				<u-icon name="arrow-down" size="20"></u-icon>
+				<u-icon :name="djStatusShow?'arrow-down':'arrow-right'" @click="djStatusClose" size="20"></u-icon>
 			</view>
-			<div class="echart_factory" style="display: flex;flex-wrap:wrap;">
-				<echarts-stacked-column-chart @click="factoryOneStatus()" className="main-card-status" ref="chart"
-					@finished="init" :legendData="dj_bar.legendData" @djBarClick="djBarClick" :series="dj_bar.series"
+			<u-line></u-line>
+			<div class="echart_factory" style="display: flex;flex-wrap:wrap;" v-if="djStatusShow">
+				<echarts-stacked-column-chart className="main-card-status" ref="chart" @finished="init"
+					:legendData="dj_bar.legendData" @djBarClick="factoryOneStatus" :series="dj_bar.series"
 					:color="dj_bar.color" width="100%" height="290px"></echarts-stacked-column-chart>
 			</div>
 			<view class="bg-gray" style="height: 15px;"></view>
@@ -50,14 +51,14 @@
 			<u-line></u-line>
 			<view class="display_sb" style="height:40px;">
 				<view>检修工作统计</view>
-				<div @click="repairCount" style="display: flex;margin-right: 10px;cursor: pointer;">
-					<view>查看统计信息</view><u-icon name="arrow-down" size="20"></u-icon>
+				<div @click="repairClose" style="display: flex;margin-right: 10px;cursor: pointer;">
+					<view>查看统计信息</view><u-icon :name="repairStatusShow?'arrow-down':'arrow-right'" size="20"></u-icon>
 				</div>
 			</view>
 			<u-line></u-line>
-			<div style="width:100%;height: 50px;">
+			<div style="width:100%;" v-if="repairStatusShow">
 
-				<view class="example-body" style="">
+				<view class="example-body" style="height: 30px;">
 					<view class="display">
 						<view @click="startClick()">{{start_time}}</view>
 						<view @click="endClick()">{{end_time}}</view>
@@ -69,13 +70,14 @@
 						:maxDate="max_time" @confirm="confirm_end" @close="close_end"></u-calendar>
 
 				</view>
+				<view>
+				
+					<echarts-base-bar-chart ref="chart" @finished="init" className="main-echart-chart"
+						@djBarClick="djBarClick" :series="repair_bar.repairTrue" width="100%"
+						height="250px"></echarts-base-bar-chart>
+				</view>
 			</div>
-			<view>
-
-				<echarts-base-bar-chart ref="chart" @finished="init" className="main-echart-chart"
-					@djBarClick="djBarClick" :series="repair_bar.repairTrue" width="100%"
-					height="250px"></echarts-base-bar-chart>
-			</view>
+			
 
 
 			<view class="bg-gray" style="height: 15px;"></view>
@@ -126,6 +128,10 @@
 	export default {
 		data() {
 			return {
+
+				djStatusShow: true,
+				repairStatusShow: true,
+
 				show: false,
 				factory_list: [],
 				defaultIndex: [],
@@ -168,12 +174,12 @@
 			})
 
 			var currentDate = new Date();
-			
+
 			var beforeDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
-			
+
 			this.start_time = this.$_formatDate(beforeDate, 'yyyy-mm-dd');
 			this.end_time = this.$_formatDate(currentDate, 'yyyy-mm-dd');
-			
+
 			this.min_time = this.$_formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 12, currentDate
 				.getDate()), 'yyyy-mm-dd');
 			this.max_time = this.$_formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate
@@ -185,6 +191,17 @@
 
 
 		methods: {
+			djClickJkd(item){
+				this.$_navigateTo('/pages/djDetail/djDetail', {
+					'item': item,
+				})
+			},
+			repairClose() {
+				this.repairStatusShow = !this.repairStatusShow;
+			},
+			djStatusClose() {
+				this.djStatusShow = !this.djStatusShow;
+			},
 
 			jdkCount() {
 				this.$_navigateTo('/pages/factoryAllStatus/factoryOneDjStatus', {
@@ -192,10 +209,11 @@
 					'factory_title': this.factory_title
 				})
 			},
-			factoryOneStatus() {
+			factoryOneStatus(e) {
 				this.$_navigateTo('/pages/factoryAllStatus/factoryOneStatus', {
 					'factory_id': this.factory_id,
-					'factory_title': this.factory_title
+					'factory_title': this.factory_title,
+					'bar_index': e
 				})
 			},
 

@@ -1,9 +1,9 @@
 <template>
 	<main-layout>
-		<view>
+		<view v-if="factory_list.length>1">
 
 
-			<view v-if="factory_list.length>0">
+			<view>
 				<view class="display_sb" style="height: 100rpx;" @click="djCount()">
 					<view style="margin-left: 20rpx;">所有工厂</view>
 					<u-icon name="arrow-right" size="20"></u-icon>
@@ -44,8 +44,8 @@
 					this.$http('djFactory').then((res) => {
 						this.factory_list = res.data.factory_list;
 						if (this.factory_list.length == 1) {
-							this.$_navigateTo('factoryOne', {
-								'item': this.factory_list[0];
+							this.$_redirectTo('factoryOne', {
+								'item': this.factory_list[0]
 							})
 						}
 
@@ -54,11 +54,15 @@
 			} else {
 				this.$http('djFactory').then((res) => {
 					this.factory_list = res.data.factory_list;
+					if (this.factory_list.length == 1) {
+						this.$_redirectTo('factoryOne', {
+							'item': this.factory_list[0]
+						})
 
+					}
 				})
+
 			}
-
-
 			// },1000);
 			// this.$_reLaunch('factoryInfo');
 		},

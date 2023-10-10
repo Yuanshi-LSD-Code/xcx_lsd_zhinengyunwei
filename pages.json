@@ -100,6 +100,15 @@
 					"enablePullDownRefresh": false
 				}
 			}]
+		},
+		{
+			"root": "pages/djDetail",
+			"pages": [{
+				"path": "djDetail",
+				"style": {
+					"navigationBarTitleText": "电机信息"
+				}
+			}]
 		}
 
 	],

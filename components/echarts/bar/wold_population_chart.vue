@@ -1,5 +1,5 @@
 <template>
-	<div :class="className" :style="{ height: height, width: width, marginTop: marginTop, minWidth: minWidth }">
+	<div :class="className" :style="{ height: height, width: width, marginTop: marginTop }">
 		<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
 	</div>
 </template>
@@ -241,14 +241,14 @@
 		},
 		watch: {
 			yAxisData(newVal) {
-				
-				
+
+
 				this.option.xAxis.data = newVal;
-				
-				
-				var autoHeight = this.option.yAxis.data.length * 60 + 100;
+
+
+				var autoHeight = this.option.xAxis.data.length * 60 + 100;
 				this.minWidth = autoHeight + 'px';
-				
+
 				this.$refs.chart.setOption(this.option)
 			},
 			series(newVal) {
@@ -271,9 +271,11 @@
 				chart.on('click', params => {
 					console.log('点击事件触发2：', params);
 					let index = params.dataIndex;
+					let label = this.yAxisLabel[index];
+					let title = this.yAxisData[index];
 
 
-					this.$emit('djBarClick', index);
+					this.$emit('djClick', label,title);
 					// 处理点击回调的业务逻辑
 				});
 			},
