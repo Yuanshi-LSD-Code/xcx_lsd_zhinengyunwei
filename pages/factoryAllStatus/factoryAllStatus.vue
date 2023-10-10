@@ -31,21 +31,21 @@
 						@djClick="factoryDjBarDayDayList"></echarts-wold-population-chart>
 				</div>
 			</view>
-			
+
 			<view class="bg-gray" style="height: 15px;"></view>
 			<view>
 				<view style="font-size: 14px;height: 40px;">{{dj_bar_bar_device_title}}{{barItem.title}}状态</view>
-			
-			
-				<div style="width: 100%;overflow: auto;">
-					<echarts-wold-population-chart :__that="this" :key="djBarDjListKey" className="main-jdk-dj"
-						:yAxisData="djBarDjList.yAxisData" :series="djBarDjList.series"
-						:yAxisLabel="djBarDjList.yAxisLabel"
-						@djClick="factoryDjBarDayDayList"></echarts-wold-population-chart>
+
+
+				<div class="w-100" style="height: 145px;">
+					<echarts-basic-line-config-chart :key="djBarDjDayListKey" :series="djBarDjDayList.series"
+						:xAxisData="djBarDjDayList.xAxisData" :dayMonth="djBarDjDayList.dayMonth"
+						@djTimeClick="factoryDjTimeDetail2" className="main-jkd-dj-day-bar"
+						height="100%"></echarts-basic-line-config-chart>
 				</div>
 			</view>
-			
-			
+
+
 		</view>
 
 	</main-layout>
