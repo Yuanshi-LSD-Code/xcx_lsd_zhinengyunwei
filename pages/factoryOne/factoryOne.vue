@@ -50,7 +50,7 @@
 			<u-line></u-line>
 			<view class="display_sb" style="height:40px;">
 				<view>检修工作统计</view>
-				<div @click="jdkCount" style="display: flex;margin-right: 10px;cursor: pointer;">
+				<div @click="repairCount" style="display: flex;margin-right: 10px;cursor: pointer;">
 					<view>查看统计信息</view><u-icon name="arrow-down" size="20"></u-icon>
 				</div>
 			</view>
@@ -186,6 +186,12 @@
 
 		methods: {
 
+			jdkCount() {
+				this.$_navigateTo('/pages/factoryAllStatus/factoryOneDjStatus', {
+					'factory_id': this.factory_id,
+					'factory_title': this.factory_title
+				})
+			},
 			factoryOneStatus() {
 				this.$_navigateTo('/pages/factoryAllStatus/factoryOneStatus', {
 					'factory_id': this.factory_id,

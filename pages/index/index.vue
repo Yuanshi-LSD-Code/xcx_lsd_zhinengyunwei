@@ -3,7 +3,7 @@
 		<view>
 
 
-			<view>
+			<view v-if="factory_list.length>0">
 				<view class="display_sb" style="height: 100rpx;" @click="djCount()">
 					<view style="margin-left: 20rpx;">所有工厂</view>
 					<u-icon name="arrow-right" size="20"></u-icon>
@@ -43,6 +43,11 @@
 					console.log(data.msg); // 输出：'更新了'
 					this.$http('djFactory').then((res) => {
 						this.factory_list = res.data.factory_list;
+						if (this.factory_list.length == 1) {
+							this.$_navigateTo('factoryOne', {
+								'item': this.factory_list[0];
+							})
+						}
 
 					})
 				})
