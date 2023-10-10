@@ -238,12 +238,12 @@
 							.length - 1];
 						this.dj_bar_bar_device_title = this.djBarDjList.yAxisData[this.djBarDjList.yAxisData
 							.length - 1];
-
+						this.djBarDayDayList();
 					} else {
 						this.dj_bar_bar_device_id = '';
 						this.dj_bar_bar_device_title = '';
 					}
-					this.djBarDayDayList();
+
 				});
 			},
 
