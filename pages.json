@@ -87,6 +87,18 @@
 					"navigationBarTitleText": "所有工厂",
 					"enablePullDownRefresh": false
 				}
+			}, {
+				"path": "factoryOneStatus",
+				"style": {
+					"navigationBarTitleText": "工厂",
+					"enablePullDownRefresh": false
+				}
+			}, {
+				"path": "factoryOneDjStatus",
+				"style": {
+					"navigationBarTitleText": "工厂",
+					"enablePullDownRefresh": false
+				}
 			}]
 		}
 

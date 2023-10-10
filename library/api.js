@@ -50,7 +50,23 @@ class Api {
 
 	}
 
-    //组件二天比较
+	
+	factoryDjAvgbgList() {
+		return 'Dj/factoryDjAvgbgList';
+	}
+	factoryDjDayList() {
+		return 'Dj/factoryDjDayList';
+	}
+	factoryDjDayDayList() {
+		return 'Dj/factoryDjDayDayList';
+	}
+
+
+	//电机组件
+	djBarDayDayList() {
+		return 'Dj/djBarDayDayList';
+	}
+	//组件二天比较
 	djBarDayDjList() {
 		return 'Dj/djBarDayDjList';
 	}

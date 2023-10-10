@@ -40,8 +40,8 @@
 				<u-icon name="arrow-down" size="20"></u-icon>
 			</view>
 			<div class="echart_factory" style="display: flex;flex-wrap:wrap;">
-				<echarts-stacked-column-chart className="main-card-status" ref="chart" @finished="init"
-					:legendData="dj_bar.legendData" @djBarClick="djBarClick" :series="dj_bar.series"
+				<echarts-stacked-column-chart @click="factoryOneStatus()" className="main-card-status" ref="chart"
+					@finished="init" :legendData="dj_bar.legendData" @djBarClick="djBarClick" :series="dj_bar.series"
 					:color="dj_bar.color" width="100%" height="290px"></echarts-stacked-column-chart>
 			</div>
 			<view class="bg-gray" style="height: 15px;"></view>
@@ -63,14 +63,14 @@
 						<view @click="endClick()">{{end_time}}</view>
 					</view>
 
-					<u-calendar :show="show_start_time" value="2022-02-15" defaultDate="2022-02-15" minDate="2020-01-01"
-						monthNum="60" maxDate="2030-01-01" @confirm="confirm_start" @close="close_start"></u-calendar>
-					<u-calendar :show="show_end_time" value="2022-02-15" defaultDate="2022-02-15" minDate="2020-01-01"
-						monthNum="60" maxDate="2030-01-01" @confirm="confirm_end" @close="close_end"></u-calendar>
+					<u-calendar :show="show_start_time" :defaultDate="start_time" :minDate="min_time" monthNum="13"
+						:maxDate="max_time" @confirm="confirm_start" @close="close_start"></u-calendar>
+					<u-calendar :show="show_end_time" :defaultDate="end_time" :minDate="min_time" monthNum="13"
+						:maxDate="max_time" @confirm="confirm_end" @close="close_end"></u-calendar>
 
 				</view>
 			</div>
-			<view >
+			<view>
 
 				<echarts-base-bar-chart ref="chart" @finished="init" className="main-echart-chart"
 					@djBarClick="djBarClick" :series="repair_bar.repairTrue" width="100%"
@@ -168,11 +168,16 @@
 			})
 
 			var currentDate = new Date();
-
+			
 			var beforeDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
-
+			
 			this.start_time = this.$_formatDate(beforeDate, 'yyyy-mm-dd');
 			this.end_time = this.$_formatDate(currentDate, 'yyyy-mm-dd');
+			
+			this.min_time = this.$_formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 12, currentDate
+				.getDate()), 'yyyy-mm-dd');
+			this.max_time = this.$_formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate
+				.getDate() + 1), 'yyyy-mm-dd');
 
 			this.init();
 
@@ -180,14 +185,21 @@
 
 
 		methods: {
-			
+
+			factoryOneStatus() {
+				this.$_navigateTo('/pages/factoryAllStatus/factoryOneStatus', {
+					'factory_id': this.factory_id,
+					'factory_title': this.factory_title
+				})
+			},
+
 			repairDetail(item, index) {
 				console.log(4545454)
 				this.$_navigateTo('/pages/factoryOne/repairDetail', {
 					'item': item
 				})
 			},
-			
+
 			init() {
 				this.djList();
 				this.djBar();
@@ -297,8 +309,7 @@
 			confirm_start(e) {
 				this.show_start_time = false;
 				this.start_time = e[0];
-				console.log(7778)
-				console.log(e);
+				this.dJRepairInfo();
 			},
 			close_start(e) {
 				this.show_start_time = false;
@@ -308,6 +319,7 @@
 			confirm_end(e) {
 				this.show_end_time = false;
 				this.end_time = e[0];
+				this.dJRepairInfo();
 				console.log(e);
 			},
 			close_end(e) {
