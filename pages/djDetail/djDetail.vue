@@ -14,8 +14,19 @@
 				<echarts-stage-speed-gauge className="main-dj-detail-jkd" :key="keyTime" ref="chart" @finished="init"
 					:gauge_org="item.avgbg ? item.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
 			</view>
+			<u-line></u-line>
+			<view style="display">
+				<view>11111</view>
+				<view>22222</view>
+				<view>33333</view>
+				<view>44444</view>
+			</view>
+			<u-line></u-line>
+			<view>
+				
+			</view>
 
-			1216
+			
 		</view>
 
 	</main-layout>
