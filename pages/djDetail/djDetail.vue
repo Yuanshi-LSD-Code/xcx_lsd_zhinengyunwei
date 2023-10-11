@@ -10,7 +10,7 @@
 				</div>
 			</view>
 			<view style="display: flex;flex-wrap: wrap;">
-				
+
 				<echarts-stage-speed-gauge className="main-dj-detail-jkd" :key="keyTime" ref="chart" @finished="init"
 					:gauge_org="item.avgbg ? item.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
 			</view>
@@ -23,21 +23,32 @@
 			</view>
 			<u-line></u-line>
 			<view>
-				
+
 			</view>
 
-			
+
 		</view>
 
 	</main-layout>
 </template>
 
+
 <script>
+	import info from '@/pages/djDetail/components/info.vue'
+	import repair from '@/pages/djDetail/components/repair.vue'
+	import report from '@/pages/djDetail/components/report.vue'
+	import status from '@/pages/djDetail/components/status.vue'
 	export default {
+		components: {
+			info,
+			repair,
+			report,
+			status,
+		},
 		data() {
 			return {
 				item: {},
-				keyTime:'',
+				keyTime: '',
 
 			}
 		},
@@ -52,7 +63,7 @@
 			console.log(option);
 			var item = JSON.parse(option.item);
 			this.item = item
-			this.keyTime =  new Date().getTime();
+			this.keyTime = new Date().getTime();
 		},
 		onShow() {
 
