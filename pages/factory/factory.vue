@@ -9,7 +9,7 @@
 				</view>
 
 				<view style="display: flex;flex-wrap: wrap;">
-					<view v-for="(item2,index2) in item.dj" style="width: 50%;">
+					<view v-for="(item2,index2) in item.dj" style="width: 50%;"  @click="djClickJkd(item2)">
 						<echarts-stage-speed-gauge className="main-dj-detail-jkd" ref="chart" @finished="init"
 							:gauge_org="item2.avgbg ? item2.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
 						<div class="display_j" style="">
@@ -134,6 +134,11 @@
 
 		},
 		methods: {
+			djClickJkd(item){
+				this.$_navigateTo('/pages/djDetail/djDetail', {
+					'item': item,
+				})
+			},
 
 			startClick() {
 				this.show_start_time = true;

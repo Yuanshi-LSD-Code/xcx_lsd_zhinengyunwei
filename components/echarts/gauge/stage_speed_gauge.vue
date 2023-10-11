@@ -213,9 +213,16 @@
 
 		mounted() {
 
-			this.$refs.chart.init(echarts, chart => {
-				chart.setOption(this.option);
-			});
+			this.$nextTick(() => {
+				console.log(78787)
+				console.log(this.option)
+				this.$refs.chart.init(echarts, chart => {
+					chart.setOption(this.option);
+
+				})
+
+
+			})
 		},
 		beforeDestroy() {
 			if (!this.chart) {
@@ -223,6 +230,20 @@
 			}
 			this.chart.dispose()
 			this.chart = null
+		},
+
+		watch: {
+			gauge_org(newVal) {
+				console.log(4444)
+				console.log(newVal)
+				var title = 100 - (newVal > 0 ? newVal : 100);
+				this.option.series[0].data[0]['value'] = title;
+
+				var formatter = '健康度：' + (newVal > 0 ? newVal : 100) + '%';
+				this.option.series[0].detail.formatter = formatter;
+				this.$refs.chart.setOption(this.option)
+
+			},
 		},
 
 		methods: {

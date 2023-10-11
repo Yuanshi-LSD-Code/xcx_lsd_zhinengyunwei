@@ -29,7 +29,15 @@
         {
             "root": "pages/factoryAllStatus",
             "pages": [
-                "factoryAllStatus"
+                "factoryAllStatus",
+                "factoryOneStatus",
+                "factoryOneDjStatus"
+            ]
+        },
+        {
+            "root": "pages/djDetail",
+            "pages": [
+                "djDetail"
             ]
         }
     ],

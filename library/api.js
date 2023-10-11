@@ -50,7 +50,14 @@ class Api {
 
 	}
 
-	
+	djReportList() {
+		return 'Dj/djReportList';
+	}
+	//电机详情
+	factoryAdminDjInfo() {
+		return 'Dj/factoryAdminDjInfo';
+	}
+
 	factoryDjAvgbgList() {
 		return 'Dj/factoryDjAvgbgList';
 	}
