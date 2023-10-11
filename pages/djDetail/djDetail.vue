@@ -23,6 +23,10 @@
 			</view>
 			<u-line></u-line>
 			<view>
+				<info></info>
+				<repair></repair>
+				<report></report>
+				<status></status>
 
 			</view>
 
