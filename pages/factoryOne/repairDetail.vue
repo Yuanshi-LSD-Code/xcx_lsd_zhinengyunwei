@@ -1,18 +1,76 @@
 <template>
 	<view style="margin-left: 20px;margin-right: 20px;">
 
-		<view class="display_sb">
+		<view class="display_sb" style="height: 40px;">
 			<view>检修组件</view>
-			<view>定子</view>
+			<view class="display">
+				<view>{{item.bar_title}}</view>
+				<u-icon name="arrow-right" size="16"></u-icon>
+			</view>
+
 		</view>
-		<view class="display_sb">
+		<u-line></u-line>
+		<view class="display_sb" style="height: 40px;">
 			<view>检修分类</view>
-			<view>日常</view>
+			<view class="display">
+				<view>{{item.repair_title}}</view>
+				<u-icon name="arrow-right" size="16"></u-icon>
+			</view>
 		</view>
-		<view class="display_sb">
-			<view>检修组件</view>
-			<view>定子</view>
+		<u-line></u-line>
+		<view class="display_sb" style="height: 40px;">
+			<view>检修结果</view>
+			<view class="display">
+				<view>{{item.status_title}}</view>
+				<u-icon name="arrow-right" size="16"></u-icon>
+			</view>
 		</view>
+		<u-line></u-line>
+		<view class="display_sb" style="height: 40px;">
+			<view>检修人员</view>
+			<view class="display">
+				<view>{{item.uname}}</view>
+				<u-icon name="arrow-right" size="16"></u-icon>
+			</view>
+		</view>
+		<u-line></u-line>
+
+
+		<view class="display_sb" style="height: 40px;">
+			<view>现场拍照</view>
+			<view class="display">
+				
+				<image :src="item.url" style="width: 50rpx;height: 50rpx;"></image>
+				
+				<u-icon name="arrow-right" size="16"></u-icon>
+			</view>
+		</view>
+		<u-line></u-line>
+		<view class="display_sb" style="height: 40px;">
+			<view>计划检修时间</view>
+			<view class="display">
+				<view>{{item.repair_date}}</view>
+				<u-icon name="arrow-right" size="16"></u-icon>
+			</view>
+		</view>
+		<u-line></u-line>
+		<view class="display_sb" style="height: 40px;">
+			<view>实际检修时间</view>
+			<view class="display">
+				<view>{{item.item.repair_true_date}}</view>
+				<u-icon name="arrow-right" size="16"></u-icon>
+			</view>
+		</view>
+		<u-line></u-line>
+		<view class="display_sb" style="height: 40px;">
+			<view>检修说明</view>
+			<view class="display">
+				<view>{{item.item.remark}}</view>
+				<u-icon name="arrow-right" size="16"></u-icon>
+			</view>
+		</view>
+		<u-line></u-line>
+
 	</view>
 </template>
 
@@ -26,7 +84,7 @@
 						color: '#3e3adc'
 					}
 				},
-				item: '',
+				item: {},
 
 				model1: {
 					userInfo: {
@@ -42,7 +100,7 @@
 			}
 		},
 		onLoad(option) {
-			var item = JSON.parse(option.item);
+			this.item = JSON.parse(option.item);
 
 			// uni.setNavigationBarTitle({
 			// 	title: '赛聚车友俱乐部'

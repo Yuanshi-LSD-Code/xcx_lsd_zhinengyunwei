@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "电机检修维护",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-line": "/node-modules/uview-ui/components/u-line/u-line"
+  }
 }

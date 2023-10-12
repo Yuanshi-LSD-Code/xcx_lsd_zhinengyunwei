@@ -49,7 +49,7 @@
 			<view>
 				<info v-if="showType==1" :deviceId="item.device_id"></info>
 				<status v-if="showType==2"></status>
-				<repair v-if="showType==3"></repair>
+				<repair v-if="showType==3" :djId="item.id" ref="repair"></repair>
 				<report v-if="showType==4" :djId="item.id" ref="report"></report>
 				
 
@@ -103,6 +103,8 @@
 		onReachBottom() {
 			if(this.showType == 4){
 				this.$refs['report'].loadList();
+			}else if(this.showType == 3){
+				this.$refs['repair'].loadList();
 			}
 			
 		},

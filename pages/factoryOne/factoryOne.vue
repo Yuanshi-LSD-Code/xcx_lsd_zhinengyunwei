@@ -84,7 +84,7 @@
 
 			<view class="display_sb" style="height:40px;">
 				<view>检修计划</view>
-				<view class="display">
+				<view class="display" @click="repairListClick">
 					<view>查看更多</view><u-icon name="arrow-right" size="20"></u-icon>
 				</view>
 
@@ -102,7 +102,7 @@
 
 			<view class="display_sb" style="height:40px;">
 				<view>工厂报告</view>
-				<view class="display">
+				<view class="display" @click="reportListClick">
 					<view>查看更多</view><u-icon name="arrow-right" size="20"></u-icon>
 				</view>
 
@@ -191,6 +191,19 @@
 
 
 		methods: {
+			reportListClick(){
+				this.$_navigateTo('/pages/factoryOne/reportList', {
+					'factory_id': this.factory_id,
+				})
+			},
+			
+			repairListClick(){
+				this.$_navigateTo('/pages/factoryOne/repairList', {
+					'factory_id': this.factory_id,
+					'factory_title': this.factory_title,
+				})
+			},
+			
 			djClickJkd(item){
 				this.$_navigateTo('/pages/djDetail/djDetail', {
 					'item': item,

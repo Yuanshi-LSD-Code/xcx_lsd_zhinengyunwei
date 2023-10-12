@@ -50,6 +50,15 @@ class Api {
 
 	}
 
+	djFactoryReportList() {
+		return 'Dj/djFactoryReportList';
+	}
+	djRepairCate() {
+		return 'Dj/djRepairCate';
+	}
+	djRepairList() {
+		return 'Dj/djRepairList';
+	}
 	djReportList() {
 		return 'Dj/djReportList';
 	}

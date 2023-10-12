@@ -23,7 +23,9 @@
             "pages": [
                 "factoryOne",
                 "factoryReport",
-                "repairDetail"
+                "repairDetail",
+                "repairList",
+                "reportList"
             ]
         },
         {

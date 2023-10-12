@@ -79,9 +79,9 @@
 						// left:'10%',
 						// right: 'center',
 						// icon: 'rect',//形状  类型包括 circle，rect,line，roundRect，triangle，diamond，pin，arrow，none
-						itemWidth: 10, // 设置宽度
-						itemHeight: 10, // 设置高度
-						// itemGap: 40, // 设置两个legend之间的间距
+						// itemWidth: 10, // 设置宽度
+						// itemHeight: 10, // 设置高度
+						itemGap: 10, // 设置两个legend之间的间距
 						data: this.legendData
 						// data: [
 						// 	{

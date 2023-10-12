@@ -77,6 +77,16 @@
 				"style": {
 					"navigationBarTitleText": "电机检修维护"
 				}
+			}, {
+				"path": "repairList",
+				"style": {
+					"navigationBarTitleText": "电机检修工作"
+				}
+			}, {
+				"path": "reportList",
+				"style": {
+					"navigationBarTitleText": "工厂报告列表"
+				}
 			}]
 		},
 		{
