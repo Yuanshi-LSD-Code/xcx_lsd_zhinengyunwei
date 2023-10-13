@@ -246,7 +246,7 @@
 				this.option.xAxis.data = newVal;
 
 
-				var autoHeight = this.option.xAxis.data.length * 60 + 100;
+				var autoHeight = this.option.xAxis.data.length * 60 + 50;
 				this.minWidth = autoHeight + 'px';
 
 				this.$refs.chart.setOption(this.option)

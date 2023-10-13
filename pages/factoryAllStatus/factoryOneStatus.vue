@@ -23,8 +23,7 @@
 				<view style="font-size: 14px;height: 40px;">全部电机{{barItem.title}}状态统计</view>
 				<u-line></u-line>
 
-				<div class="jdk_line_echarts" style="">
-
+				<div class="jdk_line_echarts w-100" style="">
 					<echarts-basic-line-chart ref="chart" @finished="init" className="main-jdk-all-bar-time"
 						:key="djBarTimeListKey" :__that="this" :yAxisData="djBarTimeList.xAxisData"
 						:series="djBarTimeList.series" :dayMonth="djBarTimeList.dayMonth"
@@ -55,7 +54,7 @@
 					<view class="example-body" style="">
 						<view class="display">
 							<view @click="startClick()">{{start_time}}</view>
-							<view>~</view>
+							<view class="display_j" style="width: 15px;"> ~ </view>
 							<view @click="endClick()">{{end_time}}</view>
 						</view>
 

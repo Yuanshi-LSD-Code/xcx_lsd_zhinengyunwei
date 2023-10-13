@@ -108,15 +108,38 @@
 						]
 
 					},
+					
+					grid: {
+						
+						left: '10px', // 图形距离容器左边界的距离
+						right: '10px' ,// 图形距离容器右边界的距离
+						containLabel: true
+					},
 					xAxis: {
 						type: 'category',
 						data: this.xAxisData,
 						// data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+						
+						axisLabel: {
+							interval: 0, // 设置刻度间隔为 0，表示所有刻度都显示
+							overflow: 'breakAll', // 超出部分截断显示
+							// ellipsis: true // 显示省略号
+							// formatter: function(value) {
+							// 	console.log(8888999)
+							// 	console.log(value)
+							// 	if (value.length > 4) {
+							// 		return value.substring(0, 4) + '<br/>' + value.substring(4);
+							// 	}
+							// 	console.log(value)
+							// 	return value;
+							// }
+						},
 					},
+					
 					yAxis: {
 						type: 'value'
 					},
-					radius: '90%',
+					radius: '100%',
 					series: this.series,
 					// series: [
 

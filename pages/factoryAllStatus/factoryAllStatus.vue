@@ -42,7 +42,7 @@
 					<view class="example-body" style="">
 						<view class="display">
 							<view @click="startClick()">{{start_time}}</view>
-							<view>~</view>
+							<view class="display_j" style="width: 15px;"> ~ </view>
 							<view @click="endClick()">{{end_time}}</view>
 						</view>
 

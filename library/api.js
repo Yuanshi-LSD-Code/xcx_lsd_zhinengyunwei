@@ -50,6 +50,26 @@ class Api {
 
 	}
 
+	//电机状态
+	factoryDjDayJkdList() {
+		return 'Dj/factoryDjDayJkdList';
+	}
+	factoryDjDayBarList() {
+		return 'Dj/factoryDjDayBarList';
+	}
+	factoryDjDayBarDayList() {
+		return 'Dj/factoryDjDayBarDayList';
+	}
+	factoryDjDayBarAesList() {
+		return 'Dj/factoryDjDayBarAesList';
+	}
+	factoryDjDayTsAesList() {
+		return 'Dj/factoryDjDayTsAesList';
+	}
+
+
+
+
 	djFactoryReportList() {
 		return 'Dj/djFactoryReportList';
 	}

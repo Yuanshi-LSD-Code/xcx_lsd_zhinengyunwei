@@ -70,10 +70,8 @@
 			<view class="display" style="flex-direction:column;margin-top: 5px;">
 				<view  v-for="(item, index) in dj_doc" :key="index" @click="docClick(item)">{{item.title}}</view>
 
-
 			</view>
 		</view>
-
 
 
 	</view>
