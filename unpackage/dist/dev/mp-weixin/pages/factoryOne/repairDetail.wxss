@@ -1,0 +1,10 @@
+
+.safe-area-inset-bottom {
+	/* height: 100rpx; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	bottom: 0px;
+}
+

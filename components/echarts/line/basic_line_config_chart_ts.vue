@@ -60,12 +60,12 @@
 			return {
 				myChart: null,
 				option: {
-					tooltip: {
-						trigger: 'axis',
-						axisPointer: {
-							type: 'shadow'
-						}
-					},
+					// tooltip: {
+					// 	trigger: 'axis',
+					// 	axisPointer: {
+					// 		type: 'shadow'
+					// 	}
+					// },
 					legend: {
 						left: '5%',
 						// bottom: '5%',
@@ -79,7 +79,7 @@
 
 					},
 					grid: {
-						top: '20px', // 图形距离容器上边界的距离
+						top: '50px', // 图形距离容器上边界的距离
 						bottom: '20px', // 图形距离容器下边界的距离
 						left: '45px', // 图形距离容器左边界的距离
 						right: '10px' // 图形距离容器右边界的距离

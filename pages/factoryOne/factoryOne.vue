@@ -192,6 +192,11 @@
 
 
 		methods: {
+			refresh(){
+				console.log(8874443534)
+				this.init();
+			},
+			
 			reportListClick(){
 				this.$_navigateTo('/pages/factoryOne/reportList', {
 					'factory_id': this.factory_id,

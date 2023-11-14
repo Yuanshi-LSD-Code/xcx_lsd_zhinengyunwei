@@ -1,5 +1,5 @@
 // 工具类
-// import storage from '../storage.js';
+import api from '../api.js';
 const app = getApp();
 
 class Helper {
@@ -322,7 +322,7 @@ class Helper {
 	//进行上一个页面的刷信息刷新
 	refreshBeforePageInfo() {
 		//需要在对应页面的vue实例中定义一个标准的refresh方法
-		const bpage = utils.getBeforePageVm();
+		const bpage = this.getBeforePageVm();
 		if (!bpage) {
 			return;
 		}
@@ -433,6 +433,32 @@ class Helper {
 		}
 		var data = reg.test(url);
 		return data ? data : false;
+	}
+
+	uploadFile(path) {
+		return new Promise((resolve, reject) => {
+			uni.uploadFile({
+				url: api.url('upload'),
+				filePath: path,
+				name: 'file',
+				fileType: 'image',
+				cloudPath: '',
+				success: res => {
+					console.log('uploadFile res ==> ', res)
+					let data = JSON.parse(res.data);
+
+					if (data.code == 200) {
+						resolve(data.data);
+					} else {
+						reject()
+					}
+				},
+				fail: (err) => {
+					console.log(err)
+					reject()
+				}
+			});
+		});
 	}
 
 }

@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "u-calendar": "/node-modules/uview-ui/components/u-calendar/u-calendar"
+    "u-calendar": "/node-modules/uview-ui/components/u-calendar/u-calendar",
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-picker": "/node-modules/uview-ui/components/u-picker/u-picker"
   },
   "component": true
 }

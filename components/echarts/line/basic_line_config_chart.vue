@@ -202,8 +202,8 @@
 				chart.on('click', params => {
 					console.log('点击事件触发2：', params);
 					let index = params.dataIndex;
-			
-					this.$emit('djBarClick', index);
+			        let time = this.dayMonth[index];
+					this.$emit('djTimeClick', time);
 					// 处理点击回调的业务逻辑
 				});
 			

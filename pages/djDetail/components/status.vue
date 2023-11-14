@@ -3,7 +3,7 @@
 	<view>
 
 		<view>
-			<view class="display">
+			<view class="display" style="margin-top: 10px;">
 				<view>电机健康度趋势</view>
 				<view class="display" style="margin-left: 10px;">
 					<view @click="startClick()">{{start_time}}</view>
@@ -23,17 +23,17 @@
 			</div>
 		</view>
 
-		<view>
+		<view style="margin-top: 10px;">
 			<view>电机组件运行状态</view>
 
-			<div style="width: 100%;overflow: auto;height:250px">
+			<div style="width: 100%;overflow: auto;">
 				<echarts-wold-population-chart :__that="this" :key="djBarDjListKey" className="main-jdk-dj"
 					:yAxisData="djBarDjList.yAxisData" :series="djBarDjList.series" :yAxisLabel="djBarDjList.yAxisLabel"
 					@djClick="factoryDjBarDayDayList" height="100%"></echarts-wold-population-chart>
 			</div>
 		</view>
 
-		<view>
+		<view style="margin-top: 10px;">
 			<view class="display">
 				<view>{{dj_bar_device_title}}状态趋势</view>
 				<view class="display" style="margin-left: 10px;">
@@ -49,29 +49,45 @@
 			</view>
 			<div class="w-100" style="height: 145px;">
 				<echarts-basic-line-config-chart :series="djBarDayList.series" :xAxisData="djBarDayList.xAxisData"
-					:dayMonth="djBarDayList.dayMonth" @djTimeClick="factoryDjTimeDetail2"
-					className="main-jkd-dj-day-bar" height="100%"></echarts-basic-line-config-chart>
+					:dayMonth="djBarDayList.dayMonth" @djTimeClick="factoryDjTime" className="main-jkd-dj-day-bar"
+					height="100%"></echarts-basic-line-config-chart>
 			</div>
 		</view>
 
 
-		<view>
-			<view class="display">
+		<view style="margin-top: 10px;">
+			<view class="display_j" style="width: 100%;">
+				<div style="margin-right: 5px;">
+					<u-icon name="play-left-fill" size="12" @click.stop="handeItemLeft2"></u-icon>
+				</div>
 				<view>实时变化趋势</view>
+				<div style="margin-left: 5px;">
+					<u-icon name="play-right-fill" size="12" :color="right_value2 ? '#333333' : '#cccccc'"
+						@click.stop="headerRight2"></u-icon>
+				</div>
 
 			</view>
 			<div class="w-100" style="height: 145px;">
 				<echarts-basic-line-config-chart :series="djBarDayAesList.series" :xAxisData="djBarDayAesList.xAxisData"
-					:dayMonth="djBarDayAesList.dayMonth" @djTimeClick="factoryDjTimeDetail2"
-					className="main-jkd-dj-day-bar" height="100%"></echarts-basic-line-config-chart>
+					:dayMonth="djBarDayAesList.dayMonth" className="main-jkd-dj-day-bar"
+					height="100%"></echarts-basic-line-config-chart>
 			</div>
 		</view>
 
-		<view>
-			<view class="display">
-				<view>实时变化趋势</view>
+		<view style="margin-top: 10px;">
+
+			<view class="display_j select_bord" style="height: 20px;width: 100%;" @click="changeBar">
+				<view class="display_j">
+					<view class="display_j">
+						{{selectTsTypeTitle}}
+					</view>
+					<u-icon name="arrow-down" size="14"></u-icon>
+				</view>
+
 
 			</view>
+
+
 			<div class="w-100" style="height: 145px;">
 				<echarts-basic-line-config-chart-ts :key="djBarDayAesTsListKey" :marginTop="'0px'"
 					:series="djBarDayAesTsList.series" :xAxisData="djBarDayAesTsList.xAxisData"
@@ -80,7 +96,8 @@
 		</view>
 
 
-
+		<u-picker :show="barShow" closeOnClickOverlay="true" :columns="selectTsType" :defaultIndex="defaultIndexBar"
+			keyName="title" @confirm="barConfirm()" @cancel="barCancel()"></u-picker>
 
 	</view>
 </template>
@@ -122,66 +139,71 @@
 
 
 				djBarDayAesTsList: {},
-				selectTsType: [{
-						title: '三相电流',
-						type: 'irms',
-						id: 1
-					}, {
-						title: '三相电压',
-						type: 'vrms',
-						id: 2
-					}, {
-						title: '有功功率',
-						type: 'ActivePower',
-						id: 3
-					}, {
-						title: '电压平衡度',
-						type: 'Voltagebalance',
-						id: 4
-					},
-					{
-						title: '电流平衡度',
-						type: 'CurrentBalance',
-						id: 5
-					}, {
-						title: '频率',
-						type: 'SignalFrequency',
-						id: 6
-					}, {
-						title: '总谐波',
-						type: 'THD',
-						id: 7
-					},
-					{
-						title: '三次谐波',
-						type: 'ThirdHarmonic',
-						id: 8
-					}, {
-						title: '五次谐波',
-						type: 'FifthHarmonic',
-						id: 9
-					}, {
-						title: '七次谐波',
-						type: 'SeventhHarmonic',
-						id: 10
-					}, {
-						title: '九次谐波',
-						type: 'NinthHarmonic',
-						id: 11
-					}, {
-						title: '十一次谐波',
-						type: 'EleventhHarmonic',
-						id: 12
-					},
-					{
-						title: '十三次谐波',
-						type: 'ThirteenthHarmonic',
-						id: 13
-					}
+				selectTsType: [
+					[{
+							title: '三相电流',
+							type: 'irms',
+							id: 1
+						}, {
+							title: '三相电压',
+							type: 'vrms',
+							id: 2
+						}, {
+							title: '有功功率',
+							type: 'ActivePower',
+							id: 3
+						}, {
+							title: '电压平衡度',
+							type: 'Voltagebalance',
+							id: 4
+						},
+						{
+							title: '电流平衡度',
+							type: 'CurrentBalance',
+							id: 5
+						}, {
+							title: '频率',
+							type: 'SignalFrequency',
+							id: 6
+						}, {
+							title: '总谐波',
+							type: 'THD',
+							id: 7
+						},
+						{
+							title: '三次谐波',
+							type: 'ThirdHarmonic',
+							id: 8
+						}, {
+							title: '五次谐波',
+							type: 'FifthHarmonic',
+							id: 9
+						}, {
+							title: '七次谐波',
+							type: 'SeventhHarmonic',
+							id: 10
+						}, {
+							title: '九次谐波',
+							type: 'NinthHarmonic',
+							id: 11
+						}, {
+							title: '十一次谐波',
+							type: 'EleventhHarmonic',
+							id: 12
+						},
+						{
+							title: '十三次谐波',
+							type: 'ThirteenthHarmonic',
+							id: 13
+						}
+					]
 				],
 				selectTsTypeTitle: '三相电流',
 				selectTsTypeValue: 'irms',
+				defaultIndexBar: '',
+				barShow: false,
 
+				right_value2: false,
 
 			}
 		},
@@ -210,6 +232,7 @@
 
 				this.aes_time = this.$_formatDate(currentDate, 'yyyy-mm-dd');
 
+
 				this.init();
 			})
 		},
@@ -219,6 +242,66 @@
 				this.djBarDayDayList();
 				this.djBarDayDjList();
 
+			},
+			
+			factoryDjTimeDetail2(e){
+				this.curr_time_click = e;
+				this.djBarDayDjList();
+			},
+
+			factoryDjTime(e) {
+				this.aes_time = e;
+				this.factoryDjDayBarAesList();
+			},
+
+			factoryDjBarDayDayList(label, title) {
+				// console.log(e);
+				this.dj_bar_device_id = label,
+					this.dj_bar_device_title = title,
+					this.factoryDjDayBarDayList();
+			},
+
+			handeItemLeft2() {
+				// 自定义时间
+				var diyDate = new Date(this.aes_time)
+				//减1天
+				this.aes_time = this.$_formatDate(new Date(diyDate.setDate(diyDate.getDate() - 1)), 'yyyy-mm-dd');
+				this.factoryDjDayBarAesList();
+				this.right_value2 = true;
+			},
+
+			headerRight2() {
+				// 自定义时间
+				var diyDate = new Date(this.aes_time)
+				//加1天
+				this.aes_time = this.$_formatDate(new Date(diyDate.setDate(diyDate.getDate() + 1)), 'yyyy-mm-dd');
+
+
+				if (this.aes_time >= this.$_formatDate(new Date(), 'yyyy-mm-dd')) {
+					this.right_value2 = false;
+				}
+				this.factoryDjDayBarAesList();
+
+
+			},
+
+
+			changeBar() {
+				this.barShow = true;
+			},
+
+			barConfirm(e) {
+				console.log(8788)
+				console.log(e)
+				this.selectTsTypeValue = e.value[0].type;
+				this.selectTsTypeTitle = e.value[0].title;
+
+				this.factoryDjDayTsAesList();
+				this.barShow = false;
+
+			},
+			barCancel() {
+				this.barShow = false;
 			},
 
 
@@ -255,7 +338,7 @@
 						this.dj_bar_device_title = '';
 					}
 					this.factoryDjDayBarDayList();
-					this.factoryDjDayBarAesList();
+
 				});
 			},
 
@@ -271,7 +354,7 @@
 
 				}).then((res) => {
 					this.djBarDayList = res.data;
-
+					this.factoryDjDayBarAesList();
 
 				});
 			},

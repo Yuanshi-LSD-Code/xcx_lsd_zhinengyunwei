@@ -6,6 +6,9 @@ const obj = {
 		console.log(this);
 	},
 	
+	uploadFile(path){
+		return utils.uploadFile(path)
+	},
 	navigateTo(name,params){
 		utils.navigateTo(name,params)
 	},
@@ -73,6 +76,9 @@ const obj = {
 	},
 	success(title){
 		utils.toast(title,'success');
+	},
+	error(title){
+		utils.toast(title,'error');
 	},
 	//alert
 	alert(title="",content=""){

@@ -50,6 +50,13 @@ class Api {
 
 	}
 
+	factoryAdminRepairEdit() {
+		return 'Dj/factoryAdminRepairEdit';
+	}
+	factoryAdminRepairCate() {
+		return 'Dj/factoryAdminRepairCate';
+	}
+
 	//电机状态
 	factoryDjDayJkdList() {
 		return 'Dj/factoryDjDayJkdList';
@@ -208,6 +215,9 @@ class Api {
 	}
 	updateMember() {
 		return 'Wxapp/updateMember';
+	}
+	upload() {
+		return 'Inter/upload';
 	}
 
 
