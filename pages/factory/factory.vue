@@ -5,7 +5,8 @@
 
 			<view v-for="(item,index) in factory_dj_list " :key=" index">
 				<view class="factory_title display_a" style="margin-top: 10rpx;">
-					{{item.title}}
+					<view style="margin-left: 20rpx;margin-right: 20rpx">{{item.title}}</view>
+					
 				</view>
 
 				<view style="display: flex;flex-wrap: wrap;">
@@ -13,7 +14,10 @@
 						<echarts-stage-speed-gauge className="main-dj-detail-jkd" ref="chart" @finished="init"
 							:gauge_org="item2.avgbg ? item2.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
 						<div class="display_j" style="">
-							{{ item2.title }}
+							<img style="height: 10px;width: 10px;"
+								:src="item2.status == 1? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
+								<view style="margin-left: 20rpx;">{{ item2.title }}</view>
+							
 						</div>
 					</view>
 				</view>
@@ -23,7 +27,7 @@
 			<view class="bg-gray" style="height: 15px;"></view>
 
 			<div class="card_status_list card_list" style="">
-				<div class="row-space font-bold" style="height:40px;">
+				<div class="row-space font-bold" style="height:40px;margin-left: 20rpx;">
 					运行状态统计</div>
 				<u-line></u-line>
 				<div class="echart_factory" style="display: flex;flex-wrap:wrap;">
@@ -36,7 +40,7 @@
 			<view class="bg-gray" style="height: 15px;"></view>
 
 			<div class="card_work_list card_list" style="margin-top: 20px;">
-				<div class="row-space" style="height:40px;">
+				<div class="row-space font-bold" style="height:40px;margin-left: 20rpx;">
 
 					检修工作统计
 				</div>
@@ -213,7 +217,7 @@
 
 <style scoped lang="scss">
 	.factory_title {
-		height: 100rpx;
+		// height: 80rpx;
 		background-color: rgba(68, 114, 196, 1);
 		color: white;
 	}

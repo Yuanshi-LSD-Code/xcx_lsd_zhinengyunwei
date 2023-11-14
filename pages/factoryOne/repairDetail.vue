@@ -58,7 +58,7 @@
 		<view class="display_sb" style="height: 40px;">
 			<view>实际检修时间</view>
 			<view class="display" @click="endClick">
-				<view>{{item.repair_true_date}}</view>
+				<view>{{item.repair_true_date && item.repair_true_date != 'null'?item.repair_true_date:''}}</view>
 				<u-icon name="arrow-right" size="16"></u-icon>
 			</view>
 		</view>
@@ -136,11 +136,12 @@
 		async onLoad(option) {
 			this.item = JSON.parse(option.item);
 
-			let res = await this.$http('factoryAdminRepairCate');
+			let res = await this.$http('factoryAdminRepairCate',{id:this.item.id});
 
 			this.repairCateModule.push(res.data.module_cate);
 			this.repairCateRepair.push(res.data.repair_cate);
 			this.repairCateStatus.push(res.data.repair_status);
+			this.item = res.data.info;
 
 			var currentDate = new Date();
 

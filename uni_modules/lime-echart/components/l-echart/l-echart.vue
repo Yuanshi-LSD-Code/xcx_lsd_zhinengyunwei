@@ -256,7 +256,7 @@ export default {
 						.exec(res => {
 							if (res) {
 								let { width, height } = res[0];
-								this.width = width = width || 300;
+								this.width = width = width || 375;
 								this.height = height = height || 300;
 								this.chart.resize({width, height})
 							}

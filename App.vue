@@ -135,7 +135,10 @@
 					const model = e.model;
 					const modelInclude = ["iPhone X", 'iPhone XR', "iPhone XS", "iPhone XS MAX",
 						"iPhone 11", "iPhone 11 Pro",
-						"iPhone 11 Pro MAX"
+						"iPhone 11 Pro MAX",
+						"iPhone 12",'iPhone 12 Pro','iPhone 12 Pro Max',
+						"iPhone 13 Pro",'iPhone 13 Pro Max','iPhone 13 mini',
+						"iPhone 14",'iPhone 14 Plus','iPhone 14 Pro',
 					];
 					console.log(444)
 					console.log(Vue.prototype)
@@ -149,6 +152,8 @@
 					if (flag) {
 						Vue.prototype.isIphoneX = flag
 					}
+					console.log(77777788)
+					console.log(Vue.prototype.isIphoneX)
 				}
 			})
             let res =  this.login()

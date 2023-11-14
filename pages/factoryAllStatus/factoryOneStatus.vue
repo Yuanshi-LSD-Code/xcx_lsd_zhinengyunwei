@@ -14,13 +14,13 @@
 
 			<view class="bg-gray" style="height: 10px;"></view>
 			<view>
-				<u-tabs :list="barList" :current="tabCurrent" @click="tabClick" keyName="title"></u-tabs>
+				<u-tabs :list="barList" :current="tabCurrent" @click="tabClick" activeStyle="color: #3c9cff" keyName="title"></u-tabs>
 				<!-- 				 <u-tabs :list="barList" @click="click" keyName="title" itemStyle="height: 54px;width:52px;font-size:12px"></u-tabs> -->
 			</view>
 
 			<view class="bg-gray" style="height: 10px;"></view>
 			<view>
-				<view style="font-size: 14px;height: 40px;">全部电机{{barItem.title}}状态统计</view>
+				<view class="font-bold" style="font-size: 14px;height: 40px;margin-left: 20rpx;">全部电机{{barItem.title}}状态统计</view>
 				<u-line></u-line>
 
 				<div class="jdk_line_echarts w-100" style="">
@@ -33,7 +33,7 @@
 			</view>
 			<view class="bg-gray" style="height: 15px;"></view>
 			<view>
-				<view style="font-size: 14px;height: 40px;">各电机{{barItem.title}}状态</view>
+				<view class="font-bold" style="font-size: 14px;height: 40px;margin-left: 20rpx;">各电机{{barItem.title}}状态</view>
 
 
 				<div style="width: 100%;overflow: auto;">
@@ -46,7 +46,7 @@
 
 			<view class="bg-gray" style="height: 15px;"></view>
 			<view>
-				<view style="font-size: 14px;height: 40px;">{{dj_bar_bar_device_title}}{{barItem.title}}状态</view>
+				<view class="font-bold" style="font-size: 14px;height: 40px;margin-left: 20rpx;">{{dj_bar_bar_device_title}}{{barItem.title}}状态</view>
 
 				<div style="width:100%;height: 50px;">
 

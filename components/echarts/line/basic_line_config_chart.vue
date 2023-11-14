@@ -60,12 +60,12 @@
 			return {
 				myChart: null,
 				option: {
-					tooltip: {
-						trigger: 'axis',
-						axisPointer: {
-							type: 'shadow'
-						}
-					},
+					// tooltip: {
+					// 	trigger: 'axis',
+					// 	axisPointer: {
+					// 		type: 'shadow'
+					// 	}
+					// },
 					legend: {
 						bottom: '5%',
 						right: 5,

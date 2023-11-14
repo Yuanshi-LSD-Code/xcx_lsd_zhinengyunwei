@@ -4,7 +4,7 @@
 
 		<view>
 			<view class="display" style="margin-top: 10px;">
-				<view>电机健康度趋势</view>
+				<view style="margin-left: 20rpx;">电机健康度趋势</view>
 				<view class="display" style="margin-left: 10px;">
 					<view @click="startClick()">{{start_time}}</view>
 					<view class="display_j" style="width: 15px;"> ~ </view>
@@ -24,7 +24,7 @@
 		</view>
 
 		<view style="margin-top: 10px;">
-			<view>电机组件运行状态</view>
+			<view style="margin-left: 20rpx;">电机组件运行状态</view>
 
 			<div style="width: 100%;overflow: auto;">
 				<echarts-wold-population-chart :__that="this" :key="djBarDjListKey" className="main-jdk-dj"
@@ -35,7 +35,7 @@
 
 		<view style="margin-top: 10px;">
 			<view class="display">
-				<view>{{dj_bar_device_title}}状态趋势</view>
+				<view style="margin-left: 20rpx;">{{dj_bar_device_title}}状态趋势</view>
 				<view class="display" style="margin-left: 10px;">
 					<view @click="barStartClick()">{{bar_start_time}}</view>
 					<view class="display_j" style="width: 15px;"> ~ </view>
@@ -60,7 +60,7 @@
 				<div style="margin-right: 5px;">
 					<u-icon name="play-left-fill" size="12" @click.stop="handeItemLeft2"></u-icon>
 				</div>
-				<view>实时变化趋势</view>
+				<view style="margin-left: 20rpx;">实时变化趋势</view>
 				<div style="margin-left: 5px;">
 					<u-icon name="play-right-fill" size="12" :color="right_value2 ? '#333333' : '#cccccc'"
 						@click.stop="headerRight2"></u-icon>

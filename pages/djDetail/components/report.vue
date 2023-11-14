@@ -3,9 +3,9 @@
 
 
 		<view v-for="(item,index) in list " :key="index">
-			<view class="display" style="height: 100rpx;flex-direction: column;padding-top: 15rpx;" @click="reportTo(item,index)">
+			<view class="display" style="flex-direction: column;padding-top: 20rpx;" @click="reportTo(item,index)">
 				<view style="margin-left: 20rpx;">{{item.label_title}}</view>
-				<view style="margin-left: 20rpx;">{{item.add_time}}</view>
+				<view style="margin-left: 20rpx;margin-top: 10rpx;">{{item.add_time}}</view>
 
 			</view>
 			<u-line></u-line>

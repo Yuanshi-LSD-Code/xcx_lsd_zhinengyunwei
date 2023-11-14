@@ -84,12 +84,12 @@
 					// 	text: 'World Population'
 					// },
 					// radius: '90%',
-					tooltip: {
-						trigger: 'axis',
-						axisPointer: {
-							type: 'shadow',
-						}
-					},
+					// tooltip: {
+					// 	trigger: 'axis',
+					// 	axisPointer: {
+					// 		type: 'shadow',
+					// 	}
+					// },
 
 					legend: {
 						// bottom: '5%',

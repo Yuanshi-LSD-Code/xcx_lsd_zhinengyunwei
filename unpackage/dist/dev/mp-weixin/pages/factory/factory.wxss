@@ -82,7 +82,6 @@
 /* 透明度 */
 /* 文章场景相关 */
 .factory_title.data-v-49e2131c {
-  height: 100rpx;
   background-color: #4472c4;
   color: white;
 }

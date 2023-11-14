@@ -4,18 +4,19 @@
 
 			<view class="display" style="width: 100%;height: 30px;">
 				<view class="display_sa select_bord" style="" @click="changeFactory">
-					<view class="display_j" style="">
+					<view class="display_j" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
 						{{factory_title}}
 					</view>
 					<u-icon name="arrow-down" size="14"></u-icon>
 
 				</view>
-				
+
 				<view class="display_sa select_bord" style="border-radius: 3px;">
-					<u--input placeholder="请输入姓名" border="none" fontSize="12px" v-model="uname" @change="change" style="width: 100px;height: 30px;"></u--input>
-				
+					<u--input placeholder="请输入姓名" border="none" fontSize="12px" v-model="uname" @change="change"
+						style="width: 100px;height: 30px;"></u--input>
+
 				</view>
-				
+
 				<!-- <view class="display_sa select_bord" style="" @click="changeBar">
 					<view class="display_j">
 						{{bar_title}}
@@ -34,28 +35,36 @@
 
 			</view>
 
-			<view v-for="(item,index) in list " :key="index">
-				<view class="display" style="height: 100rpx;padding-top: 15rpx;" @click="reportTo(item,index)">
+			<view v-if="list.length >0">
+				<view v-for="(item,index) in list " :key="index">
+					<view class="display" style="padding-top: 15rpx;" @click="reportTo(item,index)">
 
 
-					<view class="display" style="flex-direction: column;margin-left: 10px;">
-						<view style="" class="display">
-							<view style="">{{item.label_title}}</view>
+						<view class="display" style="flex-direction: column;margin-left: 10px;">
+							<view style="" class="display">
+								<view style="">{{item.label_title}}</view>
+							</view>
+							<view class="display_sb">
+								<view>{{item.admin_account}}</view>
+								<view style="">{{item.add_time}}</view>
+							</view>
+
 						</view>
-						<view class=".display_sb">
-							<view>{{item.admin_account}}</view>
-							<view style="">{{item.add_time}}</view>
+						<view style="display: flex;justify-content:flex-end;width: 30%;">
+							<u-icon name="arrow-right" size="16"></u-icon>
 						</view>
-						
+
+
+
 					</view>
-					<view style="display: flex;justify-content:flex-end;width: 30%;">
-						<u-icon name="arrow-right" size="16"></u-icon>
-					</view>
-
-
-
+					<u-line></u-line>
 				</view>
-				<u-line></u-line>
+			</view>
+			<view v-if="list.length <=0">
+				<view class="display" style="height: 100rpx;padding-top: 15rpx;justify-content : center">
+				           暂无数据
+				
+				</view>
 			</view>
 
 			<u-picker :show="factoryShow" closeOnClickOverlay="true" :columns="factory_list"
@@ -104,20 +113,20 @@
 		},
 
 		onLoad(option) {
-			// this.factory_title = option.factory_title;
-			// this.factory_id = option.factory_id;
+			this.factory_title = option.factory_title;
+			this.factory_id = option.factory_id;
 			// this.factory_list.push(['id'=>'','title'=>'全部工厂']);
 			this.$http('djRepairCate').then((res) => {
 				this.factory_list.push(res.data.factory_list);
 				// this.bar_list.push(res.data.bar_list);
 				// this.status_list.push(res.data.status_list);
 
-				// res.data.factory_list.forEach((item, index) => {
-				// 	if (item.id == this.factory_id) {
-				// 		this.defaultIndex[0] = index;
+				res.data.factory_list.forEach((item, index) => {
+					if (item.id == this.factory_id) {
+						this.defaultIndex[0] = index;
 
-				// 	}
-				// })
+					}
+				})
 
 			})
 
@@ -135,9 +144,9 @@
 
 
 		methods: {
-			
-			change(e){
-				
+
+			change(e) {
+
 				this.uname = e;
 				this.init();
 			},

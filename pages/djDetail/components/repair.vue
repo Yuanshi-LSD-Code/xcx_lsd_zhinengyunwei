@@ -29,25 +29,37 @@
 			</view>
 			<u-line></u-line>
 
-			<view v-for="(item,index) in list " :key="index">
-				<view class="display" style="height: 100rpx;padding-top: 15rpx;" @click="repairDetail(item,index)">
+			<view v-if="list.length>0">
+				<view v-for="(item,index) in list " :key="index">
+					<view class="display" style="height: 100rpx;padding-top: 15rpx;" @click="repairDetail(item,index)">
 
 
-					<view class="display" style="flex-direction: column;margin-left: 10px;">
-						<view style="" class="display">
-							<view style="width: 100px;">{{item.label_title}}</view>
-							<view class="status_bord display_j" style="">{{item.status_title}}</view>
+						<view class="display" style="flex-direction: column;margin-left: 10px;">
+							<view style="" class="display">
+								<view style="width: 100px;">{{item.label_title}}</view>
+								<view v-if="item.status == 1" class="status_bord display_j" style="border: 1px solid rgba(150, 150, 150, 1);color:gray">{{item.status_title}}</view>
+								<view v-if="item.status == 2" class="status_bord display_j" style="border: 1px solid green;color:green">{{item.status_title}}</view>
+								<view v-if="item.status == 3" class="status_bord display_j" style="border: 1px solid yellow;color:yellow">{{item.status_title}}</view>
+								<!-- <view class="status_bord display_j" style="">{{item.status_title}}</view> -->
+							</view>
+							<view style="">{{item.add_time}}</view>
 						</view>
-						<view style="">{{item.add_time}}</view>
+						<view style="display: flex;justify-content:flex-end;width: 100%;margin-right: 20px;">
+							<u-icon name="arrow-right" size="16"></u-icon>
+						</view>
+
+
+
 					</view>
-					<view style="display: flex;justify-content:flex-end;width: 100%;margin-right: 20px;">
-						<u-icon name="arrow-right" size="16"></u-icon>
-					</view>
-
-
-
+					<u-line></u-line>
 				</view>
-				<u-line></u-line>
+			</view>
+			
+			<view v-if="list.length <=0">
+				<view class="display" style="height: 100rpx;padding-top: 15rpx;justify-content : center">
+				           暂无数据
+				
+				</view>
 			</view>
 
 			<u-picker :show="factoryShow" closeOnClickOverlay="true" :columns="factory_list"
@@ -98,14 +110,14 @@
 
 			}
 		},
-		
+
 		mounted() {
 			this.$nextTick(() => {
 				this.$http('djRepairCate').then((res) => {
 					this.factory_list.push(res.data.factory_list);
 					this.bar_list.push(res.data.bar_list);
 					this.status_list.push(res.data.status_list);
-				
+
 				})
 				this.getPager();
 				this.init();
@@ -113,7 +125,7 @@
 		},
 
 		onLoad(option) {
-			
+
 		},
 		onShow() {},
 

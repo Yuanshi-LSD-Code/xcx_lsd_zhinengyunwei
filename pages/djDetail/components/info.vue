@@ -1,7 +1,7 @@
 <template>
 	<view style="margin-left: 10px;margin-right: 10px;">
 		<view>
-			<view style="height: 20px;padding-top: 5px;">电机参数</view>
+			<view class="font-bold" style="height: 30px;padding-top: 5px;">电机参数</view>
 			<u-line></u-line>
 			<view class="display" style="flex-wrap: wrap;">
 				<view style="width: 50%;">电机型号：{{info.model || ''}}</view>
@@ -33,7 +33,7 @@
 		</view>
 
 		<view style="margin-top: 10px;">
-			<view style="height: 20px;padding-top: 5px;">运行参数</view>
+			<view  class="font-bold" style="height: 30px;padding-top: 5px;">运行参数</view>
 			<u-line></u-line>
 			<view class="display" style="flex-wrap: wrap;margin-top: 5px;">
 				<view style="width: 50%;">本月运行(分钟):{{aes_param.run_time ||''}}</view>
@@ -65,10 +65,10 @@
 		</view>
 
 		<view style="margin-top: 10px;">
-			<view style="height: 20px;padding-top: 5px;">文件资料</view>
+			<view  class="font-bold" style="height: 30px;padding-top: 5px;">文件资料</view>
 			<u-line></u-line>
 			<view class="display" style="flex-direction:column;margin-top: 5px;">
-				<view  v-for="(item, index) in dj_doc" :key="index" @click="docClick(item)">{{item.title}}</view>
+				<view  v-for="(item, index) in dj_doc" :key="index" @click="docClick(item)" style="color: blue;">{{item.title}}</view>
 
 			</view>
 		</view>

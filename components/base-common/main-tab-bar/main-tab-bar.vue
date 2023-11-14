@@ -2,6 +2,7 @@
 
 	<view class="main-tab-bar">
 
+		<!-- <view class="botton_nav" style=""> -->
 		<view class="botton_nav" :style="{bottom:(isIphoneX?'25rpx':'')}">
 
 			<view class="botton_nav_con" v-if="shwoType" :style="{marginLeft:('')}" @click="navClick(item,index)"

@@ -123,21 +123,12 @@
 						axisLabel: {
 							interval: 0, // 设置刻度间隔为 0，表示所有刻度都显示
 							overflow: 'breakAll', // 超出部分截断显示
-							// ellipsis: true // 显示省略号
-							// formatter: function(value) {
-							// 	console.log(8888999)
-							// 	console.log(value)
-							// 	if (value.length > 4) {
-							// 		return value.substring(0, 4) + '<br/>' + value.substring(4);
-							// 	}
-							// 	console.log(value)
-							// 	return value;
-							// }
 						},
 					},
 					
 					yAxis: {
-						type: 'value'
+						type: 'value',
+						interval: 1, // 设置刻度间距为整数
 					},
 					radius: '100%',
 					series: this.series,

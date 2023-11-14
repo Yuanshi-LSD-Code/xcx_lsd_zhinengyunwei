@@ -3,10 +3,11 @@
 	<main-layout>
 		<view>
 			<view style="height: 30px;background-color: rgba(68, 114, 196, 1);">
-				<div class="display_a" style="padding-top: 5px;">
+				<div class="display_a" style="padding-top: 5px;margin-left: 20rpx;">
 					<img style="height: 10px;width: 10px;"
 						:src="item.status == 1? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
-					{{ item.title }}
+						<view style="margin-left: 20rpx;color: white;">{{ item.title }}</view>
+					  
 				</div>
 			</view>
 			<view class="display_j">
@@ -18,29 +19,29 @@
 			<view class="display" style="height: 30px;">
 				<view class="display_j" style="flex:1">
 					<view class="display_j" @click="infoShowChage(1)">
-						<view>电机参数</view>
-						<u-icon :name="showType == 1?'arrow-down':'arrow-up'"  size="16"></u-icon>
+						<view :style="{color:showType==1 ?'blue':''}">电机参数</view>
+						<u-icon :name="showType == 1?'arrow-down':'arrow-up'"  size="16" :color="showType==1 ?'blue':''"></u-icon>
 					</view>
 				</view>
 				<u-line direction="col" style="height: 30px;"></u-line>
 				<view class="display_j" style="flex:1">
 					<view class="display_j" @click="infoShowChage(2)">
-						<view>运行状态</view>
-						<u-icon :name="showType == 2?'arrow-down':'arrow-up'"  size="16"></u-icon>
+						<view :style="{color:showType==2 ?'blue':''}">运行状态</view>
+						<u-icon :name="showType == 2?'arrow-down':'arrow-up'"  size="16" :color="showType==2 ?'blue':''"></u-icon>
 					</view>
 				</view>
 				<u-line direction="col" style="height: 30px;"></u-line>
 				<view class="display_j" style="flex:1">
 					<view class="display_j" @click="infoShowChage(3)">
-						<view>检修维护</view>
-						<u-icon :name="showType == 3?'arrow-down':'arrow-up'"  size="16"></u-icon>
+						<view :style="{color:showType==3 ?'blue':''}">检修维护</view>
+						<u-icon :name="showType == 3?'arrow-down':'arrow-up'"  size="16" :color="showType==3 ?'blue':''"></u-icon>
 					</view>
 				</view>
 				<u-line direction="col" style="height: 30px;"></u-line>
 				<view class="display_j" style="flex:1">
 					<view class="display_j" @click="infoShowChage(4)">
-						<view>电机报告</view>
-						<u-icon :name="showType ==4?'arrow-down':'arrow-up'"  size="16"></u-icon>
+						<view :style="{color:showType==4 ?'blue':''}">电机报告</view>
+						<u-icon :name="showType ==4?'arrow-down':'arrow-up'"  size="16" :color="showType==4 ?'blue':''"></u-icon>
 					</view>
 				</view>
 				

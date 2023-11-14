@@ -4,7 +4,7 @@
 			<u-line></u-line>
 
 			<view class="display_j" style="height: 40px;">
-				<view> {{factory_title}}</view>
+				<view style="margin-left: 20rpx;margin-right: 20rpx"> {{factory_title}}</view>
 			</view>
 			<view style="position:absolute;top:11px;right:10px"><img @click="changeFactory()"
 					src="../../static/image/u88.svg" style="width: 24px;height: 18px;" /></view>
@@ -14,8 +14,8 @@
 			<view>
 
 				<view class="display_sb" style="height:40px;">
-					<view>电机健康度</view>
-					<div @click="jdkCount" style="display: flex;margin-right: 10px;cursor: pointer;">
+					<view class="font-bold" style="margin-left: 20rpx;">电机健康度</view>
+					<div @click="jdkCount" style="display: flex;margin-right: 20rpx;cursor: pointer;">
 						<view>查看统计信息</view><u-icon name="arrow-right" size="20"></u-icon>
 					</div>
 				</view>
@@ -26,7 +26,7 @@
 						<div class="display_j" style="">
 							<img style="height: 10px;width: 10px;"
 								:src="item2.status == 1? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
-							{{ item2.title }}
+							<view style="margin-left: 20rpx;">{{ item2.title }}</view>
 						</div>
 					</view>
 				</view>
@@ -36,8 +36,11 @@
 			<view class="bg-gray" style="height: 15px;"></view>
 
 			<view class="display_sb" style="height:40px;">
-				<view>电机运行状态</view>
-				<u-icon :name="djStatusShow?'arrow-down':'arrow-right'" @click="djStatusClose" size="20"></u-icon>
+				<view class="font-bold" style="margin-left: 20rpx;">电机运行状态</view>
+				<view style="margin-right: 20rpx;">
+					<u-icon :name="djStatusShow?'arrow-down':'arrow-right'" @click="djStatusClose" size="20"></u-icon>
+				</view>
+				
 			</view>
 			<u-line></u-line>
 			<div class="echart_factory" style="display: flex;flex-wrap:wrap;" v-if="djStatusShow">
@@ -50,15 +53,15 @@
 
 			<u-line></u-line>
 			<view class="display_sb" style="height:40px;">
-				<view>检修工作统计</view>
-				<div @click="repairClose" style="display: flex;margin-right: 10px;cursor: pointer;">
+				<view class="font-bold" style="margin-left: 20rpx;">检修工作统计</view>
+				<div @click="repairClose" style="display: flex;margin-right: 20rpx;cursor: pointer;">
 					<view>查看统计信息</view><u-icon :name="repairStatusShow?'arrow-down':'arrow-right'" size="20"></u-icon>
 				</div>
 			</view>
 			<u-line></u-line>
 			<div style="width:100%;" v-if="repairStatusShow">
 
-				<view class="example-body" style="height: 30px;">
+				<view class="example-body" style="height: 30px;margin-left: 20rpx;">
 					<view class="display">
 						<view @click="startClick()">{{start_time}}</view>
 						<view class="display_j" style="width: 15px;"> ~ </view>
@@ -84,8 +87,8 @@
 			<view class="bg-gray" style="height: 15px;"></view>
 
 			<view class="display_sb" style="height:40px;">
-				<view>检修计划</view>
-				<view class="display" @click="repairListClick">
+				<view class="font-bold" style="margin-left: 20rpx;">检修计划</view>
+				<view class="display" @click="repairListClick" style="margin-right: 20rpx;">
 					<view>查看更多</view><u-icon name="arrow-right" size="20"></u-icon>
 				</view>
 
@@ -102,19 +105,29 @@
 			<view class="bg-gray" style="height: 15px;"></view>
 
 			<view class="display_sb" style="height:40px;">
-				<view>工厂报告</view>
-				<view class="display" @click="reportListClick">
+				<view class="font-bold" style="margin-left: 20rpx;">工厂报告</view>
+				<view class="display" @click="reportListClick" style="margin-right: 20rpx;">
 					<view>查看更多</view><u-icon name="arrow-right" size="20"></u-icon>
 				</view>
 
 			</view>
-			<view>
+			<view style="bottom: 25rpx;">
+				<view v-if="report_list.length >0">
 				<view v-for="(item,index) in report_list " :key="index">
 					<view class="display_sb" style="height: 80rpx;" @click="reportTo(item,index)">
-						<view style="margin-left: 20rpx;">{{item.label_title}}</view>
-
+						<view style="margin-left: 20rpx;">{{index+1}} 、{{item.label_title}}</view>
 					</view>
 
+				</view>
+				</view>
+				<view v-if="report_list.length <=0">
+					<view style="height: 80rpx;">
+						<view style="margin-left: 20rpx;">
+							暂无数据
+						</view>
+						
+					</view>
+				  
 				</view>
 			</view>
 
@@ -200,6 +213,7 @@
 			reportListClick(){
 				this.$_navigateTo('/pages/factoryOne/reportList', {
 					'factory_id': this.factory_id,
+					'factory_title': this.factory_title,
 				})
 			},
 			
