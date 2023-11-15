@@ -68,7 +68,7 @@
 				<div class="echart_factory" style="display: flex;flex-wrap:wrap;">
 					<echarts-stacked-column-chart ref="chart" @finished="init" className="main-echart-chart"
 						:legendData="factory_repair.legendData" :series="factory_repair.series" width="100%"
-						height="290px"></echarts-stacked-column-chart>
+						height="290px" echartHeight="290px"></echarts-stacked-column-chart>
 				</div>
 			</div>
 

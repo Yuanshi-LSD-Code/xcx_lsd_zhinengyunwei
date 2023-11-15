@@ -1,6 +1,7 @@
 <template>
 	<!-- <div :class="className" :key="refresh" :style="{ height: height, width: width, marginTop: marginTop, }" /> -->
-	<view :class="className" :style="{ height: height, width: width, marginTop: marginTop,marginBottom:marginTop }">
+	<view :class="className"
+		:style="{ height: echart_height, width: width, marginTop: marginTop,marginBottom:marginTop }">
 		<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
 	</view>
 </template>
@@ -26,6 +27,10 @@
 			height: {
 				type: String,
 				default: '100px'
+			},
+			echartHeight: {
+				type: String,
+				default: '',
 			},
 			autoResize: {
 				type: Boolean,
@@ -64,6 +69,7 @@
 		data() {
 			return {
 				myChart: null,
+				echart_height: this.height,
 				option: {
 					color: this.color,
 					fontStyle: "italic", //italic斜体  oblique倾斜
@@ -115,15 +121,17 @@
 					radius: '90%',
 					grid: {
 						top: '15px', // 图形距离容器上边界的距离
-                        // left:'10%',
+						// left:'10%',
 						// right: '0%',
 						bottom: '30%',
+						height: '210px', // 设置图形高度
 						containLabel: true
 					},
 
 					yAxis: [{
 						type: 'value',
-						interval: 1, // 设置刻度间距为整数
+						// interval: 1, // 设置刻度间距为整数
+						mix:1,
 						axisLabel: {
 							padding: [20, 20, 5, 5],
 						},
@@ -206,7 +214,11 @@
 			}
 		},
 		mounted() {
-
+         console.log(33344);
+		if(this.echartHeight){
+			var autoHeight = this.option.legend.data.length * 13 + 140;
+		    this.echart_height = autoHeight + 'px';
+		}
 			this.$nextTick(() => {
 				this.$refs.chart.init(echarts, chart => {
 					chart.setOption(this.option);
@@ -257,10 +269,10 @@
 				chart.setOption(this.option)
 				chart.on('click', params => {
 					console.log('点击事件触发2：', params);
-						let index = params.dataIndex;
-						
-					
-						this.$emit('djBarClick', index);
+					let index = params.dataIndex;
+
+
+					this.$emit('djBarClick', index);
 					// 处理点击回调的业务逻辑
 				});
 			},
