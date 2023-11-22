@@ -81,7 +81,15 @@
 					},
 					radius: '90%',
 					yAxis: {
-						type: 'value'
+						type: 'value',
+						axisLabel: {
+							// padding: [20, 20, 5, 5],
+							formatter: function (value) {
+							                if (value === parseInt(value)) {
+							                    return value;  // 只显示整数
+							                }
+							            }
+						},
 					},
 					series: [{
 						data: this.series,

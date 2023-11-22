@@ -2,7 +2,10 @@
 	<!-- <div :class="className" :key="refresh" :style="{ height: height, width: width, marginTop: marginTop, }" /> -->
 	<view :class="className"
 		:style="{ height: echart_height, width: width, marginTop: marginTop,marginBottom:marginTop }">
-		<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
+		<view style="width: 375px;">
+			<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
+		</view>
+		
 	</view>
 </template>
 
@@ -131,10 +134,16 @@
 					yAxis: [{
 						type: 'value',
 						// interval: 1, // 设置刻度间距为整数
-						mix:1,
+						// mix:1,
 						axisLabel: {
 							padding: [20, 20, 5, 5],
+							formatter: function (value) {
+							                if (value === parseInt(value)) {
+							                    return value;  // 只显示整数
+							                }
+							            }
 						},
+						
 					}],
 					xAxis: [{
 
@@ -216,7 +225,7 @@
 		mounted() {
          console.log(33344);
 		if(this.echartHeight){
-			var autoHeight = this.option.legend.data.length * 13 + 140;
+			var autoHeight = this.option.legend.data.length * 13 + 290;
 		    this.echart_height = autoHeight + 'px';
 		}
 			this.$nextTick(() => {
@@ -224,6 +233,7 @@
 					chart.setOption(this.option);
 				});
 			})
+			// this.$refs.chart.resize()
 
 		},
 		beforeDestroy() {
@@ -242,6 +252,7 @@
 
 				}
 				this.$refs.chart.setOption(this.option)
+				// this.$refs.chart.resize()
 			},
 			series(newVal) {
 
@@ -251,12 +262,14 @@
 
 				}
 				this.$refs.chart.setOption(this.option)
+				// this.$refs.chart.resize()
 			},
 			color(newVal) {
 
 				this.option.color = newVal;
 
 				this.$refs.chart.setOption(this.option)
+				// this.$refs.chart.resize()
 			},
 		},
 		methods: {

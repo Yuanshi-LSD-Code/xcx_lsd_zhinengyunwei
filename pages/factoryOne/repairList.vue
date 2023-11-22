@@ -147,6 +147,9 @@
 					'item': item
 				})
 			},
+			refresh(){
+				this.init();
+			},
 
 			init() {
 				this.pager.reset();

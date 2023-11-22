@@ -15,7 +15,7 @@
 							:gauge_org="item2.avgbg ? item2.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
 						<div class="display_j" style="">
 							<img style="height: 10px;width: 10px;"
-								:src="item2.status == 1? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
+								:src="item2.dj_status > 0? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
 								<view style="margin-left: 20rpx;">{{ item2.title }}</view>
 							
 						</div>

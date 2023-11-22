@@ -128,7 +128,16 @@
 					
 					yAxis: {
 						type: 'value',
-						interval: 1, // 设置刻度间距为整数
+						// interval: 1, // 设置刻度间距为整数
+						
+						axisLabel: {
+							formatter: function (value) {
+							                if (value === parseInt(value)) {
+							                    return value;  // 只显示整数
+							    
+							            }
+						},
+						},
 					},
 					radius: '100%',
 					series: this.series,

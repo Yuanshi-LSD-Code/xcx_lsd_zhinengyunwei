@@ -2,10 +2,10 @@
 
 	<main-layout>
 		<view>
-			<view style="height: 30px;background-color: rgba(68, 114, 196, 1);">
+			<view style="height: 40px;background-color: rgba(68, 114, 196, 1);">
 				<div class="display_a" style="padding-top: 5px;margin-left: 20rpx;">
 					<img style="height: 10px;width: 10px;"
-						:src="item.status == 1? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
+						:src="item.dj_status > 0? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
 						<view style="margin-left: 20rpx;color: white;">{{ item.title }}</view>
 					  
 				</div>

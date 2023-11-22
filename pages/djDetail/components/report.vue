@@ -1,16 +1,22 @@
 <template>
 	<view style="margin-left: 10px;margin-right: 10px;">
 
+		<view v-if="list.length>0">
+			<view v-for="(item,index) in list " :key="index">
+				<view class="display" style="flex-direction: column;padding-top: 20rpx;" @click="reportTo(item,index)">
+					<view style="margin-left: 20rpx;">{{item.label_title}}</view>
+					<view style="margin-left: 20rpx;margin-top: 10rpx;">{{item.add_time}}</view>
 
-		<view v-for="(item,index) in list " :key="index">
-			<view class="display" style="flex-direction: column;padding-top: 20rpx;" @click="reportTo(item,index)">
-				<view style="margin-left: 20rpx;">{{item.label_title}}</view>
-				<view style="margin-left: 20rpx;margin-top: 10rpx;">{{item.add_time}}</view>
+				</view>
+				<u-line></u-line>
+			</view>
+		</view>
+		<view v-if="list.length <=0">
+			<view class="display" style="height: 100rpx;padding-top: 15rpx;justify-content : center">
+				暂无数据
 
 			</view>
-			<u-line></u-line>
 		</view>
-
 
 
 	</view>
@@ -47,11 +53,11 @@
 				this.getPager();
 			})
 		},
-		
-		
+
+
 		methods: {
-			
-	
+
+
 
 			getPager() {
 				// console.log(this.$api.reapirList)

@@ -61,6 +61,11 @@
 			this.loadList()
 		},
 		methods: {
+			
+			refresh(){
+				this.list=[];
+				this.getPager();
+			},
 
 			getPager() {
 				// console.log(this.$api.reapirList)
