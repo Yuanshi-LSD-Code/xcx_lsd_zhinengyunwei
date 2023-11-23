@@ -12,9 +12,9 @@
 				<view style="width: 50%;">额定转速：{{info.rated_speed || ''}}</view>
 
 				<view style="width: 50%;">额定功率：{{info.power || ''}}</view>
-				<view style="width: 50%;">运行频率：{{info.work_freq || ''}}</view>
+				<view style="width: 50%;">运行频率：{{info.work_freq || ''}}{{info.work_freq ?'Hz': ''}}</view>
 				<view style="width: 50%;">电压互感器：{{info.trans_title || ''}}</view>
-				<view style="width: 50%;">电流互感器：{{info.trans_one || ''}}</view>
+				<view style="width: 50%;">电流互感器：{{info.trans_one || ''}}/{{info.trans_two || ''}}</view>
 				<view style="width: 50%;">接法：{{info.connection_title || ''}}</view>
 				<!-- <view style="width: 50%;">防护等级：{{info.power}}</view> -->
 
@@ -44,14 +44,14 @@
 				<view style="width: 50%;">电流平衡度(%)：{{aes_param.CurrentBalance ||''}}</view>
 
 				<view style="width: 50%;">T相电压(V)：{{aes_param.VtRms ||''}}</view>
-				<view style="width: 50%;">功率因数：{{aes_param.VtRms ||''}}</view>
+				<view style="width: 50%;">功率因数：{{aes_param.PowerFactor ||''}}</view>
 				<view style="width: 50%;">R相电流(A)：{{aes_param.IrRms ||''}}</view>
-				<view style="width: 50%;">相角(Deg)：{{aes_param.deg ||''}}</view>
+				<view style="width: 50%;">相角(Deg)：{{aes_param.PhaseAngle ||''}}</view>
 				<view style="width: 50%;">S相电流(A)：{{aes_param.IsRms ||''}}</view>
 				<view style="width: 50%;">频率(Hz)：{{aes_param.SignalFrequency ||''}}</view>
 
 				<view style="width: 50%;">T相电流(A)：{{aes_param.ItRms ||''}}</view>
-				<view style="width: 50%;">导纳(A/V)：{{aes_param.av ||''}}</view>
+				<view style="width: 50%;">导纳(A/V)：{{aes_param.Admittance ||''}}</view>
 				<view style="width: 50%;">总谐波(%)：{{aes_param.THD ||''}}</view>
 				<view style="width: 50%;">3次谐波(%)：{{aes_param.ThirdHarmonic ||''}}</view>
 				<view style="width: 50%;">5次谐波(%)：{{aes_param.FifthHarmonic ||''}}</view>

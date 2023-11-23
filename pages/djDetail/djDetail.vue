@@ -111,6 +111,14 @@
 		},
 
 		methods: {
+			refresh(){
+				console.log(22222);
+				console.log(this.shopType);
+				// if(this.shopType == 3){
+					this.$refs['repair'].init();
+				// }
+				// console.log(345445454);
+			},
 			infoShowChage(e) {
 				
 				this.showType = e
