@@ -214,8 +214,8 @@
 		mounted() {
 
 			this.$nextTick(() => {
-				console.log(78787)
-				console.log(this.option)
+				// console.log(78787)
+				// console.log(this.option)
 				this.$refs.chart.init(echarts, chart => {
 					chart.setOption(this.option);
 

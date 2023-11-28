@@ -6,12 +6,12 @@
 			<view class="display" style="flex-wrap: wrap;">
 				<view style="width: 50%;">电机型号：{{info.model || ''}}</view>
 				<view style="width: 50%;">电机品牌：{{info.brand || ''}}</view>
-				<view style="width: 50%;">额定电压：{{info.voltage || ''}}</view>
+				<view style="width: 50%;">额定电压：{{info.voltage || ''}}V</view>
 				<view style="width: 50%;">传动装置：{{info.gearing_title || ''}}</view>
 				<view style="width: 50%;">额定电流：{{info.elect || ''}}</view>
-				<view style="width: 50%;">额定转速：{{info.rated_speed || ''}}</view>
+				<view style="width: 50%;">额定转速：{{info.rated_speed || ''}}RPM</view>
 
-				<view style="width: 50%;">额定功率：{{info.power || ''}}</view>
+				<view style="width: 50%;">额定功率：{{info.power || ''}}KW</view>
 				<view style="width: 50%;">运行频率：{{info.work_freq || ''}}{{info.work_freq ?'Hz': ''}}</view>
 				<view style="width: 50%;">电压互感器：{{info.trans_title || ''}}</view>
 				<view style="width: 50%;">电流互感器：{{info.trans_one || ''}}/{{info.trans_two || ''}}</view>

@@ -238,7 +238,8 @@
 			djDayBarList() {
 
 				this.$http('djDayBarList', {
-					'bar_type': this.barItem.type
+					'bar_type': this.barItem.type,
+					'factory_id':this.factory_id,
 				}).then((res) => {
 					this.djBarTimeList = res.data;
 

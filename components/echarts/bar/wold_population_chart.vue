@@ -1,5 +1,5 @@
 <template>
-	<div :class="className" :style="{ height: height, width: width, marginTop: marginTop }">
+	<div :class="className" :style="{ height: height, width: width, marginTop: marginTop,minWidth:echart_width }">
 		<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
 	</div>
 </template>
@@ -28,7 +28,7 @@
 			},
 			minWidth: {
 				type: String,
-				default: '750px'
+				default: '375px'
 			},
 			autoResize: {
 				type: Boolean,
@@ -77,7 +77,7 @@
 		},
 		data() {
 			return {
-				echart_height: this.height,
+				echart_width: this.width,
 				myChart: null,
 				option: {
 					// title: {
@@ -226,6 +226,12 @@
 			}
 		},
 		mounted() {
+			if(this.option.xAxis.data.length <= 1){
+				this.echart_width =  '20px';
+			}else{
+				var autoHeight = this.option.xAxis.data.length * 60 + 50;
+				this.echart_width = autoHeight + 'px';
+			}
 			this.$nextTick(() => {
 				this.$refs.chart.init(echarts, chart => {
 					chart.setOption(this.option);
@@ -245,9 +251,13 @@
 
 				this.option.xAxis.data = newVal;
 
-
-				var autoHeight = this.option.xAxis.data.length * 60 + 50;
-				this.minWidth = autoHeight + 'px';
+    //             if(this.option.xAxis.data.length <= 1){
+				// 	this.minWidth =  '20px';
+				// }else{
+				// 	var autoHeight = this.option.xAxis.data.length * 60 + 50;
+				// 	this.minWidth = autoHeight + 'px';
+				// }
+				
 
 				this.$refs.chart.setOption(this.option)
 			},

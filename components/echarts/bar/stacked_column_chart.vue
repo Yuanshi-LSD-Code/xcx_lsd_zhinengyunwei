@@ -1,11 +1,11 @@
 <template>
 	<!-- <div :class="className" :key="refresh" :style="{ height: height, width: width, marginTop: marginTop, }" /> -->
 	<view :class="className"
-		:style="{ height: echart_height, width: width, marginTop: marginTop,marginBottom:marginTop }">
-		<view style="width: 375px;">
+		:style="{width: width, marginTop: marginTop,marginBottom:marginTop }">
+		<view :style="{width: '375px', height: echart_height}">
 			<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
 		</view>
-		
+
 	</view>
 </template>
 
@@ -137,13 +137,13 @@
 						// mix:1,
 						axisLabel: {
 							padding: [20, 20, 5, 5],
-							formatter: function (value) {
-							                if (value === parseInt(value)) {
-							                    return value;  // 只显示整数
-							                }
-							            }
-						},
-						
+							formatter: function(value) {
+								if (value === parseInt(value)) {
+									return value; // 只显示整数
+
+								}
+							},
+						}
 					}],
 					xAxis: [{
 
@@ -223,11 +223,11 @@
 			}
 		},
 		mounted() {
-         console.log(33344);
-		if(this.echartHeight){
-			var autoHeight = this.option.legend.data.length * 13 + 290;
-		    this.echart_height = autoHeight + 'px';
-		}
+			// console.log(33344);
+			if (this.echartHeight) {
+				var autoHeight = this.option.legend.data.length * 10 + 290;
+				this.echart_height = autoHeight + 'px';
+			}
 			this.$nextTick(() => {
 				this.$refs.chart.init(echarts, chart => {
 					chart.setOption(this.option);

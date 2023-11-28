@@ -82,61 +82,62 @@
 						// itemGap: 40, // 设置两个legend之间的间距
 						// data:this.legendData,
 						data: [{
-								name: '良好', // 这个name需要和 series 里面的 name 对应起来
-								// textStyle: {
-								// 	color: '#2DC3FB' // 单独设置某一个图列的颜色
-								// }
-							},
-							{
-								name: '正常', // 这个name需要和 series 里面的 name 对应起来
-								// textStyle: {
-								// 	color: '#FDD43C' // 单独设置某一个图列的颜色
-								// }
+								name: '高风险', // 这个name需要和 series 里面的 name 对应起来
+								itemStyle: {
+									color: '#DF0303', // 单独设置某一个图列的颜色
+								},
 							},
 							{
 								name: '关注', // 这个name需要和 series 里面的 name 对应起来
-								// textStyle: {
-								// 	color: '#FDD43C' // 单独设置某一个图列的颜色
-								// }
+								itemStyle: {
+									color: '#FCDF44', // 单独设置某一个图列的颜色
+								},
 							},
 							{
-								name: '高风险', // 这个name需要和 series 里面的 name 对应起来
-								// textStyle: {
-								// 	color: '#FDD43C' // 单独设置某一个图列的颜色
-								// }
-							}
+								name: '正常', // 这个name需要和 series 里面的 name 对应起来
+								itemStyle: {
+									color: '#00CC00', // 单独设置某一个图列的颜色
+								},
+							},
+
+							{
+								name: '良好', // 这个name需要和 series 里面的 name 对应起来
+								itemStyle: {
+									color: '#0D08E8', // 单独设置某一个图列的颜色
+								},
+							},
 						]
 
 					},
-					
+
 					grid: {
-						
+
 						left: '10px', // 图形距离容器左边界的距离
-						right: '10px' ,// 图形距离容器右边界的距离
+						right: '10px', // 图形距离容器右边界的距离
 						containLabel: true
 					},
 					xAxis: {
 						type: 'category',
 						data: this.xAxisData,
 						// data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-						
+
 						axisLabel: {
 							interval: 0, // 设置刻度间隔为 0，表示所有刻度都显示
 							overflow: 'breakAll', // 超出部分截断显示
 						},
 					},
-					
+
 					yAxis: {
 						type: 'value',
 						// interval: 1, // 设置刻度间距为整数
-						
+
 						axisLabel: {
-							formatter: function (value) {
-							                if (value === parseInt(value)) {
-							                    return value;  // 只显示整数
-							    
-							            }
-						},
+							formatter: function(value) {
+								if (value === parseInt(value)) {
+									return value; // 只显示整数
+
+								}
+							},
 						},
 					},
 					radius: '100%',
@@ -171,7 +172,7 @@
 			}
 		},
 		mounted() {
-			
+
 			this.$nextTick(() => {
 				this.$refs.chart.init(echarts, chart => {
 					chart.setOption(this.option);
@@ -217,7 +218,7 @@
 				chart.on('click', params => {
 					console.log('点击事件触发2：', params);
 					let index = params.dataIndex;
-                   let time = that.dayMonth[index];
+					let time = that.dayMonth[index];
 					// uni.$emit('djBarClick', index);
 					this.$emit('djTimeClick', time);
 					// 处理点击回调的业务逻辑

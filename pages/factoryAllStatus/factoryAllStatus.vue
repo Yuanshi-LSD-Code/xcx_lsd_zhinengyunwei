@@ -186,7 +186,7 @@
 			djDayBarList() {
 
 				this.$http('djDayBarList', {
-					'bar_type': this.barItem.type
+					'bar_type': this.barItem.type,
 				}).then((res) => {
 					this.djBarTimeList = res.data;
 
