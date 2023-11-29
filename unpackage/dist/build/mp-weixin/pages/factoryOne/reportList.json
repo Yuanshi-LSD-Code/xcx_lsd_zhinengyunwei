@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "工厂报告列表",
-  "usingComponents": {
-    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
-    "u--input": "/node-modules/uview-ui/components/u--input/u--input",
-    "u-line": "/node-modules/uview-ui/components/u-line/u-line",
-    "u-picker": "/node-modules/uview-ui/components/u-picker/u-picker"
-  }
-}

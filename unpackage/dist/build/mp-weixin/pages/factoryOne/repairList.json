@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "电机检修工作",
-  "usingComponents": {
-    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
-    "u-line": "/node-modules/uview-ui/components/u-line/u-line",
-    "u-picker": "/node-modules/uview-ui/components/u-picker/u-picker"
-  }
-}

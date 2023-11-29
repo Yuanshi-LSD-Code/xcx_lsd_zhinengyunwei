@@ -225,8 +225,14 @@
 		mounted() {
 			// console.log(33344);
 			if (this.echartHeight) {
-				var autoHeight = this.option.legend.data.length * 10 + 290;
-				this.echart_height = autoHeight + 'px';
+				if( this.option.legend.data.length <=10){
+					var autoHeight = this.option.legend.data.length * 10 + 250;
+					this.echart_height = autoHeight + 'px';
+				}else{
+					var autoHeight = this.option.legend.data.length * 10 + 200;
+					this.echart_height = autoHeight + 'px';
+				}
+				
 			}
 			this.$nextTick(() => {
 				this.$refs.chart.init(echarts, chart => {
