@@ -1,0 +1,65 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/notice/notice",
+        "pages/user/user",
+        "pages/privacyPolicyProtocol/privacyPolicyProtocol"
+    ],
+    "subPackages": [
+        {
+            "root": "pages/factory",
+            "pages": [
+                "factory"
+            ]
+        },
+        {
+            "root": "pages/noticeDetail",
+            "pages": [
+                "noticeDetail"
+            ]
+        },
+        {
+            "root": "pages/factoryOne",
+            "pages": [
+                "factoryOne",
+                "factoryReport",
+                "repairDetail",
+                "repairList",
+                "reportList"
+            ]
+        },
+        {
+            "root": "pages/factoryAllStatus",
+            "pages": [
+                "factoryAllStatus",
+                "factoryOneStatus",
+                "factoryOneDjStatus"
+            ]
+        },
+        {
+            "root": "pages/djDetail",
+            "pages": [
+                "djDetail"
+            ]
+        }
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#ffffff",
+        "backgroundColor": "#ffffff"
+    },
+    "usingComponents": {
+        "copyright": "/components/copyright/copyright",
+        "main-layout": "/components/base-common/main-layout/main-layout",
+        "main-tab-bar": "/components/base-common/main-tab-bar/main-tab-bar",
+        "echarts-stage-speed-gauge": "/components/echarts/gauge/stage_speed_gauge",
+        "echarts-stacked-column-chart": "/components/echarts/bar/stacked_column_chart",
+        "echarts-basic-line-chart": "/components/echarts/line/basic_line_chart",
+        "echarts-wold-population-chart": "/components/echarts/bar/wold_population_chart",
+        "echarts-basic-line-config-chart": "/components/echarts/line/basic_line_config_chart",
+        "echarts-basic-line-config-chart-ts": "/components/echarts/line/basic_line_config_chart_ts",
+        "echarts-base-bar-chart": "/components/echarts/bar/base_bar_chart"
+    },
+    "sitemapLocation": "sitemap.json"
+}

@@ -33,7 +33,7 @@
 		</view>
 
 		<view style="margin-top: 10px;">
-			<view  class="font-bold" style="height: 30px;padding-top: 5px;">运行参数</view>
+			<view class="font-bold" style="height: 30px;padding-top: 5px;">运行参数</view>
 			<u-line></u-line>
 			<view class="display" style="flex-wrap: wrap;margin-top: 5px;">
 				<view style="width: 50%;">本月运行(分钟):{{aes_param.run_time ||''}}</view>
@@ -65,10 +65,11 @@
 		</view>
 
 		<view style="margin-top: 10px;">
-			<view  class="font-bold" style="height: 30px;padding-top: 5px;">文件资料</view>
+			<view class="font-bold" style="height: 30px;padding-top: 5px;">文件资料</view>
 			<u-line></u-line>
 			<view class="display" style="flex-direction:column;margin-top: 5px;">
-				<view  v-for="(item, index) in dj_doc" :key="index" @click="docClick(item)" style="color: blue;">{{item.title}}</view>
+				<view v-for="(item, index) in dj_doc" :key="index" @click="docClick(item)" style="color: blue;">
+					{{item.title}}</view>
 
 			</view>
 		</view>
@@ -115,22 +116,52 @@
 		methods: {
 
 			docClick(item) {
-				uni.downloadFile({
-					url: item.url,
-					success: res => {
-						console.log(res)
-						if (res.statusCode === 200) {
-							// 预览pdf文件
-							uni.openDocument({
-								filePath: res.tempFilePath,
-								showMenu: true, // 右上角菜单，可以进行分享保存pdf
-								success: function(file) {
-									console.log("file-success", file)
-								}
-							})
+				var isImage = this.isImageByExtension(item.url);
+				if (isImage) {
+					uni.previewImage({
+						urls: [item.url], // 需要预览的图片链接列表，数组类型
+						current: item.url, // 当前显示图片的链接，字符串类型
+						indicator: true, // 是否显示图片指示器，默认为true
+						loop: true, // 是否开启循环播放，默认为false
+						longPressActions: { // 长按图片时的菜单列表，数组类型
+							// itemList: ['发送给朋友', '保存图片', '收藏'], // 菜单按钮列表
+							success: function(data) {
+								console.log('长按菜单点击成功：' + data.tapIndex)
+							},
+							fail: function(err) {
+								console.log('长按菜单点击失败：' + err.errMsg)
+							}
 						}
-					}
-				})
+					})
+				} else {
+					uni.downloadFile({
+						url: item.url,
+						success: res => {
+							console.log(res)
+							if (res.statusCode === 200) {
+								// 预览pdf文件
+								uni.openDocument({
+									filePath: res.tempFilePath,
+									showMenu: true, // 右上角菜单，可以进行分享保存pdf
+									success: function(file) {
+										console.log("file-success", file)
+									}
+								})
+							}
+						}
+					})
+				}
+
+			},
+			isImageByExtension(filename) {
+				// 将文件名转换为小写，并获取扩展名
+				var ext = filename.toLowerCase().split('.').pop();
+
+				// 定义图片扩展名数组
+				var imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+
+				// 判断扩展名是否在图片扩展名数组中
+				return imageExtensions.includes(ext);
 			},
 			getInfo() {
 				this.$http('factoryAdminDjInfo', {
