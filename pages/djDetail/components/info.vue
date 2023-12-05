@@ -14,7 +14,7 @@
 				<view style="width: 50%;">额定功率：{{info.power || ''}}KW</view>
 				<view style="width: 50%;">运行频率：{{info.work_freq || ''}}{{info.work_freq ?'Hz': ''}}</view>
 				<view style="width: 50%;">电压互感器：{{info.trans_title || ''}}</view>
-				<view style="width: 50%;">电流互感器：{{info.trans_one || ''}}/{{info.trans_two || ''}}</view>
+				<view style="width: 50%;">电流互感器：{{info.trans_one || ''}}/{{info.trans_two || ''}}mA</view>
 				<view style="width: 50%;">接法：{{info.connection_title || ''}}</view>
 				<!-- <view style="width: 50%;">防护等级：{{info.power}}</view> -->
 

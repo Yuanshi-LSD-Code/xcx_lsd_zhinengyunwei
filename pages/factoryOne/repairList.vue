@@ -42,7 +42,7 @@
 
 						<view class="display" style="flex-direction: column;margin-left: 10px;">
 							<view style="" class="display">
-								<view style="width: 120px;">{{item.label_title}}</view>
+								<view style="width: 140px;">{{item.label_title}}</view>
 								
 								<view v-if="item.status == 1" class="status_bord display_j" style="border: 1px solid rgba(150, 150, 150, 1);color:gray">{{item.status_title}}</view>
 								<view v-if="item.status == 2" class="status_bord display_j" style="border: 1px solid green;color:green">{{item.status_title}}</view>

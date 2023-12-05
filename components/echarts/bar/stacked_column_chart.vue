@@ -226,12 +226,13 @@
 			// console.log(33344);
 			if (this.echartHeight) {
 				if( this.option.legend.data.length <=10){
-					var autoHeight = this.option.legend.data.length * 10 + 250;
+					var autoHeight = this.option.legend.data.length * 10 + 270;
 					this.echart_height = autoHeight + 'px';
 				}else{
-					var autoHeight = this.option.legend.data.length * 10 + 200;
+					var autoHeight = this.option.legend.data.length * 10 + 240;
 					this.echart_height = autoHeight + 'px';
 				}
+				
 				
 			}
 			this.$nextTick(() => {

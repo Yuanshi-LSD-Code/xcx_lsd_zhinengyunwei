@@ -68,7 +68,7 @@
 				myChart: null,
 				option: {
 					tooltip: {
-						trigger: 'axis',
+						trigger: 'item',
 						axisPointer: {
 							type: 'shadow'
 						}
