@@ -90,7 +90,7 @@
 
 			<div class="w-100" style="height: 145px;">
 				<echarts-basic-line-config-chart-ts :key="djBarDayAesTsListKey" :marginTop="'0px'"
-					:series="djBarDayAesTsList.series" :xAxisData="djBarDayAesTsList.xAxisData"
+					:series="djBarDayAesTsList.series" :xAxisData="djBarDayAesTsList.xAxisData" ref="ts"
 					className="main-jkd-dj-day" height="133px"></echarts-basic-line-config-chart-ts>
 			</div>
 		</view>
@@ -139,6 +139,7 @@
 
 
 				djBarDayAesTsList: {},
+				djBarDayAesTsListKey:'1',
 				selectTsType: [
 					[{
 							title: '三相电流',
@@ -384,7 +385,9 @@
 
 				}).then((res) => {
 					this.djBarDayAesTsList = res.data;
-
+                    this.djBarDayAesTsListKey = new Date().getTime();
+					console.log(7777777)
+					this.$refs.ts.init();
 
 				});
 			},

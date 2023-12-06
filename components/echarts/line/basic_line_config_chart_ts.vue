@@ -1,6 +1,6 @@
 <template>
 	<div :class="className" :style="{ height: height, width: width, marginTop: marginTop, }">
-		<l-echart ref="chart" @finished="init"></l-echart>
+		<l-echart ref="chart" @finished="init" ></l-echart>
 	</div>
 </template>
 
@@ -10,6 +10,10 @@
 	export default {
 		name: 'basic_line_config_chart_ts',
 		props: {
+			key: {
+				type: String,
+				default: '1'
+			},
 			className: {
 				type: String,
 				default: 'chart'
@@ -175,7 +179,8 @@
 			series(newVal) {
 
 				this.option.series = newVal;
-
+                console.log(77777777788)
+                console.log(newVal)
 				this.$refs.chart.setOption(this.option)
 			},
 
