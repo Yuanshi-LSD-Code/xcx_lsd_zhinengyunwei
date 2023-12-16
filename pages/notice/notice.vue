@@ -10,8 +10,13 @@
 			<view style="margin-top: 74rpx;"></view>
 			<view>
 				<view v-for="(item,index) in list " :key="index">
-					<view class="display_sb" style="height: 80rpx;" @click="linkTo(item,index)">
-						<view style="margin-left: 30rpx;">{{item.content}}</view>
+					
+					<view class="display_a" style="height: 80rpx;" @click="linkTo(item,index)">
+						
+							<img v-if="item.type != 4" style="width: 16px; height: 16px;margin-left: 30rpx;" src="../../static/image/u53.png" />
+							 <img v-if="item.type == 4" style="width: 16px; height: 16px;margin-left: 30rpx;" src="../../static/image/u54.png" />
+						
+						<view style="margin-left: 8rpx;">{{item.content}}</view>
 						<!-- <u-icon name="arrow-right" size="20"></u-icon> -->
 					</view>
 					<view >
