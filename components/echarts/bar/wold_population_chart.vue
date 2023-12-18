@@ -226,17 +226,19 @@
 			}
 		},
 		mounted() {
-			if(this.option.xAxis.data.length <= 1){
-				this.echart_width =  '20px';
-			}else{
+			if (this.option.xAxis.data.length <= 1) {
+				this.echart_width = '20px';
+			} else {
 				var autoHeight = this.option.xAxis.data.length * 60 + 50;
 				this.echart_width = autoHeight + 'px';
 			}
-			this.$nextTick(() => {
-				this.$refs.chart.init(echarts, chart => {
-					chart.setOption(this.option);
-				});
-			})
+			setTimeout(() => {
+				this.$nextTick(() => {
+					this.$refs.chart.init(echarts, chart => {
+						chart.setOption(this.option);
+					});
+				})
+			}, 1000)
 		},
 		beforeDestroy() {
 			if (!this.chart) {
@@ -251,13 +253,19 @@
 
 				this.option.xAxis.data = newVal;
 
-    //             if(this.option.xAxis.data.length <= 1){
+				//             if(this.option.xAxis.data.length <= 1){
 				// 	this.minWidth =  '20px';
 				// }else{
 				// 	var autoHeight = this.option.xAxis.data.length * 60 + 50;
 				// 	this.minWidth = autoHeight + 'px';
 				// }
-				
+
+				if (this.option.xAxis.data.length <= 1) {
+					this.echart_width = '20px';
+				} else {
+					var autoHeight = this.option.xAxis.data.length * 60 + 50;
+					this.echart_width = autoHeight + 'px';
+				}
 
 				this.$refs.chart.setOption(this.option)
 			},
@@ -285,7 +293,7 @@
 					let title = this.yAxisData[index];
 
 
-					this.$emit('djClick', label,title);
+					this.$emit('djClick', label, title);
 					// 处理点击回调的业务逻辑
 				});
 			},

@@ -1,7 +1,6 @@
 <template>
 	<!-- <div :class="className" :key="refresh" :style="{ height: height, width: width, marginTop: marginTop, }" /> -->
-	<view :class="className"
-		:style="{width: width, marginTop: marginTop,marginBottom:marginTop }">
+	<view :class="className" :style="{width: width, marginTop: marginTop,marginBottom:marginTop }">
 		<view :style="{width: '375px', height: echart_height}">
 			<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
 		</view>
@@ -225,21 +224,23 @@
 		mounted() {
 			// console.log(33344);
 			if (this.echartHeight) {
-				if( this.option.legend.data.length <=10){
+				if (this.option.legend.data.length <= 10) {
 					var autoHeight = this.option.legend.data.length * 10 + 270;
 					this.echart_height = autoHeight + 'px';
-				}else{
+				} else {
 					var autoHeight = this.option.legend.data.length * 10 + 240;
 					this.echart_height = autoHeight + 'px';
 				}
-				
-				
+
+
 			}
-			this.$nextTick(() => {
-				this.$refs.chart.init(echarts, chart => {
-					chart.setOption(this.option);
-				});
-			})
+			setTimeout(() => {
+				this.$nextTick(() => {
+					this.$refs.chart.init(echarts, chart => {
+						chart.setOption(this.option);
+					});
+				})
+			}, 1000)
 			// this.$refs.chart.resize()
 
 		},
@@ -251,12 +252,20 @@
 			this.chart = null
 		},
 		watch: {
+
 			legendData(newVal) {
 
 				this.option.legend.data = newVal;
 				if (this.option.color && this.option.color.length <= 0) {
 					delete this.option['color']
 
+				}
+				if (this.option.legend.data.length <= 10) {
+					var autoHeight = this.option.legend.data.length * 10 + 270;
+					this.echart_height = autoHeight + 'px';
+				} else {
+					var autoHeight = this.option.legend.data.length * 10 + 240;
+					this.echart_height = autoHeight + 'px';
 				}
 				this.$refs.chart.setOption(this.option)
 				// this.$refs.chart.resize()
