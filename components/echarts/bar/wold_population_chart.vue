@@ -226,19 +226,21 @@
 			}
 		},
 		mounted() {
-			if (this.option.xAxis.data.length <= 1) {
+			if (this.option.xAxis.data.length == 6) {
+				this.echart_width =  '100%';
+			}else if (this.option.xAxis.data.length <= 1) {
 				this.echart_width = '20px';
 			} else {
 				var autoHeight = this.option.xAxis.data.length * 60 + 50;
 				this.echart_width = autoHeight + 'px';
 			}
-			setTimeout(() => {
+			// setTimeout(() => {
 				this.$nextTick(() => {
 					this.$refs.chart.init(echarts, chart => {
 						chart.setOption(this.option);
 					});
 				})
-			}, 1000)
+			// }, 1000)
 		},
 		beforeDestroy() {
 			if (!this.chart) {
@@ -260,7 +262,9 @@
 				// 	this.minWidth = autoHeight + 'px';
 				// }
 
-				if (this.option.xAxis.data.length <= 1) {
+				if (this.option.xAxis.data.length == 6) {
+					this.echart_width =  '100%';
+				}else if (this.option.xAxis.data.length <= 1) {
 					this.echart_width = '20px';
 				} else {
 					var autoHeight = this.option.xAxis.data.length * 60 + 50;

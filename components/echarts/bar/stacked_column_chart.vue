@@ -234,13 +234,13 @@
 
 
 			}
-			setTimeout(() => {
+			// setTimeout(() => {
 				this.$nextTick(() => {
 					this.$refs.chart.init(echarts, chart => {
 						chart.setOption(this.option);
 					});
 				})
-			}, 1000)
+			// }, 1000)
 			// this.$refs.chart.resize()
 
 		},
