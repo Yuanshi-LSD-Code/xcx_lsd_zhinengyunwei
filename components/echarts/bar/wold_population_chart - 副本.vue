@@ -1,5 +1,5 @@
 <template>
-	<div :class="className"  v-if="aaa" :style="{ height: height,width:width, marginTop: marginTop,minWidth:echart_width }">
+	<div :class="className" :style="{ height: height, width: width, marginTop: marginTop,minWidth:echart_width }">
 		<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
 	</div>
 </template>
@@ -78,7 +78,6 @@
 		data() {
 			return {
 				echart_width: this.width,
-				aaa:false,
 				myChart: null,
 				option: {
 					// title: {
@@ -227,19 +226,24 @@
 			}
 		},
 		mounted() {
-			
-			
-		// 	// setTimeout(() => {
-		// 		this.$nextTick(() => {
-		
-		// 			this.$refs.chart.init(echarts, chart => {
-		// 				console.log(111111)
-						
-		// 				chart.setOption(this.option);
-						
-		// 			});
-		// 		})
-		// 	// }, 1000)
+			if (this.option.xAxis.data.length == 6) {
+				this.echart_width =  '100%';
+				this.width = '100%';
+			}else if (this.option.xAxis.data.length <= 1) {
+				this.echart_width = '20px';
+				this.width = '20px';
+			} else {
+				var autoHeight = this.option.xAxis.data.length * 60 + 50;
+				this.echart_width = autoHeight + 'px';
+				this.width = autoHeight + 'px';
+			}
+			// setTimeout(() => {
+				this.$nextTick(() => {
+					this.$refs.chart.init(echarts, chart => {
+						chart.setOption(this.option);
+					});
+				})
+			// }, 1000)
 		},
 		beforeDestroy() {
 			if (!this.chart) {
@@ -253,18 +257,6 @@
 
 
 				this.option.xAxis.data = newVal;
-				
-				
-				
-				if (this.option.xAxis.data.length == 6) {
-					this.echart_width =  '100%';
-				}else if (this.option.xAxis.data.length <= 1) {
-					this.echart_width = '20px';
-				} else {
-					var autoHeight = this.option.xAxis.data.length * 60 + 50;
-					this.echart_width = autoHeight + 'px';
-				}
-				this.aaa=true
 
 				//             if(this.option.xAxis.data.length <= 1){
 				// 	this.minWidth =  '20px';

@@ -1,7 +1,7 @@
 <template>
 	<!-- <div :class="className" :key="refresh" :style="{ height: height, width: width, marginTop: marginTop, }" /> -->
 	<view :class="className" :style="{width: width, marginTop: marginTop,marginBottom:marginTop }">
-		<view :style="{width: '375px', height: echart_height}">
+		<view v-if="aaa" :style="{width: '375px', height: echart_height}">
 			<l-echart force-use-old-canvas="false" :key="key" width="100%" ref="chart" @finished="init"></l-echart>
 		</view>
 
@@ -28,7 +28,7 @@
 			},
 			height: {
 				type: String,
-				default: '100px'
+				default: '200px'
 			},
 			echartHeight: {
 				type: String,
@@ -71,6 +71,7 @@
 		data() {
 			return {
 				myChart: null,
+				aaa:false,
 				echart_height: this.height,
 				option: {
 					color: this.color,
@@ -223,17 +224,7 @@
 		},
 		mounted() {
 			// console.log(33344);
-			if (this.echartHeight) {
-				if (this.option.legend.data.length <= 10) {
-					var autoHeight = this.option.legend.data.length * 10 + 270;
-					this.echart_height = autoHeight + 'px';
-				} else {
-					var autoHeight = this.option.legend.data.length * 10 + 240;
-					this.echart_height = autoHeight + 'px';
-				}
-
-
-			}
+			
 			// setTimeout(() => {
 				this.$nextTick(() => {
 					this.$refs.chart.init(echarts, chart => {
@@ -260,13 +251,20 @@
 					delete this.option['color']
 
 				}
-				if (this.option.legend.data.length <= 10) {
-					var autoHeight = this.option.legend.data.length * 10 + 270;
-					this.echart_height = autoHeight + 'px';
-				} else {
-					var autoHeight = this.option.legend.data.length * 10 + 240;
-					this.echart_height = autoHeight + 'px';
+				
+				if (this.echartHeight) {
+					if (this.option.legend.data.length <= 10) {
+						var autoHeight = this.option.legend.data.length * 10 + 270;
+						this.echart_height = autoHeight + 'px';
+					} else {
+						var autoHeight = this.option.legend.data.length * 10 + 240;
+						this.echart_height = autoHeight + 'px';
+					}
+				
+				
 				}
+				this.aaa=true
+				
 				this.$refs.chart.setOption(this.option)
 				// this.$refs.chart.resize()
 			},

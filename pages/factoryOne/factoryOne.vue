@@ -164,6 +164,9 @@
 				show_end_time: false,
 				start_time: '',
 				end_time: '',
+				
+				min_time: '',
+				max_time: '',
 
 
 			}
