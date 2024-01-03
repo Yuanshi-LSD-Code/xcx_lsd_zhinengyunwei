@@ -1,4 +1,401 @@
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/echarts/gauge/stage_speed_gauge"],{315:function(e,t,n){"use strict";n.r(t);var r=n(316),o=n(318);for(var i in o)["default"].indexOf(i)<0&&function(e){n.d(t,e,(function(){return o[e]}))}(i);var a,s=n(47),u=Object(s["default"])(o["default"],r["render"],r["staticRenderFns"],!1,null,null,null,!1,r["components"],a);u.options.__file="components/echarts/gauge/stage_speed_gauge.vue",t["default"]=u.exports},316:function(e,t,n){"use strict";n.r(t);var r=n(317);n.d(t,"render",(function(){return r["render"]})),n.d(t,"staticRenderFns",(function(){return r["staticRenderFns"]})),n.d(t,"recyclableRender",(function(){return r["recyclableRender"]})),n.d(t,"components",(function(){return r["components"]}))},317:function(e,t,n){"use strict";var r;n.r(t),n.d(t,"render",(function(){return o})),n.d(t,"staticRenderFns",(function(){return a})),n.d(t,"recyclableRender",(function(){return i})),n.d(t,"components",(function(){return r}));try{r={lEchart:function(){return Promise.all([n.e("common/vendor"),n.e("uni_modules/lime-echart/components/l-echart/l-echart")]).then(n.bind(null,993))}}}catch(s){if(-1===s.message.indexOf("Cannot find module")||-1===s.message.indexOf(".vue"))throw s;console.error(s.message),console.error("1. 排查组件名称拼写是否正确"),console.error("2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"),console.error("3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件")}var o=function(){var e=this,t=e.$createElement;e._self._c},i=!1,a=[];o._withStripped=!0},318:function(e,t,n){"use strict";n.r(t);var r=n(319),o=n.n(r);for(var i in r)["default"].indexOf(i)<0&&function(e){n.d(t,e,(function(){return r[e]}))}(i);t["default"]=o.a},319:function(e,t,n){"use strict";var r=n(4),o=n(13);Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var i=r(n(30)),a=r(n(32)),s=c(n(320));function u(e){if("function"!==typeof WeakMap)return null;var t=new WeakMap,n=new WeakMap;return(u=function(e){return e?n:t})(e)}function c(e,t){if(!t&&e&&e.__esModule)return e;if(null===e||"object"!==o(e)&&"function"!==typeof e)return{default:e};var n=u(t);if(n&&n.has(e))return n.get(e);var r={},i=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var a in e)if("default"!==a&&Object.prototype.hasOwnProperty.call(e,a)){var s=i?Object.getOwnPropertyDescriptor(e,a):null;s&&(s.get||s.set)?Object.defineProperty(r,a,s):r[a]=e[a]}return r.default=e,n&&n.set(e,r),r}var l={name:"stage_speed_gauge",props:{className:{type:String,default:"chart"},width:{type:String,default:"100%"},height:{type:String,default:"100px"},autoResize:{type:Boolean,default:!0},gauge_org:{type:String,default:"100"},gauge_charge:{type:String,default:""},marginTop:{type:String,default:"5px"},title:{type:String,default:""}},data:function(){return{myChart:null,option:{title:{text:"名称",x:"center",y:"center",textStyle:{fontSize:20,fontWeight:"normal",color:["#fff"]},subtextStyle:{color:"#666",fontSize:30}},series:[{type:"gauge",axisLine:{lineStyle:{width:8,color:[[.25,"#0F0AEA"],[.5,"#0BA02A"],[.75,"#F5B900"],[1,"#C31713"]]}},pointer:{itemStyle:{color:"#601885"},length:"90%",width:2},anchor:{show:!0,showAbove:!0,size:5,itemStyle:{borderWidth:5,borderColor:"#601885"}},axisTick:{distance:-10,length:5,lineStyle:{color:"#fff",width:2},splitNumber:2},splitLine:{show:!1,distance:-30,length:10,lineStyle:{color:"#fff",width:2}},axisLabel:{color:"auto",fontSize:8,show:!0,distance:40,rotate:"tangential",formatter:function(e){return 10===e?"良好":30===e?" ㅤ ㅤ 正常":60===e?" ㅤ关注":90===e?"高风险":""}},title:{offsetCenter:[0,"-10%"],fontSize:20},radius:"90%",detail:{fontSize:10,formatter:"健康度："+(this.gauge_org>0?this.gauge_org:100)+"%",color:"#000000",show:!0,textStyle:{fontSize:10},padding:[10,10],offsetCenter:[0,"85%"],fontWeight:"bold"},data:[{value:100-(this.gauge_org>0?this.gauge_org:100)}]}]}}},mounted:function(){var e=this;this.$nextTick((function(){e.$refs.chart.init(s,(function(t){t.setOption(e.option)}))}))},beforeDestroy:function(){this.chart&&(this.chart.dispose(),this.chart=null)},watch:{gauge_org:function(e){console.log(4444),console.log(e);var t=100-(e>0?e:100);this.option.series[0].data[0]["value"]=t;var n="健康度："+(e>0?e:100)+"%";this.option.series[0].detail.formatter=n,this.$refs.chart.setOption(this.option)}},methods:{init:function(){var e=this;return(0,a.default)(i.default.mark((function t(){var n;return i.default.wrap((function(t){while(1)switch(t.prev=t.next){case 0:return t.next=2,e.$refs.chart.init(s);case 2:n=t.sent,n.setOption(e.option);case 4:case"end":return t.stop()}}),t)})))()}}};t.default=l}}]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/echarts/gauge/stage_speed_gauge"],{
+
+/***/ 315:
+/*!**************************************************************************!*\
+  !*** C:/own/temp/testuni/components/echarts/gauge/stage_speed_gauge.vue ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stage_speed_gauge.vue?vue&type=template&id=447608aa& */ 316);
+/* harmony import */ var _stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stage_speed_gauge.vue?vue&type=script&lang=js& */ 318);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 47);
+
+var renderjs
+
+
+
+
+/* normalize component */
+
+var component = Object(_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null,
+  false,
+  _stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__["components"],
+  renderjs
+)
+
+component.options.__file = "components/echarts/gauge/stage_speed_gauge.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ 316:
+/*!*********************************************************************************************************!*\
+  !*** C:/own/temp/testuni/components/echarts/gauge/stage_speed_gauge.vue?vue&type=template&id=447608aa& ***!
+  \*********************************************************************************************************/
+/*! exports provided: render, staticRenderFns, recyclableRender, components */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./stage_speed_gauge.vue?vue&type=template&id=447608aa& */ 317);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_template_id_447608aa___WEBPACK_IMPORTED_MODULE_0__["components"]; });
+
+
+
+/***/ }),
+
+/***/ 317:
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/own/temp/testuni/components/echarts/gauge/stage_speed_gauge.vue?vue&type=template&id=447608aa& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns, recyclableRender, components */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
+var components
+try {
+  components = {
+    lEchart: function () {
+      return Promise.all(/*! import() | uni_modules/lime-echart/components/l-echart/l-echart */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/lime-echart/components/l-echart/l-echart")]).then(__webpack_require__.bind(null, /*! @/uni_modules/lime-echart/components/l-echart/l-echart.vue */ 993))
+    },
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+}
+var recyclableRender = false
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ 318:
+/*!***************************************************************************************************!*\
+  !*** C:/own/temp/testuni/components/echarts/gauge/stage_speed_gauge.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../app/HBuilderX.3.8.12.20230817/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./stage_speed_gauge.vue?vue&type=script&lang=js& */ 319);
+/* harmony import */ var _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_app_HBuilderX_3_8_12_20230817_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_stage_speed_gauge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ 319:
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/own/temp/testuni/components/echarts/gauge/stage_speed_gauge.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
+var _typeof = __webpack_require__(/*! @babel/runtime/helpers/typeof */ 13);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 30));
+var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 32));
+var echarts = _interopRequireWildcard(__webpack_require__(/*! echarts */ 320));
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+//
+//
+//
+//
+//
+//
+//
+//
+//健康度仪表盘
+var _default = {
+  name: 'stage_speed_gauge',
+  props: {
+    className: {
+      type: String,
+      default: 'chart'
+    },
+    width: {
+      type: String,
+      default: '100%'
+    },
+    height: {
+      type: String,
+      default: '100px'
+    },
+    autoResize: {
+      type: Boolean,
+      default: true
+    },
+    gauge_org: {
+      type: String,
+      default: '100'
+    },
+    gauge_charge: {
+      type: String,
+      default: ''
+    },
+    marginTop: {
+      type: String,
+      default: '5px'
+    },
+    title: {
+      type: String,
+      default: ''
+    }
+    //   chartData: {
+    //     type: Object,
+    //     required: true
+    //   }
+  },
+  data: function data() {
+    return {
+      myChart: null,
+      option: {
+        title: {
+          text: '名称',
+          x: 'center',
+          y: 'center',
+          textStyle: {
+            fontSize: 20,
+            fontWeight: 'normal',
+            color: ['#fff']
+          },
+          subtextStyle: {
+            color: '#666',
+            fontSize: 30
+          }
+          // top: 170,   //标题文字距离顶部距离
+        },
+
+        series: [{
+          type: 'gauge',
+          // title: {
+          // 	show: true,
+          // 	offsetCenter: ['0', '20%'],
+          // 	color: '#464646',
+          // 	fontSize: 16,
+          // 	valueAnimation: false,
+          // },
+          axisLine: {
+            lineStyle: {
+              width: 8,
+              color: [[0.25, '#0F0AEA'], [0.5, '#0BA02A'], [0.75, '#F5B900'], [1, '#C31713']]
+            }
+          },
+          pointer: {
+            itemStyle: {
+              color: '#601885'
+            },
+            length: '90%',
+            width: 2
+          },
+          // 仪表盘指针
+          // pointer: {
+          // 	show: true,
+          // 	// 仪表盘指针icon
+          // 	icon: "path://M 113.24 94.74 C 125.20 98.73 128.31 113.32 117.91 121.07 C 111.12 126.13 101.45 123.57 96.85 116.44 Q 96.57 116.00 96.07 116.13 L 6.27 138.45 A 0.79 0.79 0.0 0 1 5.34 137.98 Q 5.01 137.21 5.85 136.95 Q 49.99 123.32 94.14 109.71 A 0.83 0.82 84.3 0 0 94.72 108.99 C 95.49 99.36 103.91 91.62 113.24 94.74 Z",
+          // 	// icon: "image://https://lsdnew.dev.ycmua.com//static/img_07.png",
+          // 	width: '90%',
+          // 	// length: "100%", // 指针长度
+          // 	// keepAspect: true,
+          // 	// offsetCenter: [-18, '55%'],
+          // 	itemStyle: {
+          // 		color: "#601885",
+          // 	},
+          // },
+          // min:0,
+          // max:100,
+          anchor: {
+            show: true,
+            showAbove: true,
+            size: 5,
+            itemStyle: {
+              borderWidth: 5,
+              borderColor: "#601885"
+            }
+          },
+          axisTick: {
+            distance: -10,
+            length: 5,
+            lineStyle: {
+              color: '#fff',
+              width: 2
+            },
+            splitNumber: 2
+            // show: true, 
+          },
+
+          splitLine: {
+            show: false,
+            distance: -30,
+            length: 10,
+            lineStyle: {
+              color: '#fff',
+              width: 2
+            }
+          },
+          axisLabel: {
+            color: 'auto',
+            fontSize: 8,
+            show: true,
+            distance: 40,
+            rotate: 'tangential',
+            formatter: function formatter(value) {
+              if (value === 10) {
+                return '良好';
+              } else if (value === 30) {
+                return ' ㅤ ㅤ 正常';
+              } else if (value === 60) {
+                return ' ㅤ关注';
+              } else if (value === 90) {
+                return '高风险';
+              }
+              // if (value === 0) { return '100%'; }
+              // if (value === 100) { return '0%'; }
+              return '';
+            }
+          },
+          title: {
+            offsetCenter: [0, '-10%'],
+            fontSize: 20
+          },
+          // grid: {
+          //     left: 0,
+          //     top: 0,
+          //     right: 0,
+          //     bottom: 0
+          // },
+          radius: '90%',
+          detail: {
+            // valueAnimation: true,
+            fontSize: 10,
+            formatter: '健康度：' + (this.gauge_org > 0 ? this.gauge_org : 100) + '%',
+            // color: 'auto',
+            color: '#000000',
+            // color: '#611987',
+            show: true,
+            textStyle: {
+              fontSize: 10
+            },
+            padding: [10, 10],
+            offsetCenter: [0, "85%"],
+            fontWeight: "bold"
+          },
+          data: [{
+            // value: this.gauge_org > 0 ? this.gauge_org-10 : 0,
+            value: 100 - (this.gauge_org > 0 ? this.gauge_org : 100)
+          }]
+        }]
+      }
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+    this.$nextTick(function () {
+      // console.log(78787)
+      // console.log(this.option)
+      _this.$refs.chart.init(echarts, function (chart) {
+        chart.setOption(_this.option);
+      });
+    });
+  },
+  beforeDestroy: function beforeDestroy() {
+    if (!this.chart) {
+      return;
+    }
+    this.chart.dispose();
+    this.chart = null;
+  },
+  watch: {
+    gauge_org: function gauge_org(newVal) {
+      console.log(4444);
+      console.log(newVal);
+      var title = 100 - (newVal > 0 ? newVal : 100);
+      this.option.series[0].data[0]['value'] = title;
+      var formatter = '健康度：' + (newVal > 0 ? newVal : 100) + '%';
+      this.option.series[0].detail.formatter = formatter;
+      this.$refs.chart.setOption(this.option);
+    }
+  },
+  methods: {
+    init: function init() {
+      var _this2 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+        var chart;
+        return _regenerator.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this2.$refs.chart.init(echarts);
+              case 2:
+                chart = _context.sent;
+                chart.setOption(_this2.option);
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }
+};
+exports.default = _default;
+
+/***/ })
+
+}]);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/components/echarts/gauge/stage_speed_gauge.js.map
 ;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
     'components/echarts/gauge/stage_speed_gauge-create-component',

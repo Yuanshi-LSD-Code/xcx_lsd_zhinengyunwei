@@ -183,9 +183,9 @@
 					},
 					xAxis: {
 						axisLabel: {
-							fontSize: 10, // 设置字体大小为10px
+							fontSize: 8, // 设置字体大小为10px
 							interval: 0, // 设置刻度间隔为 0，表示所有刻度都显示
-							width: 25, // 设置每个横坐标标签的宽度为60像素
+							width: 23, // 设置每个横坐标标签的宽度为60像素
 							overflow: 'breakAll', // 超出部分截断显示
 							// ellipsis: true // 显示省略号
 							// formatter: function(value) {
@@ -266,8 +266,8 @@
 					var autoHeight = this.option.xAxis.data.length * 60 + 50;
 					
 					if(this.isIphoneX){
-						if(autoHeight>1600){
-							autoHeight=1600
+						if(autoHeight>1300){
+							autoHeight=1300
 						}
 					}
 					
