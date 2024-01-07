@@ -1,7 +1,12 @@
 {
   "description": "项目配置文件。",
   "packOptions": {
+<<<<<<< HEAD
     "ignore": []
+=======
+    "ignore": [],
+    "include": []
+>>>>>>> 2b147b528ce6891fa88338619a7b519d57567b46
   },
   "setting": {
     "urlCheck": false,
@@ -9,6 +14,7 @@
     "postcss": false,
     "minified": true,
     "newFeature": true,
+<<<<<<< HEAD
     "bigPackageSizeSupport": true
   },
   "compileType": "miniprogram",
@@ -39,5 +45,23 @@
         }
       ]
     }
+=======
+    "bigPackageSizeSupport": true,
+    "ignoreUploadUnusedFiles": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wx49a6c7e721da893d",
+  "projectname": "lsd_new_uniapp",
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+>>>>>>> 2b147b528ce6891fa88338619a7b519d57567b46
   }
 }

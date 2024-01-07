@@ -11,6 +11,12 @@
         "minified": true,
         "newFeature": true,
         "bigPackageSizeSupport": true,
+        "ignoreUploadUnusedFiles": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
         "coverView": true,
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
@@ -25,13 +31,7 @@
         "packNpmRelationList": [],
         "minifyWXSS": true,
         "disableUseStrict": false,
-        "ignoreUploadUnusedFiles": true,
         "checkInvalidKey": true,
-        "babelSetting": {
-            "ignore": [],
-            "disablePlugins": [],
-            "outputPath": ""
-        },
         "useStaticServer": true,
         "showES6CompileOption": false,
         "useCompilerPlugins": false
