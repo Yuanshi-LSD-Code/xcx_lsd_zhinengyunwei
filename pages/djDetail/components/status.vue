@@ -31,6 +31,45 @@
 					:yAxisData="djBarDjList.yAxisData" :series="djBarDjList.series" :yAxisLabel="djBarDjList.yAxisLabel"
 					@djClick="factoryDjBarDayDayList" height="100%"></echarts-wold-population-chart>
 			</div>
+			<view class="" style="margin-left: 10%;display: flex;justify-content: space-around;">
+				<view style="width:50px" :style="{color: djStatusShow==1? 'red':''}">
+					<view style="display: flex;" @click="djStatusClose(1)">
+						<view>详情</view><u-icon :name="djStatusShow == 1?'arrow-down':'arrow-right'" size="10"></u-icon>
+					</view>
+					<veiw style="width:50px" v-show="djStatusShow == 1?true:false">短路绕组松脱绝缘故障局部放电</veiw>
+				</view>
+
+				<view style="width:50px" :style="{color: djStatusShow==2? 'red':''}">
+					<view style="display: flex;" @click="djStatusClose(2)">
+						<view>详情</view><u-icon :name="djStatusShow == 2?'arrow-down':'arrow-right'" size="10"></u-icon>
+					</view>
+					<veiw style="width:50px" v-show="djStatusShow == 2?true:false">转子铜条开裂或松动</veiw>
+				</view>
+				<view style="width:50px" :style="{color: djStatusShow==3? 'red':''}">
+					<view style="display: flex;" @click="djStatusClose(3)">
+						<view>详情</view><u-icon :name="djStatusShow == 3?'arrow-down':'arrow-right'" size="10"></u-icon>
+					</view>
+					<veiw style="width:50px" v-show="djStatusShow == 3?true:false">轴承问题</veiw>
+				</view>
+				<view style="width:50px" :style="{color: djStatusShow==4? 'red':''}">
+					<view style="display: flex;" @click="djStatusClose(4)">
+						<view>详情</view><u-icon :name="djStatusShow == 4?'arrow-down':'arrow-right'" size="10"></u-icon>
+					</view>
+					<veiw style="width:50px" v-show="djStatusShow == 4?true:false">基础松动部件松动从动部件松动或超差</veiw>
+				</view>
+				<view style="width:50px" :style="{color: djStatusShow==5? 'red':''}">
+					<view style="display: flex;" @click="djStatusClose(5)">
+						<view>详情</view><u-icon :name="djStatusShow == 5?'arrow-down':'arrow-right'" size="10"></u-icon>
+					</view>
+					<veiw style="width:50px" v-show="djStatusShow == 5?true:false">皮带皮带轮齿轮箱风机/泵叶轮</veiw>
+				</view>
+				<view style="width:50px" :style="{color: djStatusShow==6? 'red':''}">
+					<view style="display: flex;" @click="djStatusClose(6)">
+						<view>详情</view><u-icon :name="djStatusShow == 6?'arrow-down':'arrow-right'" size="10"></u-icon>
+					</view>
+					<veiw style="width:50px" v-show="djStatusShow == 6?true:false">联轴器和电动机轴的不对中不平衡</veiw>
+				</view>
+			</view>
 		</view>
 
 		<view style="margin-top: 10px;">
@@ -139,7 +178,7 @@
 
 
 				djBarDayAesTsList: {},
-				djBarDayAesTsListKey:'1',
+				djBarDayAesTsListKey: '1',
 				selectTsType: [
 					[{
 							title: '三相电流',
@@ -205,6 +244,7 @@
 				barShow: false,
 
 				right_value2: false,
+				djStatusShow: 0,
 
 			}
 		},
@@ -239,13 +279,21 @@
 		},
 
 		methods: {
+			djStatusClose(e) {
+				if (e == this.djStatusShow) {
+					this.djStatusShow = 0;
+				} else {
+					this.djStatusShow = e
+				}
+
+			},
 			init() {
 				this.djBarDayDayList();
 				this.djBarDayDjList();
 
 			},
-			
-			factoryDjTimeDetail2(e){
+
+			factoryDjTimeDetail2(e) {
 				this.curr_time_click = e;
 				this.djBarDayDjList();
 			},
@@ -385,7 +433,7 @@
 
 				}).then((res) => {
 					this.djBarDayAesTsList = res.data;
-                    this.djBarDayAesTsListKey = new Date().getTime();
+					this.djBarDayAesTsListKey = new Date().getTime();
 					console.log(7777777)
 					this.$refs.ts.init();
 
