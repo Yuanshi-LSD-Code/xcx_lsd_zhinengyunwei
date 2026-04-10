@@ -129,7 +129,7 @@
 		},
 		methods: {
 			async init() {
-				console.log(77777777)
+				//console.log(77777777)
 				const chart = await this.$refs.chart.init(echarts);
 				// this.$refs.chart.setChart((params) => {
 				// 	console.log(8888881)
@@ -154,7 +154,7 @@
 				});
 			},
 			chartClick() {
-				console.log(666666666677)
+				//console.log(666666666677)
 			},
 
 			goChart() {
@@ -182,7 +182,7 @@
 			},
 
 			handleClick(event) {
-				console.log('点击事件触发：', event);
+				//console.log('点击事件触发：', event);
 				// 在这里处理点击事件的业务逻辑
 			},
 

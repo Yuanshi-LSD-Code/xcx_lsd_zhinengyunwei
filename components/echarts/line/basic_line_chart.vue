@@ -216,7 +216,7 @@
 				chart.setOption(this.option)
 				var that = this;
 				chart.on('click', params => {
-					console.log('点击事件触发2：', params);
+					//console.log('点击事件触发2：', params);
 					let index = params.dataIndex;
 					let time = that.dayMonth[index];
 					// uni.$emit('djBarClick', index);

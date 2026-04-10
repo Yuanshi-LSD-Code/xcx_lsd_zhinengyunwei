@@ -179,8 +179,8 @@
 			series(newVal) {
 
 				this.option.series = newVal;
-                console.log(77777777788)
-                console.log(newVal)
+               // console.log(77777777788)
+               // console.log(newVal)
 				this.$refs.chart.setOption(this.option)
 			},
 
@@ -191,7 +191,7 @@
 
 				chart.setOption(this.option)
 				chart.on('click', params => {
-					console.log('点击事件触发2：', params);
+					//console.log('点击事件触发2：', params);
 					let index = params.dataIndex;
 
 					this.$emit('djBarClick', index);

@@ -53,9 +53,9 @@
 
 					<view class="example-body" style="">
 						<view class="display">
-							<view @click="startClick()">{{start_time}}</view>
+							<view @click="startClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{start_time}}</view>
 							<view class="display_j" style="width: 15px;"> ~ </view>
-							<view @click="endClick()">{{end_time}}</view>
+							<view @click="endClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{end_time}}</view>
 						</view>
 
 

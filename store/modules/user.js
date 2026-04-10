@@ -8,7 +8,8 @@ const state = {
 		mobile: '',
 		pic_captcha: '',
 		sms_captcha: '',
-		validate_code_id: -1
+		validate_code_id: -1,
+		
 	},
 	isSign: false
 

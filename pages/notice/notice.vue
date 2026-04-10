@@ -95,10 +95,19 @@
 			
 			
 			linkTo(item, index) {
-				
 				this.$_navigateTo('noticeDetail', {
-					'item': item
-				})
+				'item': item
+				});
+				// 判断 item.type 的值并决定跳转的链接
+				/* if (item.type === 4) {
+				    this.$_navigateTo('/pages/factoryOne/repairDetail', {
+				        'item': item
+				    });
+				} else {
+				    this.$_navigateTo('noticeDetail', {
+				    'item': item
+				    });
+				} */
 			},
 
 			sectionChange(index) {

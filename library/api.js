@@ -162,6 +162,11 @@ class Api {
 	factoryNoticeList() {
 		return 'Factory/factoryNoticeList';
 	}
+	//新增根据ID查看admin的name
+	getAdminById() {
+		return 'Factory/getAdminById';
+	}
+	
 	adList() {
 		return 'Ad/adList';
 	}

@@ -5,15 +5,18 @@ const dev = true
 
 const configObj = {};
 if (environment == 'dev') {
-	configObj.url = 'https://lsdnew.dev.ycmua.com';
+	configObj.url = 'https://mmp.rounston.com';
+	//configObj.url = 'http://localhost:8083';
 	configObj.websocket = '';
 } else if (environment == 'product') {
-	configObj.url = 'https://lsdnew.dev.ycmua.com';
-	
+	configObj.url = 'https://mmp.rounston.com';
+	//configObj.url = 'http://localhost:8083';
 	configObj.websocket = 'ws://';
 } else {
 	console.error('错误')
 }
+
+
 configObj.imgUrl = 'http://oss-cdn.bangyaya.cn';
 configObj.webUrl = configObj.url + '/';
 configObj.apiUrl = configObj.webUrl + 'appapi/'

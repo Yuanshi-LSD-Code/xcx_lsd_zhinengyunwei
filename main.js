@@ -29,17 +29,22 @@ Vue.component('main-tab-bar',mainTabBar)
 
 import stage_speed_gauge from "@/components/echarts/gauge/stage_speed_gauge";
 import stacked_column_chart from "@/components/echarts/bar/stacked_column_chart";
+import stacked_column_chart2 from "@/components/echarts/bar/stacked_column_chart2";
 import basic_line_chart from "@/components/echarts/line/basic_line_chart";
 import wold_population_chart from "@/components/echarts/bar/wold_population_chart";
 import basic_line_config_chart from "@/components/echarts/line/basic_line_config_chart";
+import basic_line_config_charts from "@/components/echarts/line/basic_line_config_charts";
+
 import basic_line_config_chart_ts from "@/components/echarts/line/basic_line_config_chart_ts";
 import base_bar_chart from "@/components/echarts/bar/base_bar_chart";
 
 Vue.component('echarts-stage-speed-gauge', stage_speed_gauge);
 Vue.component('echarts-stacked-column-chart', stacked_column_chart);
+Vue.component('echarts-stacked-column-chart2', stacked_column_chart2);
 Vue.component('echarts-basic-line-chart', basic_line_chart);
 Vue.component('echarts-wold-population-chart', wold_population_chart);
 Vue.component('echarts-basic-line-config-chart', basic_line_config_chart);
+Vue.component('echarts-basic-line-config-charts', basic_line_config_charts);
 Vue.component('echarts-basic-line-config-chart-ts', basic_line_config_chart_ts);
 Vue.component('echarts-base-bar-chart', base_bar_chart);
 // import fui-footer from 'components/firstui/fui-footer/fui-footer.vue'

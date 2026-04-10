@@ -1,6 +1,6 @@
 {
     "name" : "lsd_new_uniapp",
-    "appid" : "__UNI__4D3B2A7",
+    "appid" : "__UNI__1EF983A",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -56,7 +56,7 @@
     "mp-weixin" : {
         /* 小程序特有相关 */
         "usingComponents" : true,
-        "appid" : "wx49a6c7e721da893d",
+        "appid" : "wx98fcf5e6e9ae7ac1",
         "setting" : {
             "urlCheck" : false,
             "minified" : true,

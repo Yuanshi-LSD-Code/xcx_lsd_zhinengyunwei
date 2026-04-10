@@ -1,12 +1,8 @@
 {
   "description": "项目配置文件。",
   "packOptions": {
-<<<<<<< HEAD
-    "ignore": []
-=======
     "ignore": [],
     "include": []
->>>>>>> 2b147b528ce6891fa88338619a7b519d57567b46
   },
   "setting": {
     "urlCheck": false,
@@ -14,40 +10,7 @@
     "postcss": false,
     "minified": true,
     "newFeature": true,
-<<<<<<< HEAD
-    "bigPackageSizeSupport": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "",
-  "appid": "wx49a6c7e721da893d",
-  "projectname": "lsd_new_uniapp",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "current": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": 0,
-      "list": [
-        {
-          "name": "",
-          "path": "",
-          "query": "",
-          "id": 0
-        }
-      ]
-    }
-=======
     "bigPackageSizeSupport": true,
-    "ignoreUploadUnusedFiles": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -55,13 +18,12 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "",
-  "appid": "wx49a6c7e721da893d",
+  "libVersion": "3.15.1",
+  "appid": "wx98fcf5e6e9ae7ac1",
   "projectname": "lsd_new_uniapp",
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
->>>>>>> 2b147b528ce6891fa88338619a7b519d57567b46
   }
 }

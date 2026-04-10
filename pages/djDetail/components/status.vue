@@ -6,9 +6,9 @@
 			<view class="display" style="margin-top: 10px;">
 				<view style="margin-left: 20rpx;">电机健康度趋势</view>
 				<view class="display" style="margin-left: 10px;">
-					<view @click="startClick()">{{start_time}}</view>
+					<view @click="startClick()" style="border: 0.5px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{start_time}}</view>
 					<view class="display_j" style="width: 15px;"> ~ </view>
-					<view @click="endClick()">{{end_time}}</view>
+					<view @click="endClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{end_time}}</view>
 				</view>
 
 				<u-calendar :show="show_start_time" :defaultDate="start_time" :minDate="min_time" monthNum="13"
@@ -31,7 +31,7 @@
 					:yAxisData="djBarDjList.yAxisData" :series="djBarDjList.series" :yAxisLabel="djBarDjList.yAxisLabel"
 					@djClick="factoryDjBarDayDayList" height="100%"></echarts-wold-population-chart>
 			</div>
-			<view class="" style="margin-left: 10%;display: flex;justify-content: space-around;">
+			<!-- <view class="" style="margin-left: 10%;display: flex;justify-content: space-around;">
 				<view style="width:50px" :style="{color: djStatusShow==1? 'red':''}">
 					<view style="display: flex;" @click="djStatusClose(1)">
 						<view>详情</view><u-icon :name="djStatusShow == 1?'arrow-down':'arrow-right'" size="10"></u-icon>
@@ -69,16 +69,16 @@
 					</view>
 					<veiw style="width:50px" v-show="djStatusShow == 6?true:false">联轴器和电动机轴的不对中不平衡</veiw>
 				</view>
-			</view>
+			</view> -->
 		</view>
 
 		<view style="margin-top: 10px;">
 			<view class="display">
 				<view style="margin-left: 20rpx;">{{dj_bar_device_title}}状态趋势</view>
 				<view class="display" style="margin-left: 10px;">
-					<view @click="barStartClick()">{{bar_start_time}}</view>
+					<view @click="barStartClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{bar_start_time}}</view>
 					<view class="display_j" style="width: 15px;"> ~ </view>
-					<view @click="barEndClick()">{{bar_end_time}}</view>
+					<view @click="barEndClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{bar_end_time}}</view>
 				</view>
 
 				<u-calendar :show="show_bar_start_time" :defaultDate="bar_start_time" :minDate="min_time" monthNum="13"
@@ -87,14 +87,28 @@
 					:maxDate="max_time" @confirm="bar_confirm_end" @close="bar_close_end"></u-calendar>
 			</view>
 			<div class="w-100" style="height: 145px;">
-				<echarts-basic-line-config-chart :series="djBarDayList.series" :xAxisData="djBarDayList.xAxisData"
+				<!-- <echarts-basic-line-config-charts :series="djBarDayList.series" :xAxisData="djBarDayList.xAxisData"
 					:dayMonth="djBarDayList.dayMonth" @djTimeClick="factoryDjTime" className="main-jkd-dj-day-bar"
-					height="100%"></echarts-basic-line-config-chart>
+					height="100%"></echarts-basic-line-config-charts> -->
+					<echarts-basic-line-config-charts
+					:key="djBarDayListKey"
+					:lineSeries="djBarDayList.lineSeries"									
+					:barSeries1="djBarDayList.barSeries1"
+					:barSeries2="djBarDayList.barSeries2"
+					:barSeries3="djBarDayList.barSeries3"
+					:barSeries4="djBarDayList.barSeries4"
+					:xAxisData="djBarDayList.xAxisData"
+					:dayMonth="djBarDayList.dayMonth"
+					:highlightIndex="highlightIndex"
+					className="main-jkd-dj-day-bar"
+					@djTimeClick="factoryDjTime"
+					height="100%"
+					></echarts-basic-line-config-charts>
 			</div>
 		</view>
 
 
-		<view style="margin-top: 10px;">
+		<view style="margin-top: 30px;">
 			<view class="display_j" style="width: 100%;">
 				<div style="margin-right: 5px;">
 					<u-icon name="play-left-fill" size="12" @click.stop="handeItemLeft2"></u-icon>
@@ -106,7 +120,7 @@
 				</div>
 
 			</view>
-			<div class="w-100" style="height: 145px;">
+			<div class="w-100" style="height: 145px;margin-top: -10px;">
 				<echarts-basic-line-config-chart :series="djBarDayAesList.series" :xAxisData="djBarDayAesList.xAxisData"
 					:dayMonth="djBarDayAesList.dayMonth" className="main-jkd-dj-day-bar"
 					height="100%"></echarts-basic-line-config-chart>
@@ -170,8 +184,18 @@
 				show_bar_end_time: false,
 				bar_start_time: '',
 				bar_end_time: '',
-				djBarDayList: {},
-
+				//djBarDayList: {},
+				djBarDayList: {
+				        barSeries1: [ /* ... */ ],
+				        barSeries2: [ /* ... */ ],
+				        barSeries3: [ /* ... */ ],
+				        barSeries4: [ /* ... */ ],
+				        lineSeries: [ /* ... */ ],
+				        xAxisData: [ /* ... */ ],
+				        dayMonth: [ /* ... */ ]
+				      },
+				 djBarDayListKey: Date.now(), // Key to force re-rendering if necessary
+				  highlightIndex: null,
 				aes_time: '',
 				//实时趋势
 				djBarDayAesList: {},
@@ -245,6 +269,8 @@
 
 				right_value2: false,
 				djStatusShow: 0,
+				
+				
 
 			}
 		},
@@ -340,8 +366,8 @@
 			},
 
 			barConfirm(e) {
-				console.log(8788)
-				console.log(e)
+				//console.log(8788)
+				//console.log(e)
 				this.selectTsTypeValue = e.value[0].type;
 				this.selectTsTypeTitle = e.value[0].title;
 
@@ -404,7 +430,6 @@
 				}).then((res) => {
 					this.djBarDayList = res.data;
 					this.factoryDjDayBarAesList();
-
 				});
 			},
 			//实时趋势
@@ -434,13 +459,13 @@
 				}).then((res) => {
 					this.djBarDayAesTsList = res.data;
 					this.djBarDayAesTsListKey = new Date().getTime();
-					console.log(7777777)
+					//console.log(7777777)
 					this.$refs.ts.init();
 
 				});
 			},
 
-			BarStartClick() {
+			barStartClick() {
 				this.show_bar_start_time = true;
 			},
 			barEndClick() {
@@ -448,29 +473,33 @@
 			},
 
 			dateChange(e) {
-				console.log(e);
+				//console.log(e);
 			},
+			//组件选中开始时间
 			bar_confirm_start(e) {
 				this.show_bar_start_time = false;
 				this.bar_start_time = e[0];
-				console.log(e);
-				this.changeBarTime();
+				//console.log(e);
+				//this.changeBarTime();
+				this.factoryDjDayBarDayList();
 			},
 			bar_close_start(e) {
 				this.show_bar_start_time = false;
 				// this.start_time = e;
-				console.log(e);
+				//console.log(e);
 			},
+			//组件选中结束时间
 			bar_confirm_end(e) {
 				this.bar_show_end_time = false;
 				this.bar_end_time = e[0];
-				console.log(e);
-				this.changeBarTime();
+				//console.log(e);
+				//this.changeBarTime();
+				this.factoryDjDayBarDayList();
 			},
 			bar_close_end(e) {
 				this.show_bar_end_time = false;
 				// this.end_time = e;
-				console.log(e);
+				//console.log(e);
 			},
 
 			changeBarTime(value) {
@@ -489,29 +518,29 @@
 			},
 
 			dateChange(e) {
-				console.log(e);
+				//console.log(e);
 			},
 			confirm_start(e) {
 				this.show_start_time = false;
 				this.start_time = e[0];
-				console.log(e);
+				//console.log(e);
 				this.changeRepairTime();
 			},
 			close_start(e) {
 				this.show_start_time = false;
 				// this.start_time = e;
-				console.log(e);
+				//console.log(e);
 			},
 			confirm_end(e) {
 				this.show_end_time = false;
 				this.end_time = e[0];
-				console.log(e);
+				//console.log(e);
 				this.changeRepairTime();
 			},
 			close_end(e) {
 				this.show_end_time = false;
 				// this.end_time = e;
-				console.log(e);
+				//console.log(e);
 			},
 
 			changeRepairTime(value) {

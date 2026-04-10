@@ -1,48 +1,36 @@
 {
-    "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-    "packOptions": {
-        "ignore": [],
-        "include": []
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "postcss": false,
+    "minified": true,
+    "newFeature": true,
+    "bigPackageSizeSupport": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wxfadb24f2c5593a89",
+  "projectname": "lsd_new_uniapp",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
     },
-    "setting": {
-        "urlCheck": false,
-        "es6": false,
-        "postcss": false,
-        "minified": true,
-        "newFeature": true,
-        "bigPackageSizeSupport": true,
-        "ignoreUploadUnusedFiles": true,
-        "babelSetting": {
-            "ignore": [],
-            "disablePlugins": [],
-            "outputPath": ""
-        },
-        "coverView": true,
-        "compileHotReLoad": false,
-        "lazyloadPlaceholderEnable": false,
-        "preloadBackgroundData": false,
-        "autoAudits": false,
-        "uglifyFileName": false,
-        "uploadWithSourceMap": true,
-        "enhance": true,
-        "useMultiFrameRuntime": true,
-        "showShadowRootInWxmlPanel": true,
-        "packNpmManually": false,
-        "packNpmRelationList": [],
-        "minifyWXSS": true,
-        "disableUseStrict": false,
-        "checkInvalidKey": true,
-        "useStaticServer": true,
-        "showES6CompileOption": false,
-        "useCompilerPlugins": false
+    "conversation": {
+      "current": -1,
+      "list": []
     },
-    "compileType": "miniprogram",
-    "libVersion": "3.2.2",
-    "appid": "wx49a6c7e721da893d",
-    "projectname": "lsd_new_uniapp",
-    "condition": {},
-    "editorSetting": {
-        "tabIndent": "insertSpaces",
-        "tabSize": 4
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": []
     }
+  }
 }

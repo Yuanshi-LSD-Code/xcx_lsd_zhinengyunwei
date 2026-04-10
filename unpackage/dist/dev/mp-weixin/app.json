@@ -55,9 +55,11 @@
     "main-tab-bar": "/components/base-common/main-tab-bar/main-tab-bar",
     "echarts-stage-speed-gauge": "/components/echarts/gauge/stage_speed_gauge",
     "echarts-stacked-column-chart": "/components/echarts/bar/stacked_column_chart",
+    "echarts-stacked-column-chart2": "/components/echarts/bar/stacked_column_chart2",
     "echarts-basic-line-chart": "/components/echarts/line/basic_line_chart",
     "echarts-wold-population-chart": "/components/echarts/bar/wold_population_chart",
     "echarts-basic-line-config-chart": "/components/echarts/line/basic_line_config_chart",
+    "echarts-basic-line-config-charts": "/components/echarts/line/basic_line_config_charts",
     "echarts-basic-line-config-chart-ts": "/components/echarts/line/basic_line_config_chart_ts",
     "echarts-base-bar-chart": "/components/echarts/bar/base_bar_chart"
   }

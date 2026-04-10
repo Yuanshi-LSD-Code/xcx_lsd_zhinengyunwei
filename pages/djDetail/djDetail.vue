@@ -6,47 +6,32 @@
 				<div class="display_a" style="padding-top: 5px;margin-left: 20rpx;">
 					<img style="height: 10px;width: 10px;"
 						:src="item.dj_status > 0? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
-						<view style="margin-left: 20rpx;color: white;">{{ item.title }}</view>
+						<view style="margin-left: 20rpx;color: white;line-height: 30px;">{{ item.title }}</view>
 					  
 				</div>
 			</view>
-			<view class="display_j">
+			<u-line></u-line>
+			
+		<view class="tab-container">
+		    <view class="tab" :class="{ 'active': showType == 1 }" @click="infoShowChage(1)">
+		        <view>电机参数</view>
+		        <view class="underline" v-if="showType == 1"></view>
+		    </view>
+		    <view class="tab" :class="{ 'active': showType == 2 }" @click="infoShowChage(2)">
+		        <view>运行状态</view>
+		        <view class="underline" v-if="showType == 2"></view>
+		    </view>
+		    <view class="tab" :class="{ 'active': showType == 3 }" @click="infoShowChage(3)">
+		        <view>检修维护</view>
+		        <view class="underline" v-if="showType == 3"></view>
+		    </view>
+		    <view class="tab" :class="{ 'active': showType == 4 }" @click="infoShowChage(4)">
+		        <view>电机报告</view>
+		        <view class="underline" v-if="showType == 4"></view>
+		    </view>
+		</view>
 
-				<echarts-stage-speed-gauge className="main-dj-detail-jkd" :key="keyTime" ref="chart" @finished="init"
-					:gauge_org="item.avgbg ? item.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
-			</view>
-			<u-line></u-line>
-			<view class="display" style="height: 30px;">
-				<view class="display_j" style="flex:1">
-					<view class="display_j" @click="infoShowChage(1)">
-						<view :style="{color:showType==1 ?'blue':''}">电机参数</view>
-						<u-icon :name="showType == 1?'arrow-down':'arrow-up'"  size="16" :color="showType==1 ?'blue':''"></u-icon>
-					</view>
-				</view>
-				<u-line direction="col" style="height: 30px;"></u-line>
-				<view class="display_j" style="flex:1">
-					<view class="display_j" @click="infoShowChage(2)">
-						<view :style="{color:showType==2 ?'blue':''}">运行状态</view>
-						<u-icon :name="showType == 2?'arrow-down':'arrow-up'"  size="16" :color="showType==2 ?'blue':''"></u-icon>
-					</view>
-				</view>
-				<u-line direction="col" style="height: 30px;"></u-line>
-				<view class="display_j" style="flex:1">
-					<view class="display_j" @click="infoShowChage(3)">
-						<view :style="{color:showType==3 ?'blue':''}">检修维护</view>
-						<u-icon :name="showType == 3?'arrow-down':'arrow-up'"  size="16" :color="showType==3 ?'blue':''"></u-icon>
-					</view>
-				</view>
-				<u-line direction="col" style="height: 30px;"></u-line>
-				<view class="display_j" style="flex:1">
-					<view class="display_j" @click="infoShowChage(4)">
-						<view :style="{color:showType==4 ?'blue':''}">电机报告</view>
-						<u-icon :name="showType ==4?'arrow-down':'arrow-up'"  size="16" :color="showType==4 ?'blue':''"></u-icon>
-					</view>
-				</view>
-				
-			</view>
-			<u-line></u-line>
+
 			<view>
 				<info v-if="showType==1" :deviceId="item.device_id"></info>
 				<status v-if="showType==2" :deviceId="item.device_id"></status>
@@ -141,4 +126,33 @@
 		z-index: 99;
 		width: 100%;
 	}
+	.tab-container {
+	    display: flex;
+	    height: 40px;
+	    border-bottom: 1px solid #ddd;
+	}
+	
+	.tab {
+	    flex: 1;
+	    text-align: center;
+	    padding: 10px;
+	    position: relative;
+	    cursor: pointer;
+	}
+	
+	.tab.active {
+	    font-weight: bold;
+	    color: blue;
+	}
+	
+	.underline {
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 2px;
+	    background-color: blue;
+	}
+
+
 </style>

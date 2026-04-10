@@ -6,4 +6,10 @@
 	z-index: 99;
 	width: 100%;
 }
+textarea {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	resize: vertical; /* 允许用户调整高度 */
+}
 

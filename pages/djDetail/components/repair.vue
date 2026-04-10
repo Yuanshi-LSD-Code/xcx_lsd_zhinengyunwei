@@ -39,7 +39,7 @@
 								<view style="width: 140px;">{{item.label_title}}</view>
 								<view v-if="item.status == 1" class="status_bord display_j" style="border: 1px solid rgba(150, 150, 150, 1);color:gray">{{item.status_title}}</view>
 								<view v-if="item.status == 2" class="status_bord display_j" style="border: 1px solid green;color:green">{{item.status_title}}</view>
-								<view v-if="item.status == 3" class="status_bord display_j" style="border: 1px solid yellow;color:yellow">{{item.status_title}}</view>
+								<view v-if="item.status == 3" class="status_bord display_j" style="border: 1px solid red;color:red">{{item.status_title}}</view>
 								<!-- <view class="status_bord display_j" style="">{{item.status_title}}</view> -->
 							</view>
 							<view style="">{{item.add_time}}</view>

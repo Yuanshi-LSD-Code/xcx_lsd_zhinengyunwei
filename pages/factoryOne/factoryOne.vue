@@ -22,12 +22,18 @@
 				<view style="display: flex;flex-wrap: wrap;">
 					<view v-for="(item2,index2) in factory_dj_list" style="width: 50%;" @click="djClickJkd(item2)">
 						<echarts-stage-speed-gauge className="main-dj-detail-jkd" ref="chart" @finished="init"
-							:gauge_org="item2.avgbg ? item2.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
+							:gauge_org="item2.avgbg ? item2.avgbg.jkd : ''" height="150px"></echarts-stage-speed-gauge>
 						<div class="display_j" style="">
-							<img style="height: 10px;width: 10px;"
-								:src="item2.dj_status > 0? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
+							<!-- <img style="height: 10px;width: 10px;"
+								:src="item2.dj_status > 0? '../../static/image/u37.svg' : '../../static/image/u36.svg'" /> -->
+								<img style="height: 10px; width: 10px;"
+								        :src="item2.dj_status === -1 ? '../../static/image/u38.svg' :
+								               item2.dj_status === 0 ? '../../static/image/u36.svg' :
+								               item2.dj_status > 0 ? '../../static/image/u37.svg' :
+								               ''" />
 							<view style="margin-left: 20rpx;">{{ item2.title }}</view>
 						</div>
+						<view class="" style="text-align: center; font-size: 12px;">{{ item2.avgbg ? item2.avgbg.add_time.slice(0,16) : '' }}</view>
 					</view>
 				</view>
 			</view>
@@ -63,9 +69,9 @@
 
 				<view class="example-body" style="height: 30px;margin-left: 20rpx;">
 					<view class="display">
-						<view @click="startClick()">{{start_time}}</view>
+						<view @click="startClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{start_time}}</view>
 						<view class="display_j" style="width: 15px;"> ~ </view>
-						<view @click="endClick()">{{end_time}}</view>
+						<view @click="endClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{end_time}}</view>
 					</view>
 
 					<u-calendar :show="show_start_time" :defaultDate="start_time" :minDate="min_time" monthNum="13"

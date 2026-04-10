@@ -37,29 +37,29 @@
 			<u-line></u-line>
 			<view class="display" style="flex-wrap: wrap;margin-top: 5px;">
 				<view style="width: 50%;">本月运行(分钟):{{aes_param.run_time ||''}}</view>
-				<view style="width: 50%;">有功功率(KW)：{{aes_param.ActivePower || ''}}</view>
-				<view style="width: 50%;">R相电压(V)：{{aes_param.VrRms ||''}}</view>
-				<view style="width: 50%;">电压平衡度(%)：{{aes_param.Voltagebalance ||''}}</view>
-				<view style="width: 50%;">S相电压(V)：{{aes_param.VsRms ||''}}</view>
-				<view style="width: 50%;">电流平衡度(%)：{{aes_param.CurrentBalance ||''}}</view>
-
-				<view style="width: 50%;">T相电压(V)：{{aes_param.VtRms ||''}}</view>
-				<view style="width: 50%;">功率因数：{{aes_param.PowerFactor ||''}}</view>
-				<view style="width: 50%;">R相电流(A)：{{aes_param.IrRms ||''}}</view>
-				<view style="width: 50%;">相角(Deg)：{{aes_param.PhaseAngle ||''}}</view>
-				<view style="width: 50%;">S相电流(A)：{{aes_param.IsRms ||''}}</view>
-				<view style="width: 50%;">频率(Hz)：{{aes_param.SignalFrequency ||''}}</view>
-
-				<view style="width: 50%;">T相电流(A)：{{aes_param.ItRms ||''}}</view>
-				<view style="width: 50%;">导纳(A/V)：{{aes_param.Admittance ||''}}</view>
 				<view style="width: 50%;">总谐波(%)：{{aes_param.THD ||''}}</view>
+				<view style="width: 50%;">R相电压(V)：{{aes_param.VrRms ||''}}</view>
 				<view style="width: 50%;">3次谐波(%)：{{aes_param.ThirdHarmonic ||''}}</view>
+				<view style="width: 50%;">S相电压(V)：{{aes_param.VsRms ||''}}</view>
 				<view style="width: 50%;">5次谐波(%)：{{aes_param.FifthHarmonic ||''}}</view>
+				<view style="width: 50%;">T相电压(V)：{{aes_param.VtRms ||''}}</view>
 				<view style="width: 50%;">7次谐波(%)：{{aes_param.SeventhHarmonic ||''}}</view>
-
+				<view style="width: 50%;">R相电流(A)：{{aes_param.IrRms ||''}}</view>
 				<view style="width: 50%;">9次谐波(%)：{{aes_param.NinthHarmonic ||''}}</view>
+				<view style="width: 50%;">S相电流(A)：{{aes_param.IsRms ||''}}</view>
 				<view style="width: 50%;">11次谐波(%)：{{aes_param.EleventhHarmonic ||''}}</view>
+				<view style="width: 50%;">T相电流(A)：{{aes_param.ItRms ||''}}</view>
 				<view style="width: 50%;">13次谐波(%)：{{aes_param.ThirteenthHarmonic ||''}}</view>
+				
+			
+				<view style="width: 50%;">电压平衡度(%)：{{aes_param.Voltagebalance ||''}}</view>
+				<view style="width: 50%;">电流平衡度(%)：{{aes_param.CurrentBalance ||''}}</view>
+				<view style="width: 50%;">有功功率(KW)：{{aes_param.ActivePower || ''}}</view>
+				<view style="width: 50%;">频率(Hz)：{{aes_param.SignalFrequency ||''}}</view>
+			<!-- 	<view style="width: 50%;">功率因数：{{aes_param.PowerFactor ||''}}</view>
+				<view style="width: 50%;">相角(Deg)：{{aes_param.PhaseAngle ||''}}</view>
+				<view style="width: 50%;">导纳(A/V)：{{aes_param.Admittance ||''}}</view>
+				 -->
 
 			</view>
 		</view>
@@ -137,7 +137,7 @@
 					uni.downloadFile({
 						url: item.url,
 						success: res => {
-							console.log(res)
+							
 							if (res.statusCode === 200) {
 								// 预览pdf文件
 								uni.openDocument({
@@ -167,8 +167,7 @@
 				this.$http('factoryAdminDjInfo', {
 					device_id: this.deviceId
 				}).then((res) => {
-					console.log(999)
-					console.log(res)
+					
 					this.info = res.data.info;
 					this.dj_doc = res.data.dj_doc;
 					this.aes_param = res.data.aes_param;

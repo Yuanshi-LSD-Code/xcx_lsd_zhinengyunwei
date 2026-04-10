@@ -227,8 +227,10 @@
 			getDeveiceCode() {
 				// #ifdef APP-PLUS
 				const that = this
-				plus.device.getInfo({
+				console.log(that,"++++++++++++")
+				plus.device.getInfo({			
 					success: function(e) {
+						console.log(e,"-----------")
 						that.globalData.uuid = e.uuid
 						// console.log(api);
 						// api.userUpdate(this.globalData.mobileType,this.globalData.uuid)
@@ -278,6 +280,7 @@
 			},
 
 			login() {
+				console.log(12312312321321)
 				return new Promise((r, j) => {
 					uni.login({
 						success: async (loginInfo) => {
@@ -285,6 +288,7 @@
 								code: loginInfo.code
 							});
 							
+							console.log(res,"=============")
 							if (res.code == 200) {
 								console.log(88888)
 								

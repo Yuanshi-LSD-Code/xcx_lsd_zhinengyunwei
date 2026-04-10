@@ -5,20 +5,27 @@
 
 			<view v-for="(item,index) in factory_dj_list " :key=" index">
 				<view class="factory_title display_a" style="margin-top: 10rpx;">
-					<view style="margin-left: 20rpx;margin-right: 20rpx">{{item.title}}</view>
+					<view style="margin-left: 20rpx;margin-right: 20rpx;height:2rem;line-height: 2rem;">{{item.title}}</view>
 					
 				</view>
 
 				<view style="display: flex;flex-wrap: wrap;">
 					<view v-for="(item2,index2) in item.dj" style="width: 50%;"  @click="djClickJkd(item2)">
 						<echarts-stage-speed-gauge className="main-dj-detail-jkd" ref="chart" @finished="init"
-							:gauge_org="item2.avgbg ? item2.avgbg.jkd : ''" height="120px"></echarts-stage-speed-gauge>
+							:gauge_org="item2.avgbg ? item2.avgbg.jkd : ''" height="150px"></echarts-stage-speed-gauge>
 						<div class="display_j" style="">
-							<img style="height: 10px;width: 10px;"
-								:src="item2.dj_status > 0? '../../static/image/u37.svg' : '../../static/image/u36.svg'" />
-								<view style="margin-left: 20rpx;">{{ item2.title }}</view>
-							
+							<!-- <img style="height: 10px;width: 10px;"
+								:src="item2.dj_status > 0? '../../static/image/u37.svg' : '../../static/image/u36.svg'" /> -->
+						<img style="height: 10px; width: 10px;"
+						        :src="item2.dj_status === -1 ? '../../static/image/u38.svg' :
+						               item2.dj_status === 0 ? '../../static/image/u36.svg' :
+						               item2.dj_status > 0 ? '../../static/image/u37.svg' :
+						               ''" />
+						<view style="margin-left: 20rpx;font-size:13px;">{{ item2.title }}</view>
+								
 						</div>
+						<view class="" style="text-align: center; font-size: 12px;">{{ item2.avgbg ? item2.avgbg.add_time.slice(0,16) : '' }}</view>
+
 					</view>
 				</view>
 
@@ -49,11 +56,11 @@
 				<div style="width:100%;height: 50px;">
 
 
-					<view class="example-body" style="">
-						<view class="display">
-							<view @click="startClick()">{{start_time}}</view>
+					<view class="example-body" >
+						<view class="display" >
+							<view @click="startClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{start_time}}</view>
 							<view class="display_j" style="width: 15px;"> ~ </view>
-							<view @click="endClick()">{{end_time}}</view>
+							<view @click="endClick()" style="border: 1px solid #000; border-radius: 3px;padding: 0px 2px;font-size: 22rpx;">{{end_time}}</view>
 						</view>
 
 
@@ -114,9 +121,7 @@
 				.getDate()), 'yyyy-mm-dd');
 			this.max_time = this.$_formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate
 				.getDate() + 1), 'yyyy-mm-dd');
-			console.log(78787)
-			console.log(this.min_time)
-			console.log(this.max_time)
+		
 
 
 			this.$http('djFactoryDjList').then((res) => {
