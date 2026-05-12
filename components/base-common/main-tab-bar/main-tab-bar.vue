@@ -81,13 +81,43 @@
 			// }
 			// #endif
 		},
-		methods: {
+		/* methods: {
 			navClick(item, index) {
 				console.log(22222)
 				console.log(item.url)
 				this.$_reLaunch(item.url)
 			},
-		},
+		}, */
+		methods: {
+		    navClick(item, index) {
+		        // 判断是否为跨小程序跳转
+		        if (item.jumpType === 'miniprogram') {
+		            // 跨小程序跳转
+		            uni.navigateToMiniProgram({
+		                appId: item.miniAppId,
+		                path: item.miniPath,
+		                extraData: item.extraData || {},
+		                success: (res) => {
+		                    console.log('跳转小程序成功', res);
+		                },
+		                fail: (err) => {
+		                    console.error('跳转小程序失败', err);
+		                    uni.showToast({
+		                        title: '跳转失败，请稍后重试',
+		                        icon: 'none'
+		                    });
+		                }
+		            });
+		        } else {
+		            // 原有的内部页面跳转（reLaunch 或 navigateTo）
+		            if (item.url) {
+		                this.$_reLaunch(item.url);  // 或使用 uni.reLaunch
+		            } else {
+		                console.warn('未配置跳转路径');
+		            }
+		        }
+		    },
+		}
 	}
 </script>
 <style scoped lang="scss">

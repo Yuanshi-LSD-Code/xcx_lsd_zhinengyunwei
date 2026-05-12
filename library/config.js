@@ -6,11 +6,13 @@ const dev = true
 const configObj = {};
 if (environment == 'dev') {
 	//configObj.url = 'https://mmp.rounston.com';
-	configObj.url = 'http://localhost:8083';
+	//configObj.url = 'http://localhost:8083';
+	configObj.url = 'http://192.168.1.111:8083';
 	configObj.websocket = '';
 } else if (environment == 'product') {
 	//configObj.url = 'https://mmp.rounston.com';
-	configObj.url = 'http://localhost:8083';
+	//configObj.url = 'http://localhost:8083';
+	configObj.url = 'http://192.168.1.111:8083';
 	configObj.websocket = 'ws://';
 } else {
 	console.error('错误')

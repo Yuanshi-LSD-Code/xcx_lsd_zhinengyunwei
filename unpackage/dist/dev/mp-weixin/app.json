@@ -49,6 +49,9 @@
     "navigationBarBackgroundColor": "#ffffff",
     "backgroundColor": "#ffffff"
   },
+  "navigateToMiniProgramAppIdList": [
+    "wx267498f413ce3a06"
+  ],
   "usingComponents": {
     "copyright": "/components/copyright/copyright",
     "main-layout": "/components/base-common/main-layout/main-layout",

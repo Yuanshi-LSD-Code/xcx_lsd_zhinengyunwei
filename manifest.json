@@ -61,6 +61,9 @@
             "urlCheck" : false,
             "minified" : true,
             "es6" : false
-        }
+        },
+		"navigateToMiniProgramAppIdList": [
+		    "wx267498f413ce3a06"   // 你的 AI 助手小程序 AppId
+		]
     }
 }
