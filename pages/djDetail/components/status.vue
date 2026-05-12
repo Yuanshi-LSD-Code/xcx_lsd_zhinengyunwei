@@ -416,9 +416,11 @@
 			},
 			//将维护建议按照序号折行展示
 			formatComment(comment) {
-				//console.log('进入formatComment了');
 			    if (!comment || comment.trim() === '') return '';
-			    return comment.replace(/\。/g, '。\n');
+			    // 将 "。 " 或 "。\t" 等替换为 "。\n"，即删除句号后的空白字符
+			    let formatted = comment.replace(/。\s*/g, '。\n');
+			    // 去掉末尾可能多余的一个换行
+			    return formatted.replace(/\n$/, '');
 			},
 			//电机组件运行状态
 			djBarDayDjList() {
