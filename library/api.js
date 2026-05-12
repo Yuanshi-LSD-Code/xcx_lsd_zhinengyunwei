@@ -225,6 +225,10 @@ class Api {
 		return 'Inter/upload';
 	}
 
+	//查询电机的最新一条的维护建议
+	getCommentByDeviceId() {
+		return 'Dj/getCommentByDeviceId';
+	}
 
 
 
