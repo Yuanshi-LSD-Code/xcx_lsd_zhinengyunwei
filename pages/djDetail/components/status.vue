@@ -72,7 +72,17 @@
 			</view> -->
 		</view>
 
+		<!-- ========== 新增维护建议区域 ========== -->
 		<view style="margin-top: 10px;">
+		    <view class="display">
+		    	<view style="margin-left: 20rpx;">维护建议</view>
+			</view>
+			<view class="display" style="margin-left: 10px;margin-top:10px;white-space: pre-wrap;">
+				{{ maintenanceText || '暂无维护建议' }}
+			</view>
+		</view>
+		<!-- =================================== -->
+		<view style="margin-top: 20px;">
 			<view class="display">
 				<view style="margin-left: 20rpx;">{{dj_bar_device_title}}状态趋势</view>
 				<view class="display" style="margin-left: 10px;">
@@ -270,7 +280,7 @@
 				right_value2: false,
 				djStatusShow: 0,
 				
-				
+				maintenanceText: '',   // 维护建议文本
 
 			}
 		},
@@ -316,6 +326,7 @@
 			init() {
 				this.djBarDayDayList();
 				this.djBarDayDjList();
+				this.getCommentByDeviceId();
 
 			},
 
@@ -395,7 +406,20 @@
 
 				});
 			},
-
+			//电机最新一条的维护建议
+			getCommentByDeviceId() {
+				this.$http('getCommentByDeviceId', {
+					'device_id': this.deviceId,
+				}).then((res) => {
+					this.maintenanceText = this.formatComment(res.data);
+				});
+			},
+			//将维护建议按照序号折行展示
+			formatComment(comment) {
+				//console.log('进入formatComment了');
+			    if (!comment || comment.trim() === '') return '';
+			    return comment.replace(/\。/g, '。\n');
+			},
 			//电机组件运行状态
 			djBarDayDjList() {
 
