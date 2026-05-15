@@ -34,7 +34,8 @@
 			"path": "pages/ai/ai",
 			"style": {
 				"navigationBarTitleText": "AI助手",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"   // 新增此行
 			}
 		},
 		{
