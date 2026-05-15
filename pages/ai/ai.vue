@@ -1,119 +1,121 @@
 <template>
+	<main-layout>
 	 <view>  <!-- 添加一个根元素 -->
-  <!--pages/index/index.wxml-->
-  <!-- 自定义导航栏 -->
-  <view class="custom-navbar" :style="{ height: navbarHeight + 'px' }">
-    <view class="navbar-content" :style="{ height: '44px', marginTop: statusBarHeight + 'px' }">
-      <view class="navbar-left">
-        <view class="nav-btn" @click="onHistoryTap">
-          <image class="nav-icon" src="../../static/image/history.png" mode="aspectFit"></image>
-        </view>
-        <view class="nav-btn" @click="onRefreshTap">
-          <image class="nav-icon" src="../../static/image/refresh.png" mode="aspectFit"></image>
-        </view>
-      </view>
-      <view class="navbar-title">圆石AI助手</view>
-      <view class="navbar-right"></view>
-    </view>
-  </view>
+	  <!--pages/index/index.wxml-->
+	  <!-- 自定义导航栏 -->
+	  <view class="custom-navbar" :style="{ height: navbarHeight + 'px' }">
+		<view class="navbar-content" :style="{ height: '44px', marginTop: statusBarHeight + 'px' }">
+		  <view class="navbar-left">
+			<view class="nav-btn" @click="onHistoryTap">
+			  <image class="nav-icon" src="../../static/image/history.png" mode="aspectFit"></image>
+			</view>
+			<view class="nav-btn" @click="onRefreshTap">
+			  <image class="nav-icon" src="../../static/image/refresh.png" mode="aspectFit"></image>
+			</view>
+		  </view>
+		  <view class="navbar-title">圆石AI助手</view>
+		  <view class="navbar-right"></view>
+		</view>
+	  </view>
 
-  <!-- 左侧历史记录悬浮层 -->
-  <view class="history-overlay" v-if="showHistoryPicker" @click="onHideHistoryPicker"></view>
-  <view
-    class="history-picker-container"
-    v-if="showHistoryPicker"
-    :style="{ height: windowHeight + 'px', transform: showHistoryPicker ? 'translateX(0)' : 'translateX(-50%)' }"
-  >
-    <scroll-view class="history-list" scroll-y>
-      <view
-        v-for="item in historyList"
-        :key="item.id"
-        class="history-item"
-        :data-id="item.id"
-        @click="onHistoryItemTap"
-      >
-        <text class="history-item-text">{{ item.name }}</text>
-      </view>
-      <view v-if="historyList.length === 0" class="empty-history">
-        <text class="empty-text">暂无历史记录</text>
-      </view>
-    </scroll-view>
-  </view>
+	  <!-- 左侧历史记录悬浮层 -->
+	  <view class="history-overlay" v-if="showHistoryPicker" @click="onHideHistoryPicker"></view>
+	  <view
+		class="history-picker-container"
+		v-if="showHistoryPicker"
+		:style="{ height: windowHeight + 'px', transform: showHistoryPicker ? 'translateX(0)' : 'translateX(-50%)' }"
+	  >
+		<scroll-view class="history-list" scroll-y>
+		  <view
+			v-for="item in historyList"
+			:key="item.id"
+			class="history-item"
+			:data-id="item.id"
+			@click="onHistoryItemTap"
+		  >
+			<text class="history-item-text">{{ item.name }}</text>
+		  </view>
+		  <view v-if="historyList.length === 0" class="empty-history">
+			<text class="empty-text">暂无历史记录</text>
+		  </view>
+		</scroll-view>
+	  </view>
 
-  <view class="container" :style="{ display: 'flex', flexDirection: 'column', paddingTop: navbarHeight + 20 + 'px' }">
-    <!-- 聊天消息列表 -->
-    <scroll-view
-      class="chat-list"
-      scroll-y
-      :scroll-into-view="scrollToBottom"
-      scroll-with-animation
-    >
-      <!-- 初始提示文字 -->
-      <view class="empty-chat-tip" v-if="messageList.length === 0">
-        <text class="empty-chat-text">今天有什么可以帮到您？</text>
-      </view>
-      <view
-        v-for="item in messageList"
-        :key="item.id"
-        class="chat-message"
-        :class="item.role === 'user' ? 'user-message' : 'assistant-message'"
-      >
-        <view
-          class="message-bubble"
-          v-if="item.role === 'user'"
-          @click="onUserMessageTap"
-          :data-content="item.content"
-        >
-          <text class="message-text">{{ item.content }}</text>
-        </view>
-        <view class="message-bubble" v-else>
-          <text class="message-text">{{ item.content }}</text>
-          <text v-if="item.duration" class="duration-text">{{ item.duration }}s</text>
-        </view>
-      </view>
-      <view id="bottom"></view>
-    </scroll-view>
+	  <view class="container" :style="{ display: 'flex', flexDirection: 'column', paddingTop: navbarHeight + 20 + 'px' }">
+		<!-- 聊天消息列表 -->
+		<scroll-view
+		  class="chat-list"
+		  scroll-y
+		  :scroll-into-view="scrollToBottom"
+		  scroll-with-animation
+		>
+		  <!-- 初始提示文字 -->
+		  <view class="empty-chat-tip" v-if="messageList.length === 0">
+			<text class="empty-chat-text">今天有什么可以帮到您？</text>
+		  </view>
+		  <view
+			v-for="item in messageList"
+			:key="item.id"
+			class="chat-message"
+			:class="item.role === 'user' ? 'user-message' : 'assistant-message'"
+		  >
+			<view
+			  class="message-bubble"
+			  v-if="item.role === 'user'"
+			  @click="onUserMessageTap"
+			  :data-content="item.content"
+			>
+			  <text class="message-text">{{ item.content }}</text>
+			</view>
+			<view class="message-bubble" v-else>
+			  <text class="message-text">{{ item.content }}</text>
+			  <text v-if="item.duration" class="duration-text">{{ item.duration }}s</text>
+			</view>
+		  </view>
+		  <view id="bottom"></view>
+		</scroll-view>
 
-    <!-- 文本输入框 -->
-    <view class="textarea-container">
-      <textarea
-        class="textarea"
-        :placeholder="isTextareaDisabled ? '请先选择产品' : '请输入内容...'"
-        :value="inputText"
-        @input="onInput"
-        maxlength="500"
-        auto-height
-        :disabled="isTextareaDisabled"
-      />
-    </view>
+		<!-- 文本输入框 -->
+		<view class="textarea-container">
+		  <textarea
+			class="textarea"
+			:placeholder="isTextareaDisabled ? '请先选择产品' : '请输入内容...'"
+			:value="inputText"
+			@input="onInput"
+			maxlength="500"
+			auto-height
+			:disabled="isTextareaDisabled"
+		  />
+		</view>
 
-    <!-- 左侧选择器 -->
-    <picker
-      class="button-container"
-      mode="selector"
-      :range="selectorItems"
-      range-key="name"
-      :value="selectorIndex"
-      @change="onSelectorChange"
-    >
-      <text class="button-text">{{ selectorItems[selectorIndex].name || '请选择产品' }}</text>
-    </picker>
+		<!-- 左侧选择器 -->
+		<picker
+		  class="button-container"
+		  mode="selector"
+		  :range="selectorItems"
+		  range-key="name"
+		  :value="selectorIndex"
+		  @change="onSelectorChange"
+		>
+		  <text class="button-text">{{ selectorItems[selectorIndex].name || '请选择产品' }}</text>
+		</picker>
 
-    <!-- 右侧圆形按钮 -->
-    <view
-      class="circle-button"
-      :class="[isLoading ? 'loading' : '', !isButtonEnabled ? 'disabled' : '']"
-      @click="onCircleButtonTap"
-    >
-      <text class="circle-button-text">{{ isLoading ? '...' : '↑' }}</text>
-    </view>
+		<!-- 右侧圆形按钮 -->
+		<view
+		  class="circle-button"
+		  :class="[isLoading ? 'loading' : '', !isButtonEnabled ? 'disabled' : '']"
+		  @click="onCircleButtonTap"
+		>
+		  <text class="circle-button-text">{{ isLoading ? '...' : '↑' }}</text>
+		</view>
 
-    <!-- 底部提示文字 -->
-    <view class="footer-notice">
-      内容由Ai生成，仅供参考
-    </view>
-  </view>
-   </view>
+		<!-- 底部提示文字 -->
+		<view class="footer-notice">
+		  内容由Ai生成，仅供参考
+		</view>
+	  </view>
+	</view>
+   	</main-layout>
 </template>
 
 <script>
