@@ -1159,7 +1159,7 @@ this;
 .chat-list {
   flex: 1;
   overflow-y: auto;
-  padding: 10px 15px 410rpx; /* 底部留出输入框区域的空间 */
+  padding: 10px 15px 510rpx; /* 底部留出输入框区域的空间 */
   box-sizing: border-box;
 }
 
@@ -1237,7 +1237,7 @@ this;
   position: fixed;
   left: 50rpx;
   right: 50rpx;
-  bottom: 140rpx; /* 为按钮留出空间：按钮高度50rpx + 下边距80rpx + 间距10rpx */
+  bottom: 240rpx; /* 为按钮留出空间：按钮高度50rpx + 下边距80rpx + 间距10rpx */
   min-height: 200rpx;
   z-index: 100;
 }
@@ -1258,7 +1258,7 @@ this;
 .button-container {
   position: fixed;
   left: 50rpx;
-  bottom: 80rpx;
+  bottom: 180rpx;
   width: 550rpx;
   height: 50rpx;
   background-color: #f0f0f0;
@@ -1272,24 +1272,6 @@ this;
   margin: 0;
 }
 
-/* 确保 picker 组件占满整个容器 */
-.button-container {
-  /* 确保 picker 本身可以点击 */
-  position: fixed;
-  left: 50rpx;
-  bottom: 80rpx;
-  width: 550rpx;
-  height: 50rpx;
-  background-color: #f0f0f0;
-  border-radius: 25rpx;
-  border: 1rpx solid #cccccc;
-  display: block;
-  z-index: 100;
-  overflow: visible;
-  pointer-events: auto;
-  padding: 0;
-  margin: 0;
-}
 
 /* 确保 picker 内部的 text 元素占满整个容器 */
 .button-container .button-text {
@@ -1318,7 +1300,7 @@ this;
 .circle-button {
   position: fixed;
   right: 50rpx; /* 右侧距离屏幕右边50rpx */
-  bottom: 80rpx; /* 下边距离屏幕下边80rpx */
+  bottom: 180rpx; /* 下边距离屏幕下边80rpx */
   width: 50rpx; /* 直径 */
   height: 50rpx; /* 直径 */
   background-color: #87CEEB; /* 天蓝色 */
@@ -1365,7 +1347,7 @@ this;
 /* 底部提示文字样式 */
 .footer-notice {
   position: fixed;
-  bottom: 20rpx;
+  bottom: 120rpx;
   left: 0;
   right: 0;
   text-align: center;
