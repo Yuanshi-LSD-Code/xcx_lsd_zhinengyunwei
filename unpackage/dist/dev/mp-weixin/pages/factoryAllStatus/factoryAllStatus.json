@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "所有工厂",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
-    "u-line": "/node-modules/uview-ui/components/u-line/u-line",
-    "u-calendar": "/node-modules/uview-ui/components/u-calendar/u-calendar"
-  }
-}

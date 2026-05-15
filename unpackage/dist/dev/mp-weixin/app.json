@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/notice/notice",
     "pages/user/user",
+    "pages/ai/ai",
     "pages/privacyPolicyProtocol/privacyPolicyProtocol"
   ],
   "subPackages": [

@@ -31,6 +31,13 @@
 			}
 		},
 		{
+			"path": "pages/ai/ai",
+			"style": {
+				"navigationBarTitleText": "AI助手",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
 			"path": "pages/privacyPolicyProtocol/privacyPolicyProtocol",
 			"style": {
 				"navigationBarTitleText": "隐私政策及注册协议",
@@ -38,6 +45,7 @@
 			}
 
 		}
+
 
 
 	],

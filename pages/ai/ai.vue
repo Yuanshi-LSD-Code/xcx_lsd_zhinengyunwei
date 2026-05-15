@@ -1,4 +1,5 @@
 <template>
+	 <view>  <!-- 添加一个根元素 -->
   <!--pages/index/index.wxml-->
   <!-- 自定义导航栏 -->
   <view class="custom-navbar" :style="{ height: navbarHeight + 'px' }">
@@ -112,6 +113,7 @@
       内容由Ai生成，仅供参考
     </view>
   </view>
+   </view>
 </template>
 
 <script>
