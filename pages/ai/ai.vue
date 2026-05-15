@@ -13,7 +13,7 @@
 			  <image class="nav-icon" src="../../static/image/refresh.png" mode="aspectFit"></image>
 			</view>
 		  </view>
-		  <view class="navbar-title">圆石AI助手</view>
+		  <view class="navbar-title">AI助手</view>
 		  <view class="navbar-right"></view>
 		</view>
 	  </view>
@@ -1064,7 +1064,7 @@ this;
 }
 
 .navbar-title {
-  font-size: 36rpx;
+  font-size: 24rpx;
   font-weight: bold;
   color: #333;
   text-align: center;
