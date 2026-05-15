@@ -6,10 +6,10 @@
     <view class="navbar-content" :style="{ height: '44px', marginTop: statusBarHeight + 'px' }">
       <view class="navbar-left">
         <view class="nav-btn" @click="onHistoryTap">
-          <image class="nav-icon" src="/static/images/history.png" mode="aspectFit"></image>
+          <image class="nav-icon" src="../../static/image/history.png" mode="aspectFit"></image>
         </view>
         <view class="nav-btn" @click="onRefreshTap">
-          <image class="nav-icon" src="/static/images/refresh.png" mode="aspectFit"></image>
+          <image class="nav-icon" src="../../static/image/refresh.png" mode="aspectFit"></image>
         </view>
       </view>
       <view class="navbar-title">圆石AI助手</view>
