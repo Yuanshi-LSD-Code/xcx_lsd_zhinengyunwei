@@ -1,0 +1,87 @@
+<!--pages/index/index.wxml-->
+<!-- 自定义导航栏 -->
+<view class="custom-navbar" style="height: {{navbarHeight}}px;">
+  <view class="navbar-content" style="height: 44px; margin-top: {{statusBarHeight}}px;">
+    <view class="navbar-left">
+      <view class="nav-btn" bindtap="onHistoryTap">
+        <image class="nav-icon" src="/images/history.png" mode="aspectFit"></image>
+      </view>
+      <view class="nav-btn" bindtap="onRefreshTap">
+        <image class="nav-icon" src="/images/refresh.png" mode="aspectFit"></image>
+      </view>
+    </view>
+    <view class="navbar-title">圆石AI助手</view>
+    <view class="navbar-right"></view>
+  </view>
+</view>
+
+<!-- 左侧历史记录悬浮层 -->
+<view class="history-overlay" wx:if="{{showHistoryPicker}}" bindtap="onHideHistoryPicker"></view>
+<view class="history-picker-container" wx:if="{{showHistoryPicker}}" style="height: {{windowHeight}}px; transform: translateX({{showHistoryPicker ? '0' : '-50%'}});">
+  <scroll-view class="history-list" scroll-y>
+    <view wx:for="{{historyList}}" wx:key="id" class="history-item" data-id="{{item.id}}" bindtap="onHistoryItemTap">
+      <text class="history-item-text">{{item.name}}</text>
+    </view>
+    <view wx:if="{{historyList.length === 0}}" class="empty-history">
+      <text class="empty-text">暂无历史记录</text>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="container" style="display: flex; flex-direction: column; padding-top: {{navbarHeight + 20}}px;">
+  <!-- 聊天消息列表 -->
+  <scroll-view class="chat-list" scroll-y scroll-into-view="{{scrollToBottom}}" scroll-with-animation>
+    <!-- 初始提示文字 -->
+    <view class="empty-chat-tip" wx:if="{{messageList.length === 0}}">
+      <text class="empty-chat-text">今天有什么可以帮到您？</text>
+    </view>
+    <view wx:for="{{messageList}}" wx:key="id" class="chat-message {{item.role === 'user' ? 'user-message' : 'assistant-message'}}">
+      <view class="message-bubble" wx:if="{{item.role === 'user'}}" bindtap="onUserMessageTap" data-content="{{item.content}}">
+        <text class="message-text">{{item.content}}</text>
+      </view>
+      <view class="message-bubble" wx:else>
+        <text class="message-text">{{item.content}}</text>
+        <text wx:if="{{item.duration}}" class="duration-text">{{item.duration}}s</text>
+      </view>
+    </view>
+    <view id="bottom"></view>
+  </scroll-view>
+  
+  <!-- 文本输入框 -->
+  <view class="textarea-container">
+    <textarea 
+      class="textarea" 
+      placeholder="{{isTextareaDisabled ? '请先选择产品' : '请输入内容...'}}" 
+      value="{{inputText}}"
+      bindinput="onInput"
+      maxlength="500"
+      auto-height
+      disabled="{{isTextareaDisabled}}"
+    />
+  </view>
+  
+  <!-- 左侧选择器 -->
+  <picker 
+    class="button-container" 
+    mode="selector" 
+    range="{{selectorItems}}"
+    range-key="name"
+    value="{{selectorIndex}}"
+    bindchange="onSelectorChange"
+  >
+    <text class="button-text">{{selectorItems[selectorIndex].name || '请选择产品'}}</text>
+  </picker>
+  
+  <!-- 右侧圆形按钮 -->
+  <view 
+    class="circle-button {{isLoading ? 'loading' : ''}} {{!isButtonEnabled ? 'disabled' : ''}}" 
+    bindtap="onCircleButtonTap"
+  >
+    <text class="circle-button-text">{{isLoading ? '...' : '↑'}}</text>
+  </view>
+
+  <!-- 底部提示文字 -->
+  <view class="footer-notice">
+    内容由Ai生成，仅供参考
+  </view>
+</view>
